@@ -1,0 +1,362 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-family: 'Roboto', sans-serif;
+}
+
+.container{
+    position: relative;
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.promo{
+    min-height: 800px;
+    background: url('../img/background_up@2x.png') center center/cover no-repeat;
+    padding: 39px 0 62px 0;
+}
+
+.logo .logo_img{
+    display: block;
+    width: 83px;
+    height: 71px;
+    margin: 0 auto;
+}
+.logo .logo_text{
+    font-family: Roboto;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #ffffff;  
+    text-align: center;
+    margin-top: 14px;
+}
+
+h1{
+    margin-top: 53px;
+}
+
+.title{
+    font-size: 41px;
+    line-height: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #f9bf3b;
+    text-align: center;
+}
+
+.simple .title_big{
+    font-size: 80px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 21px;
+}
+
+h2.title{
+    margin-top: 30px;
+}
+
+.promo .promo_text{
+    font-size: 21px;
+    line-height: 28px;
+    font-weight: 300;
+    color: #ffffff;
+    text-align: center;
+    padding: 0 13px;
+    padding-top: 23px;
+}
+
+.promo .promo_text span{
+    font-weight: 700;
+    color: #f9bf3b;
+}
+
+.promo .promo_btn{
+    display: block;
+    margin: 0 auto;
+    margin-top: 69px;
+    width: 321px;
+    height: 80px;
+    background-image: linear-gradient(0.0deg, #2798b9 0%, #3ab6da 100%);
+    border: 4px solid rgba(0,0,0,0.23);
+    box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0.18);
+    font-size: 21px;
+    line-height: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-shadow: -1px -1px 0px rgba(0,0,0,0.22);
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+}
+
+.more{
+    margin-top: 69px;
+}
+
+.more .more_text{
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-align: center;
+}
+
+.more .more_img{
+    width: 30px;
+    height: 19px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 13px;
+}
+
+.waiting {
+    min-height: 0px;
+    background-color: #efefef;
+    padding: 85px 0 75px 0;
+}
+
+.waiting .waiting_header{
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #252525;
+    text-align: center;
+}
+
+.waiting .waiting_divider{
+    width: 217px;
+    height: 4px;
+    background-color: #f9bf3b;
+    margin: 0 auto;
+    margin-top: 18px;
+}
+
+.waiting .waiting_subheader{
+    font-size: 23px;
+    font-weight: 400;
+    color: #4a4a4a;
+    text-align: center;
+    margin-top: 17px;
+}
+.waiting .waiting_wraper{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 45px;
+}
+
+.waiting .waiting_wraper .waiting_item{
+    width: 342px;
+}
+
+.waiting .waiting_wraper .waiting_item .waiting_img{
+    width: 342px;
+    height: 201px;
+}
+
+.waiting .waiting_wraper .waiting_item .waiting_desription{
+    font-size: 15px;
+    line-height: 21px;
+    font-weight: 300;
+    color: #4a4a4a;
+    margin-top: 33px;
+    text-align: center;
+}
+
+.whatis{
+    min-height: 0px;
+    padding: 102px 0 107px 0;
+}
+
+.whatis .whatis_header{
+    text-align: end;
+    font-size: 28px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #299cbd;
+    margin-left: 391px;
+}
+
+.whatis .whatis_text{
+    margin-top: 25px;
+    font-size: 17px;
+    line-height: 27px;
+    font-weight: 300;
+    color: #4a4a4a;
+    margin-left: 391px;
+    text-align: justify;
+}
+
+.whatis .whatis_text span{
+    font-weight: 700;
+}
+
+.whatis .whatis_img{
+    position: absolute;
+    top: -54px;
+    left: -240px;
+    width: 868px;
+    height: 502px;
+    z-index: -1;
+}
+
+.end{
+    background: url('../img/background_down@2x.png') center center/cover no-repeat;
+    padding: 86px 0 79px 0;
+    min-height: 300px;
+ }
+
+.stud .stud_header{
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #efefef; 
+    text-align: center;
+ } 
+ 
+.stud .stud_divider{
+    width: 217px;
+    height: 4px;
+    background-color: #f9bf3b;
+    margin: 0 auto;
+    margin-top: 23px;
+}
+
+.stud .stud_wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 41px;
+}
+
+.stud .stud_wrapper .stud_item{
+    width: 204px;
+}
+
+ .stud .stud_wrapper .stud_item .stud_img{
+     height: 115px;
+     width: 115px;
+     display: block;
+     margin: 0 auto;
+ }
+
+ .stud .stud_wrapper .stud_item .stud_description{
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: 300;
+    color: #efefef;
+    text-align: center;
+    margin-top: 26px;
+ }
+
+ .gifts{
+     min-height: 300px;
+     padding: 86px 0 83px 0;
+     background-color: #efefef;
+ }
+
+ .gifts .gifts_img{
+     display: block;
+     margin: 0 auto;
+     width: 154px;
+     height: 173px;
+ }
+
+ .gifts .gifts_description{
+    font-size: 30px;
+    line-height: 43px;
+    font-weight: 400;
+    color: #252525;
+    margin-top: 42px;
+    text-align: center;
+ }
+
+ .gifts .promo_btn{
+    width: 321px;
+    height: 80px;
+    background-image: linear-gradient(0.0deg, #2798b9 0%, #3ab6da 100%);
+    border: 4px solid rgba(0,0,0,0.1);
+    box-shadow: inset 0px -5px 0px 0px rgba(0,0,0,0.17);
+    font-size: 21px;
+    line-height: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-shadow: -1px -1px 0px rgba(0,0,0,0.21);
+    color: #ffffff;
+    display: block;
+    margin: 0 auto;
+    margin-top: 48px;
+    cursor: pointer;
+ }
+
+ .meeting{
+     min-height: 0px;
+     padding: 89px 0 64px 0;
+ }
+
+ .meeting .meeting_img{
+    display: block;
+    margin: 0 auto;
+    width: 252px;
+     height: 154px;
+ }
+
+ .meeting .meeting_header{
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #252525;
+    margin-top: 37px;
+    text-align: center;
+ }
+
+ .meeting .meeting_adress{
+    font-size: 36px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #299cbd;
+    margin-top: 30px;
+    text-align: center;
+ }
+
+ .meeting .meeting_description{
+    font-size: 23px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #4a4a4a;
+    text-align: center;
+    margin-top: 25px;
+ }
+
+ footer{
+     padding: 61px 0 69px 0;
+     min-height: 0px;
+     background-color: #1a1a1a;
+ }
+
+.info {
+    font-size: 15px;
+    line-height: 21px;
+    font-weight: 300;
+    text-decoration: underline;
+    color: #888888;
+    text-align: center;
+}
+
+footer a {
+    color: #888888;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 21px;
+    text-decoration: none;
+}
+
+.underlined {
+    text-decoration: underline;
+}
