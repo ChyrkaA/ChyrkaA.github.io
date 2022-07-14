@@ -147,7 +147,7 @@ percent.forEach((item, i) =>{
 //отслеживание поклассово, найдя i-тый класс, другому i-му классу добавляется класс top, btn, opacity
 const overlay = document.querySelectorAll('.portfolio__overlay'),
         top1 = document.querySelectorAll('.portfolio__descr'),
-        btn = document.querySelectorAll('.portfolio__btn');
+        btn = document.querySelectorAll('.portfolio__link');
 
 overlay.forEach((item, i) =>{
         overlay[i].addEventListener('mouseover', function() {
