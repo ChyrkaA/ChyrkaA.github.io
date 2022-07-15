@@ -236,7 +236,7 @@ const Visible = function (target) {
 		// Если элемент полностью видно, то запускаем следующий код
 			console.clear();
 			//добавляем аттрибут
-			//target.setAttribute('data-wow-delay', "1s");
+			target.setAttribute('data-wow-delay', "1s");
 			//добавляем классы
 			target.classList.add('animate__animated');
 			target.classList.add('animate__fadeIn');
