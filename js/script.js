@@ -125,6 +125,7 @@ $(document).ready(function(){
 const hamburger = document.querySelector('.hamburger'),
         menu = document.querySelector('.menu'),
         close = document.querySelector('.menu__close');
+	
 
 hamburger.addEventListener('click', function() {
         menu.classList.add('active');
@@ -144,10 +145,18 @@ percent.forEach((item, i) =>{
 
 
 
-//отслеживание поклассово, найдя i-тый класс, другому i-му классу добавляется класс top, btn, opacity
+//отслеживание поклассово, найдя i-тый класс, другому i-му классу добавляется класс top, btn, opacity и др
 const overlay = document.querySelectorAll('.portfolio__overlay'),
         top1 = document.querySelectorAll('.portfolio__descr'),
-        btn = document.querySelectorAll('.portfolio__link');
+        btn = document.querySelectorAll('.portfolio__link'),
+	menuItem = document.querySelectorAll('.menu__item');
+
+menuItem.forEach((item, i) =>{
+	menuItem[i].addEventListener('click', function() {
+		menu.classList.remove('active');
+		hamburger.classList.remove('hide');
+	});
+});
 
 overlay.forEach((item, i) =>{
         overlay[i].addEventListener('mouseover', function() {
@@ -173,9 +182,23 @@ btn.forEach((item, i) =>{
                 btn[i].classList.remove('hide');
         });	
 });
-new WOW().init();
 
-// Получаем нужный элемент
+function onDisplay(entry) {
+	entry.forEach(function(change) {
+		if (change.isIntersecting) {
+			change.target.classList.add('Delay');
+		}else change.target.classList.remove('Delay');
+	});
+}
+const elements = document.querySelectorAll('.animate');
+const options = {threshold: [0.2]};
+const observer = new IntersectionObserver(onDisplay, options);
+for (let elm of elements) {
+	observer.observe(elm);
+}
+
+
+/* // Получаем нужный элемент
 const promo = document.querySelector('.promo__smooth');
 const photo = document.querySelector('.about__photo');
 const descr = document.querySelector('.about__descr');
@@ -332,4 +355,4 @@ const Visible = function (target) {
 	Visible (skillsData);
 	Visible (skillsCreative);
 	Visible (skillsDesign);
-	Visible (skillsSoftskills);
+	Visible (skillsSoftskills); */
