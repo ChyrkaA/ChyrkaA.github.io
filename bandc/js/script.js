@@ -28,6 +28,7 @@ console.log(arr);
 const btn = document.getElementById('btn');
 const ul = document.querySelector('.bandc__list');
 let result = [];
+let nums= [];
 
 function num(){
 let num;
@@ -59,16 +60,18 @@ function proverka(a, b) {
 				}
 			}
 		}
-		resultArr(bulls, cows-bulls);
+		resultArr(bulls, cows-bulls, b);
 		/* alert('Быки: ' + (bulls) + ' Коровы: ' + (cows - bulls)); */
 	}
 }
 
-function resultArr(a, b){	
+function resultArr(a, b, c){	
 	result.push(`Бики: ${a}, Корови: ${b}`);
+	let chislo=c.join('');
+	nums.push(chislo);
 	let title = '';
 	result.forEach((item, i) => {
-		title = title + `<li class="bandc__list-item">${i+1}: ${item}</li>`;
+		title = title + `<li class="bandc__list-item">Хід №${i+1}: <br> Ваше число: <b>${nums[i]}</b>. Результат: ${item}</li>`;
 	});
 	ul.innerHTML = title;	
 }
