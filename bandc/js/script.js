@@ -59,7 +59,7 @@ function proverka(a, b) {
 				}
 			}
 		}
-		resultArr(bulls, cows);
+		resultArr(bulls, cows-bulls);
 		/* alert('Быки: ' + (bulls) + ' Коровы: ' + (cows - bulls)); */
 	}
 }
