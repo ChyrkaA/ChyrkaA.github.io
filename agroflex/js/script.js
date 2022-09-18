@@ -78,13 +78,34 @@ window.addEventListener('DOMContentLoaded', () => {
         });
         const arrows = document.querySelector('.promo__arrows'); 
         window.addEventListener('scroll', ()=>{
-                if (window.scrollY > 200){
+                if (window.scrollY > 100){
                         arrows.classList.add('hide');
                 }
                 else{
                         arrows.classList.remove('hide');
                 }
+        }); 
+        
+        const modalButton = document.querySelector('[data-modal]');
+        const modal = document.querySelector('.modal');
+        const overlay = document.querySelector('.overlay');
+        const close = document.querySelector('.modal__close');
+
+        function openModal(){
+                modal.classList.remove('hide_modal');
+                overlay.classList.remove('hide_modal');
+                document.body.style.overflow = 'hidden';
+        }
+        function closeModal(){
+                modal.classList.add('hide_modal');
+                overlay.classList.add('hide_modal');
+                document.body.style.overflow = '';
+        }
+        modalButton.addEventListener('click', ()=>{
+                openModal();
         });
-       
+        close.addEventListener('click', ()=>{
+                closeModal();
+        });
 });
 
