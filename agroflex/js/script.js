@@ -86,26 +86,36 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
         }); 
         
-        const modalButton = document.querySelector('[data-modal]');
-        const modal = document.querySelector('.modal');
-        const overlay = document.querySelector('.overlay');
-        const close = document.querySelector('.modal__close');
-
-        function openModal(){
-                modal.classList.remove('hide_modal');
-                overlay.classList.remove('hide_modal');
-                document.body.style.overflow = 'hidden';
-        }
-        function closeModal(){
-                modal.classList.add('hide_modal');
-                overlay.classList.add('hide_modal');
-                document.body.style.overflow = '';
-        }
-        modalButton.addEventListener('click', ()=>{
-                openModal();
-        });
-        close.addEventListener('click', ()=>{
-                closeModal();
-        });
+        const menuColor = document.querySelector('.menu');
+        const menuWrapper = document.querySelector('.menu__wrapper');
+        window.addEventListener('scroll', ()=>{
+                if (window.scrollY > 50){
+                        menuColor.style.cssText = `
+                                background-color: rgba(67, 138, 40, 0.7);
+                                transform: translateY(-70px);
+                        `;
+                        menuWrapper.style.cssText = `                        
+                                transform: translateY(35px);
+                        `;
+                }
+                else{
+                        menuColor.style.cssText = ``;
+                        menuWrapper.style.cssText = ``;
+                }
+        }); 
+        const logo = document.querySelector('.menu__logo_img');
+        window.addEventListener('scroll', ()=>{
+                if (window.scrollY > 50){
+                        logo.style.cssText = `
+                        opacity: 0;
+                `;
+                }
+                else{
+                        logo.style.cssText = `
+                        opacity: 1;
+                `;
+                }
+        }); 
+        
 });
 
