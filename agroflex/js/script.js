@@ -1,36 +1,30 @@
 'use strict';
-window.addEventListener('DOMContentLoaded', () => {        
+
 //jQery
-
-        $('.distrib__slider').slick({
-                centerMode: true,
-                centerPadding: '50px',
-                slidesToShow: 5,
-                dots: true,
-                variableWidth:true,
-                prevArrow: $('.distrib__prev_btn'),
-                nextArrow: $('.distrib__next_btn'),
-                responsive: [{
-                                breakpoint: 768,
-                                settings: {
-                                        arrows: false,
-                                        centerMode: true,
-                                        centerPadding: '40px',
-                                        slidesToShow: 3
-                                }
-                        },
-                        {
-                                breakpoint: 480,
-                                settings: {
-                                        arrows: false,
-                                        centerMode: true,
-                                        centerPadding: '40px',
-                                        slidesToShow: 1
-                                }
-                        }
-                ]
+$(document).ready(function () {   
+        $('.distrib__wrapper').click(function () {
+                $(this).attr('tabindex', 1).focus();
+                $(this).toggleClass('distrib__wrapper_active');
+                $(this).find('.distrib__list').slideToggle(500);
         });
+        $('.distrib__region').click(function () {
+                $('.distrib__cross').toggleClass('distrib__cross_active');
+        });        
+        $('.distrib__wrapper').focusout(function () {
+                $('.distrib__cross').removeClass('distrib__cross_active');
+                $(this).removeClass('distrib__wrapper_active');
+                $(this).find('.distrib__list').slideUp(500);
+        });
+        $('.distrib__item').click(function () {
+                $('.distrib__cross').remove();
+                $(this).parents('.distrib__wrapper').find('.distrib__region').text($(this).text()).after(function() {
+                        return '<div class="distrib__cross">'+'<span>'+'</span>'+'<span>'+'</span>'+'</div>';
+                });
+                $('.distrib__cross').removeClass('distrib__cross_active');             
+        });      
+});
 
+window.addEventListener('DOMContentLoaded', () => {        
 //js
 
         const tabParent = document.querySelector('.catalog__tabs');
@@ -116,6 +110,36 @@ window.addEventListener('DOMContentLoaded', () => {
                 `;
                 }
         }); 
-        
-});
 
+        const region = document.querySelectorAll('.distrib__item');
+        const contact = document.querySelectorAll('.distrib__contact');
+        const regionParent = document.querySelector('.distrib__list');
+        const contacts = document.querySelector('.distrib__contacts');
+
+        function hideRegionContacts() {  
+                contact.forEach(item => {
+                        item.classList.remove('distrib__contacts_active');
+                });
+                contacts.classList.add('hide');
+        }
+        
+        function showRegionContacts(i) {
+                contacts.classList.remove('hide');
+                contact[i].classList.add('distrib__contacts_active');
+        }
+        
+        hideRegionContacts();
+        
+        regionParent.addEventListener('click', (event) => {
+                const target = event.target;
+                if (target && target.classList.contains('distrib__item')) {
+                        region.forEach((item, i) => {
+                                if (target == item) {
+                                        hideRegionContacts();
+                                        showRegionContacts(i);                                        
+                                }
+                        });
+                }
+        });
+
+});
