@@ -89,89 +89,89 @@ $(document).ready(function(){
 
 
 //js
-const preload = document.querySelector('.bckg');
-document.body.style.overflow = 'hidden';
-setTimeout(function () {
-	preload.classList.add('hide');
-	document.body.style.overflow = '';
-}, 1000);
-setTimeout(()=>preload.remove(),1500);
+window.addEventListener('DOMContentLoaded', () => {
 
+	const preload = document.querySelector('.bckg');
 
-    
+	function ready(){		
+		document.body.style.overflow = '';
+		preload.remove();
+	}
 
+	window.addEventListener("load", ready);
 
-const hamburger = document.querySelector('.hamburger'),
-        menu = document.querySelector('.menu'),
-        close = document.querySelector('.menu__close');
-	
+	const hamburger = document.querySelector('.hamburger'),
+		menu = document.querySelector('.menu'),
+		close = document.querySelector('.menu__close');
+		
 
-hamburger.addEventListener('click', function() {
-        menu.classList.add('active');
-        hamburger.classList.add('hide');
-});
+	hamburger.addEventListener('click', function() {
+		menu.classList.add('active');
+		hamburger.classList.add('hide');
+	});
 
-close.addEventListener('click', function() {
-        menu.classList.remove('active');
-        hamburger.classList.remove('hide');
-});
-
-const percent = document.querySelectorAll('.skills__header_percent'),
-        lines = document.querySelectorAll('.skills__progress_yellow');
-percent.forEach((item, i) =>{
-        lines[i].style.width = item.innerHTML;  //innerHTML достает значение с элемента страницы
-});
-
-
-
-//отслеживание поклассово, найдя i-тый класс, другому i-му классу добавляется класс top, btn, opacity и др
-const overlay = document.querySelectorAll('.portfolio__overlay'),
-        top1 = document.querySelectorAll('.portfolio__descr'),
-        btn = document.querySelectorAll('.portfolio__link'),
-	menuItem = document.querySelectorAll('.menu__item');
-
-menuItem.forEach((item, i) =>{
-	menuItem[i].addEventListener('click', function() {
+	close.addEventListener('click', function() {
 		menu.classList.remove('active');
 		hamburger.classList.remove('hide');
 	});
-});
 
-overlay.forEach((item, i) =>{
-        overlay[i].addEventListener('mouseover', function() {
-                overlay[i].classList.add('opacity');
-                top1[i].classList.add('top');
-                btn[i].classList.add('hide');
-        });
-        overlay[i].addEventListener('mouseout', function() {
-                overlay[i].classList.remove('opacity');
-                top1[i].classList.remove('top');
-                btn[i].classList.remove('hide');
-        });       
-});
-btn.forEach((item, i) =>{
-        btn[i].addEventListener('mouseover', function() {
-                overlay[i].classList.add('opacity');
-                top1[i].classList.add('top');
-                btn[i].classList.add('hide');
-        });
-        btn[i].addEventListener('mouseout', function() {
-                overlay[i].classList.remove('opacity');
-                top1[i].classList.remove('top');
-                btn[i].classList.remove('hide');
-        });	
-});
-
-function onDisplay(entry) {
-	entry.forEach(function(change) {
-		if (change.isIntersecting) {
-			change.target.classList.add('Delay');
-		}else change.target.classList.remove('Delay');
+	const percent = document.querySelectorAll('.skills__header_percent'),
+		lines = document.querySelectorAll('.skills__progress_yellow');
+	percent.forEach((item, i) =>{
+		lines[i].style.width = item.innerHTML;  //innerHTML достает значение с элемента страницы
 	});
-}
-const elements = document.querySelectorAll('.animate');
-const options = {threshold: [0.2]};
-const observer = new IntersectionObserver(onDisplay, options);
-for (let elm of elements) {
-	observer.observe(elm);
-}
+
+
+
+	//отслеживание поклассово, найдя i-тый класс, другому i-му классу добавляется класс top, btn, opacity и др
+	const overlay = document.querySelectorAll('.portfolio__overlay'),
+		top1 = document.querySelectorAll('.portfolio__descr'),
+		btn = document.querySelectorAll('.portfolio__link'),
+		menuItem = document.querySelectorAll('.menu__item');
+
+	menuItem.forEach((item, i) =>{
+		menuItem[i].addEventListener('click', function() {
+			menu.classList.remove('active');
+			hamburger.classList.remove('hide');
+		});
+	});
+
+	overlay.forEach((item, i) =>{
+		overlay[i].addEventListener('mouseover', function() {
+			overlay[i].classList.add('opacity');
+			top1[i].classList.add('top');
+			btn[i].classList.add('hide');
+		});
+		overlay[i].addEventListener('mouseout', function() {
+			overlay[i].classList.remove('opacity');
+			top1[i].classList.remove('top');
+			btn[i].classList.remove('hide');
+		});       
+	});
+	btn.forEach((item, i) =>{
+		btn[i].addEventListener('mouseover', function() {
+			overlay[i].classList.add('opacity');
+			top1[i].classList.add('top');
+			btn[i].classList.add('hide');
+		});
+		btn[i].addEventListener('mouseout', function() {
+			overlay[i].classList.remove('opacity');
+			top1[i].classList.remove('top');
+			btn[i].classList.remove('hide');
+		});	
+	});
+
+	function onDisplay(entry) {
+		entry.forEach(function(change) {
+			if (change.isIntersecting) {
+				change.target.classList.add('Delay');
+			}else change.target.classList.remove('Delay');
+		});
+	}
+	const elements = document.querySelectorAll('.animate');
+	const options = {threshold: [0.2]};
+	const observer = new IntersectionObserver(onDisplay, options);
+	for (let elm of elements) {
+		observer.observe(elm);
+	}
+})
