@@ -92,6 +92,17 @@ $(document).ready(function(){
 window.addEventListener('DOMContentLoaded', () => {
 
 	const preload = document.querySelector('.bckg');
+	const resume = document.querySelector('.resume');
+	const promo = document.querySelector('.promo');
+	const portfolio = document.querySelector('.portfolio')
+	const user = detect.parse(navigator.userAgent);	//подключаемый модуль, для определения браузера устройства
+
+	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini|Safari|Chrome Mobile/i.test(user.browser.name)) {	//проверка регулярными выражениями на название браузера
+		promo.style.backgroundAttachment = "scroll";
+		resume.style.backgroundAttachment = "scroll";
+		portfolio.style.backgroundAttachment = "scroll";
+
+    	}
 
 	function ready(){		
 		document.body.style.overflow = '';
