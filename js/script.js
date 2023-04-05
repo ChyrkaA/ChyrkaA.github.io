@@ -185,4 +185,51 @@ window.addEventListener('DOMContentLoaded', () => {
 	for (let elm of elements) {
 		observer.observe(elm);
 	}
+
+
+
+
+
+
+
+	const linksParent = document.querySelector('.contacts__social');
+	const links = document.querySelectorAll('.contacts__link');
+
+	function coloredLink(i){
+		links[i].classList.remove('greyscale');
+	}
+	function greyLink(){
+		links.forEach(item=>{
+			item.classList.add('greyscale');
+		})
+	}
+
+	function removeGreyLink(){
+		links.forEach(item => {
+			item.classList.remove('greyscale');
+		})
+	}
+
+	linksParent.addEventListener('mouseover', (e)=>{
+		const target = e.target;
+		if(target && (target.classList.contains('contacts__social') || target.classList.contains('contacts__link'))){
+			greyLink()
+			console.log('in');
+		}	
+		if(target && target.classList.contains('contacts__link')) {
+			links.forEach((item, i)=>{
+				if(target==item){
+					coloredLink(i);
+				}
+			})
+		} 		
+	});
+	linksParent.addEventListener('mouseout', (e)=>{
+		const target = e.target;
+		if(target && (!target.classList.contains('contacts__link') && !target.classList.contains('linkImg'))){			
+			removeGreyLink();
+		} else {
+			console.log('out')
+		}
+	});
 })
