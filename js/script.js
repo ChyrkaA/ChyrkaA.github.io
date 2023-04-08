@@ -1,13 +1,5 @@
 //jQuery
-$(document).ready(function(){
-        // $(window).scroll(function() {	//обрабатываем окно браузера
-        //         if ($(this).scrollTop()>300){	//если страница опустилась ниже на 800 единиц
-        //                 $('.promo__arrows').fadeOut();	//то появляется кнопка прокрутки вверх
-        //         }else{	//если не прокручена страница на 300 единиц
-        //                 $('.promo__arrows').fadeIn();	//то кнопка скрывается
-        //         }
-        // });   
-        
+$(document).ready(function(){        
         
         $('.modal__close').on('click', function(){
                 $('.overlay, #thanks').fadeOut();
@@ -77,14 +69,6 @@ $(document).ready(function(){
 		});
 		return false;
 	});
-
-	// $(window).scroll(function() {	//обрабатываем окно браузера
-	// 	if ($(this).scrollTop()>800){	//если страница опустилась ниже на 800 единиц
-	// 		$('.pageup').fadeIn();	//то появляется кнопка прокрутки вверх
-	// 	}else{	//если не прокручена страница на 800 единиц
-	// 		$('.pageup').fadeOut();	//то кнопка скрывается
-	// 	}
-	// });
 });
 
 
