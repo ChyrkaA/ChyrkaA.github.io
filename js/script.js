@@ -1,5 +1,5 @@
 //jQuery
-$(document).ready(function(){        
+$(document).on('ready', function(){        
         
         $('.modal__close').on('click', function(){
                 $('.overlay, #thanks').fadeOut();
@@ -29,7 +29,7 @@ $(document).ready(function(){
 			},
 			messages: {
 				name: "Введіть Ваше імя",
-                                surname: "Введіть Ваше прізвище",
+                    surname: "Введіть Ваше прізвище",
 				phone: {
 					required: "Введіть Ваш номер телефону",
 					minlength: "Зразок: +380ххххххххх (10 цифр)"
@@ -75,40 +75,47 @@ $(document).ready(function(){
 //js
 window.addEventListener('DOMContentLoaded', () => {
 
-	const arrows = document.querySelector('.promo__arrows');
-	const pageUp = document.querySelector('.pageup');
+	const preload = document.querySelector('.bckg'),
+		resume = document.querySelector('.resume'),
+		promo = document.querySelector('.promo'),
+		portfolio = document.querySelector('.portfolio'),
+		
+		user = detect.parse(navigator.userAgent),	//подключаемый модуль, для определения браузера устройства
+		
+		menu = document.querySelector('.menu'),
+		overlay = document.querySelectorAll('.portfolio__overlay'),
+		top1 = document.querySelectorAll('.portfolio__descr'),
+		btn = document.querySelectorAll('.portfolio__link'),
+		hamburger = document.querySelector('.hamburger'),
 
-	const fadeIn = (el, timeout, display) => {
-		el.style.opacity = 0;
+		arrows = document.querySelector('.promo__arrows'),
+		pageUp = document.querySelector('.pageup');
+		// menuItem = document.querySelectorAll('.menu__item');
+
+	const fadeIn = (el, timeout, opacity, display) => {
+		el.style.opacity = opacity || 1;
 		el.style.display = display || 'block';
 		el.style.transition = `opacity ${timeout}ms`;
-		el.style.opacity = 1;
 	};
 
-	const fadeOut = (el, timeout) => {
-		el.style.opacity = 1;
+	const fadeOut = (el, timeout, opacity) => {
+		el.style.opacity = opacity || 0;
 		el.style.transition = `opacity ${timeout}ms`;
-		el.style.opacity = 0;
 	};
 
 	window.addEventListener('scroll',()=>{	
-		if(scrollY>=300){
+		if (scrollY>=300){
 			fadeOut(arrows, 1000);
 		} else {
 			fadeIn(arrows, 1000);
 		}
-		if(scrollY>=800){
-			pageUp.classList.add('show');
+		if (scrollY>=800){
+			fadeIn(pageUp, 1000, 0.7);
 		} else {
-			pageUp.classList.remove('show');
+			fadeOut(pageUp, 1000, 0);
 		}
 	})
 
-	const preload = document.querySelector('.bckg');
-	const resume = document.querySelector('.resume');
-	const promo = document.querySelector('.promo');
-	const portfolio = document.querySelector('.portfolio')
-	const user = detect.parse(navigator.userAgent);	//подключаемый модуль, для определения браузера устройства
 
 	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini|Safari|Chrome Mobile/i.test(user.browser.name)) {	//проверка регулярными выражениями на название браузера
 		promo.style.backgroundAttachment = "scroll";
@@ -123,24 +130,13 @@ window.addEventListener('DOMContentLoaded', () => {
 	}
 
 	window.addEventListener("load", ready);
-
-	const hamburger = document.querySelector('.hamburger'),
-		menu = document.querySelector('.menu'),
-		overlay = document.querySelectorAll('.portfolio__overlay'),
-		top1 = document.querySelectorAll('.portfolio__descr'),
-		btn = document.querySelectorAll('.portfolio__link'),
-		menuItem = document.querySelectorAll('.menu__item');
 	
 	document.body.addEventListener('click', (e)=>{
 		if (e.target.closest('.hamburger')) {
 			menu.classList.add('active');
 			hamburger.classList.add('hide');
 		} 
-		if (e.target.closest('.menu__close') || e.target.closest('.menu__overlay')) {
-			menu.classList.remove('active');
-			hamburger.classList.remove('hide');
-		}
-		if (e.target.closest('.menu__item')) {
+		if (e.target.closest('.menu__close') || e.target.closest('.menu__overlay') || e.target.closest('.menu__item')) {
 			menu.classList.remove('active');
 			hamburger.classList.remove('hide');
 		}
@@ -152,30 +148,59 @@ window.addEventListener('DOMContentLoaded', () => {
 	// 	lines[i].style.width = item.innerHTML;  //innerHTML достает значение с элемента страницы
 	// });
 
-	overlay.forEach((item, i) =>{
-		item.addEventListener('mouseover', function() {
-			overlay[i].classList.add('opacity');
-			top1[i].classList.add('top');
-			btn[i].classList.add('hide');
+	function targetMouseToggle(action, item, i){
+		if(action === 'mouseover'){
+			item.addEventListener(action, () => {
+				overlay[i].classList.add('opacity');
+				top1[i].classList.add('top');
+				btn[i].classList.add('hide');
+			});
+		} else if (action === 'mouseout'){
+			item.addEventListener('mouseout', () => {
+				overlay[i].classList.remove('opacity');
+				top1[i].classList.remove('top');
+				btn[i].classList.remove('hide');
+			});   
+		}
+	}
+
+	function targetAction(target){
+		target.forEach((item, i) =>{
+			targetMouseToggle('mouseover', item, i);
+			targetMouseToggle('mouseout', item, i);    
 		});
-		overlay[i].addEventListener('mouseout', function() {
-			overlay[i].classList.remove('opacity');
-			top1[i].classList.remove('top');
-			btn[i].classList.remove('hide');
-		});       
-	});
-	btn.forEach((item, i) =>{
-		item.addEventListener('mouseover', function() {
-			overlay[i].classList.add('opacity');
-			top1[i].classList.add('top');
-			btn[i].classList.add('hide');
-		});
-		btn[i].addEventListener('mouseout', function() {
-			overlay[i].classList.remove('opacity');
-			top1[i].classList.remove('top');
-			btn[i].classList.remove('hide');
-		});	
-	});
+	}
+	targetAction(overlay);
+	targetAction(btn);
+
+	// overlay.forEach((item, i) =>{
+	// 	mouseToggle('mouseover', item, i);
+	// 	// item.addEventListener('mouseover', function() {
+	// 	// 	overlay[i].classList.add('opacity');
+	// 	// 	top1[i].classList.add('top');
+	// 	// 	btn[i].classList.add('hide');
+	// 	// });
+	// 	mouseToggle('mouseout', item, i);
+	// 	// item.addEventListener('mouseout', function() {
+	// 	// 	overlay[i].classList.remove('opacity');
+	// 	// 	top1[i].classList.remove('top');
+	// 	// 	btn[i].classList.remove('hide');
+	// 	// });       
+	// });
+	// btn.forEach((item, i) =>{
+	// 	mouseToggle('mouseover', item, i);
+	// 	mouseToggle('mouseout', item, i);
+	// 	// item.addEventListener('mouseover', function() {
+	// 	// 	overlay[i].classList.add('opacity');
+	// 	// 	top1[i].classList.add('top');
+	// 	// 	btn[i].classList.add('hide');
+	// 	// });
+	// 	// item.addEventListener('mouseout', function() {
+	// 	// 	overlay[i].classList.remove('opacity');
+	// 	// 	top1[i].classList.remove('top');
+	// 	// 	btn[i].classList.remove('hide');
+	// 	// });	
+	// });
 
 	function onDisplay(entry) {
 		entry.forEach(function(change) {
