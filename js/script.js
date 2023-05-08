@@ -130,15 +130,22 @@ window.addEventListener('DOMContentLoaded', () => {
 	}
 
 	window.addEventListener("load", ready);
+
+	function toggleMenuClass(action){
+		menu.classList[action]('active');
+		hamburger.classList[action]('hide');
+	}
 	
 	document.body.addEventListener('click', (e)=>{
 		if (e.target.closest('.hamburger')) {
-			menu.classList.add('active');
-			hamburger.classList.add('hide');
+			toggleMenuClass('add');
+			// menu.classList['add']('active');
+			// hamburger.classList['add']('hide');
 		} 
 		if (e.target.closest('.menu__close') || e.target.closest('.menu__overlay') || e.target.closest('.menu__item')) {
-			menu.classList.remove('active');
-			hamburger.classList.remove('hide');
+			toggleMenuClass('remove')
+			// menu.classList.remove('active');
+			// hamburger.classList.remove('hide');
 		}
 	})
 
@@ -148,58 +155,69 @@ window.addEventListener('DOMContentLoaded', () => {
 	// 	lines[i].style.width = item.innerHTML;  //innerHTML достает значение с элемента страницы
 	// });
 
-	function targetMouseToggle(action, item, i){
-		if(action === 'mouseover'){
-			item.addEventListener(action, () => {
-				overlay[i].classList.add('opacity');
-				top1[i].classList.add('top');
-				btn[i].classList.add('hide');
-			});
-		} else if (action === 'mouseout'){
-			item.addEventListener('mouseout', () => {
-				overlay[i].classList.remove('opacity');
-				top1[i].classList.remove('top');
-				btn[i].classList.remove('hide');
-			});   
-		}
-	}
+	// function targetMouseToggle(action, item, i){
+	// 	if(action === 'mouseover'){
+	// 		item.addEventListener(action, () => {
+	// 			overlay[i].classList.add('opacity');
+	// 			top1[i].classList.add('top');
+	// 			btn[i].classList.add('hide');
+	// 		});
+	// 	} else if (action === 'mouseout'){
+	// 		item.addEventListener('mouseout', () => {
+	// 			overlay[i].classList.remove('opacity');
+	// 			top1[i].classList.remove('top');
+	// 			btn[i].classList.remove('hide');
+	// 		});   
+	// 	}
+	// }
 
-	function targetAction(target){
+	// function targetAction(target){
+	// 	target.forEach((item, i) =>{
+	// 		targetMouseToggle('mouseover', item, i);
+	// 		targetMouseToggle('mouseout', item, i);    
+	// 	});
+	// }
+	// targetAction(overlay);
+	// targetAction(btn);
+
+	function togglePortfolioClass(target, event, action){
 		target.forEach((item, i) =>{
-			targetMouseToggle('mouseover', item, i);
-			targetMouseToggle('mouseout', item, i);    
+			item.addEventListener(event, () => {
+				overlay[i].classList[action]('opacity');
+				top1[i].classList[action]('top');
+				btn[i].classList[action]('hide');
+			});
 		});
 	}
-	targetAction(overlay);
-	targetAction(btn);
+
+	togglePortfolioClass(overlay, 'mouseover', 'add');
+	togglePortfolioClass(overlay, 'mouseout', 'remove');
+	togglePortfolioClass(btn, 'mouseover', 'add');
+	togglePortfolioClass(btn, 'mouseout', 'remove');
 
 	// overlay.forEach((item, i) =>{
-	// 	mouseToggle('mouseover', item, i);
-	// 	// item.addEventListener('mouseover', function() {
-	// 	// 	overlay[i].classList.add('opacity');
-	// 	// 	top1[i].classList.add('top');
-	// 	// 	btn[i].classList.add('hide');
-	// 	// });
-	// 	mouseToggle('mouseout', item, i);
-	// 	// item.addEventListener('mouseout', function() {
-	// 	// 	overlay[i].classList.remove('opacity');
-	// 	// 	top1[i].classList.remove('top');
-	// 	// 	btn[i].classList.remove('hide');
-	// 	// });       
+	// 	item.addEventListener('mouseover', function() {
+	// 		overlay[i].classList.add('opacity');
+	// 		top1[i].classList.add('top');
+	// 		btn[i].classList.add('hide');
+	// 	});
+	// 	item.addEventListener('mouseout', function() {
+	// 		overlay[i].classList.remove('opacity');
+	// 		top1[i].classList.remove('top');
+	// 		btn[i].classList.remove('hide');
+	// 	});       
 	// });
 	// btn.forEach((item, i) =>{
-	// 	mouseToggle('mouseover', item, i);
-	// 	mouseToggle('mouseout', item, i);
-	// 	// item.addEventListener('mouseover', function() {
-	// 	// 	overlay[i].classList.add('opacity');
-	// 	// 	top1[i].classList.add('top');
-	// 	// 	btn[i].classList.add('hide');
-	// 	// });
-	// 	// item.addEventListener('mouseout', function() {
-	// 	// 	overlay[i].classList.remove('opacity');
-	// 	// 	top1[i].classList.remove('top');
-	// 	// 	btn[i].classList.remove('hide');
-	// 	// });	
+	// 	item.addEventListener('mouseover', function() {
+	// 		overlay[i].classList.add('opacity');
+	// 		top1[i].classList.add('top');
+	// 		btn[i].classList.add('hide');
+	// 	});
+	// 	item.addEventListener('mouseout', function() {
+	// 		overlay[i].classList.remove('opacity');
+	// 		top1[i].classList.remove('top');
+	// 		btn[i].classList.remove('hide');
+	// 	});	
 	// });
 
 	function onDisplay(entry) {
