@@ -51,8 +51,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     btn.addEventListener('click', (e) => {  //start request after click on button
-        e.preventDefault();
-        startTimeRequest = new Date();  //Record the start time of the request
+        e.preventDefault();        
         changeActiveBtn(true);     //Button lock
         validHTML(inputValue.value) //Checking if a link is valid
             .then(()=>isHtml()) //If the link is valid, the DOM tree as a string is written to the file, then this file is checked by the isHTML function, if there is a structure in the file, then isPage is set to "true"
@@ -60,6 +59,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 if(isPage){ //checking if we got a DOM tree from the entered link
                     if (url.href == inputValue.value) { //verification, the link entered is the same as the previous one. Protection against additional unnecessary requests.
                         if ((new Date() - startTimeRequest) > 300000 || tagValue != tag.value.toUpperCase()) {  //checking if the link entered was requested within the last 5 minutes and if the same tag was used
+                            startTimeRequest = new Date();  //Record the start time of the request
                             tagValue = tag.value.toUpperCase();                
                             getDataFromDB(url);
                         } else {
@@ -67,6 +67,7 @@ window.addEventListener('DOMContentLoaded', () => {
                             changeActiveBtn(false);
                         }
                     } else {
+                        startTimeRequest = new Date();  //Record the start time of the request
                         url = new URL(`${inputValue.value}`);
                         getDataFromDB(url);
                     }
