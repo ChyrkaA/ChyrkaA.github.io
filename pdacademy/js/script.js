@@ -3,6 +3,14 @@
 import Swiper from './swiper-bundle.min.js'
 
 window.addEventListener('DOMContentLoaded', () => {
+    const preload = document.querySelector('.preload');
+
+    function ready() {
+        document.querySelector('body').removeAttribute('style');
+        preload.remove();
+    }
+
+    window.addEventListener("load", ready);
 
     const menuBtn = document.querySelectorAll('.menu__item_link');
 
@@ -140,5 +148,7 @@ window.addEventListener('DOMContentLoaded', () => {
         body.style.marginRight = 0;
         body.style.overflowY = 'scroll';
     })
+
+
 
 })
