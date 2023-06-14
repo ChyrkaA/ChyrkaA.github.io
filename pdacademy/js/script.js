@@ -62,7 +62,7 @@ window.addEventListener('DOMContentLoaded', () => {
             line2.classList.toggle('active_line2');
 
             if (this.classList.contains('active-style')) {
-                this.nextElementSibling.style.maxHeight = '400px';
+                this.nextElementSibling.style.maxHeight = '450px';
             } else {
                 this.nextElementSibling.style.maxHeight = '0px';
             }
@@ -148,7 +148,4 @@ window.addEventListener('DOMContentLoaded', () => {
         body.style.marginRight = 0;
         body.style.overflowY = 'scroll';
     })
-
-
-
 })
