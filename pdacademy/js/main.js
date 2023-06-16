@@ -83,13 +83,13 @@ window.addEventListener('DOMContentLoaded', () => {
         el.style.opacity = opacity || 1;
         el.style.visibility = visibility || 'visible';
         el.style.display = display || 'block';
-        el.style.transition = `opacity ${timeout}ms`;
+        el.style.transition = `all ${timeout}ms`;
     };
 
     const fadeOut = (el, timeout, opacity, visibility) => {
         el.style.opacity = opacity || 0;
         el.style.visibility = visibility || 'hidden';
-        el.style.transition = `opacity ${timeout}ms`;
+        el.style.transition = `all ${timeout}ms`;
     };
 
     const logo = document.querySelector('.menu__logo');
@@ -117,7 +117,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const modal = document.querySelector('#modal-offline');
     const modalThanks = document.querySelector('#modal-thanks');
     const overlay = document.querySelector('.overlay');
-    const closeModal = document.querySelector('.modal__close');
+    const closeModal = document.querySelectorAll('.modal__close');
     const body = document.querySelector('body');
     const scroll = calcScroll();
 
@@ -136,16 +136,71 @@ window.addEventListener('DOMContentLoaded', () => {
     };
 
     offlineBtn.addEventListener('click', () => {
-        fadeIn(overlay, 300, 1, 'visible');
-        fadeIn(modal, 300, 1, 'visible');
-        body.style.marginRight = `${scroll}px`;
-        body.style.overflowY = 'hidden';
+        openModal(modal);
     });
 
-    closeModal.addEventListener('click', () => {
+    function closeModals(trigger) {
         fadeOut(overlay, 300, 0, 'hidden');
-        fadeOut(modal, 300, 0, 'hidden');
+        fadeOut(trigger, 300, 0, 'hidden');
         body.style.marginRight = 0;
         body.style.overflowY = 'scroll';
+    }
+
+    function openModal(trigger) {
+        fadeIn(overlay, 300, 1, 'visible');
+        fadeIn(trigger, 300, 1, 'visible');
+        body.style.marginRight = `${scroll}px`;
+        body.style.overflowY = 'hidden';
+    }
+
+    closeModal.forEach(closeBtn => {
+        closeBtn.addEventListener('click', () => {
+            if (closeBtn.closest('#modal-offline')) {
+                closeModals(modal);
+            } else {
+                closeModals(modalThanks);
+            }
+
+        })
     })
+
+
+    $('form').submit(function (e) { //обращение ко всем формам "form". Если нужна конкретная форма, обращаемся через ее класс или идентификатор. submit - когда все условия выполнены, тогда функция выполняется
+        e.preventDefault(); //стандартное действие браузера отменяется (в данном случае, отмена перезагрузки страницы)
+
+        // if (!$(this).valid()) { //Если наша форма не прошла валидацию то выполнение кода прекращается
+        //     return;
+        // }
+
+        $.ajax({ //метод для отправки данных на сервер
+            type: "POST", //указываем, что мы хотим сделать с данными, получить, или отправить. В данном случае, отправить
+            url: "mailer/smart.php", //указываем путь к обработчику отправки данных
+            data: $(this).serialize() //Данные, которые отправляем на сервер. Сейчас работаем с тем, с что есть в данной форме, через this. serialize подготовка перед отправкой на сервер
+        }).done(function () { //если сервер принял данные, выполнена операция успешно, то дальше выполняем следующую функцию
+            $(this).find("input").val(""); //внутри формы, с которой работаем, находим все значения input и очищаем их значения методом .val("")
+
+            closeModals(modal);
+            openModal(modalThanks);
+
+            setTimeout(() => {
+                closeModals(modalThanks);
+            }, 5000);
+
+            $('form').trigger('reset'); //все формы на сайте должны очиститься методом .trigger('reset')
+        });
+        return false;
+    });
+
+    function videoHeight(classTrigger) {
+        const sectionVideo = document.querySelector(classTrigger);
+        if (sectionVideo) {
+            const videoBlock = sectionVideo.querySelector('iframe');
+            const widthVideoBlock = window.getComputedStyle(videoBlock, null).getPropertyValue('width');
+            const heightVideoBlock = Math.round(+(widthVideoBlock.slice(0, -2)) * 0.5625);
+            sectionVideo.style.height = `${heightVideoBlock}px`;
+        }
+    }
+    videoHeight('.about__video')
+    videoHeight('.curs__video')
+
 })
