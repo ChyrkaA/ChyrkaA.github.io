@@ -10,7 +10,7 @@
 /*!**********************************!*\
   !*** ./src/js/modules/curses.js ***!
   \**********************************/
-/*! exports provided: default */function(e,t,s){"use strict";s.r(t),t.default=function(e,t,s,a,i,r,n,l){document.querySelector(e).addEventListener("click",e=>{const o=e.target.closest(t);if(o){const e=o.querySelector(s),t=o.querySelector(a);o.classList.toggle(i),o.nextElementSibling.classList.toggle(r),e.classList.toggle(n),t.classList.toggle(l),o.classList.contains(i)?o.nextElementSibling.style.maxHeight="450px":o.nextElementSibling.style.maxHeight="0px"}})}},"./src/js/modules/menu.js":
+/*! exports provided: default */function(e,t,s){"use strict";s.r(t),t.default=function(e,t,s,a,i,r,n,l){document.querySelector(e).addEventListener("click",e=>{const o=e.target.closest(t);if(o){const e=o.querySelector(s),t=o.querySelector(a);o.classList.toggle(i),o.nextElementSibling.classList.toggle(r),e.classList.toggle(n),t.classList.toggle(l),o.classList.contains(i)?o.nextElementSibling.style.maxHeight="600px":o.nextElementSibling.style.maxHeight="0px"}})}},"./src/js/modules/menu.js":
 /*!********************************!*\
   !*** ./src/js/modules/menu.js ***!
   \********************************/
