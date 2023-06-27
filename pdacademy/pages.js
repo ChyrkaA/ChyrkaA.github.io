@@ -1,18 +1,230 @@
-!function(e){var t={};function n(o){if(t[o])return t[o].exports;var r=t[o]={i:o,l:!1,exports:{}};return e[o].call(r.exports,r,r.exports,n),r.l=!0,r.exports}n.m=e,n.c=t,n.d=function(e,t,o){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:o})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var o=Object.create(null);if(n.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var r in e)n.d(o,r,function(t){return e[t]}.bind(null,r));return o},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s="./src/js/pages.js")}({"./src/js/modules/menu.js":
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/pages.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/js/modules/menu.js":
 /*!********************************!*\
   !*** ./src/js/modules/menu.js ***!
   \********************************/
-/*! exports provided: default */function(e,t,n){"use strict";n.r(t),t.default=function(e,t,n,o,r){document.querySelectorAll(e).forEach(e=>{e.onmousemove=t=>{e.onclick=()=>{let n=document.createElement("div");n.classList.add("click"),n.style.left=t.clientX-e.offsetLeft-705+"px",n.style.top=t.clientY-e.offsetTop+"px",e.appendChild(n),setTimeout(()=>{n.remove()},1e3)}}});const s=document.querySelector(".menu__logo"),c=document.querySelector(".menu__wrapper");window.addEventListener("scroll",()=>{scrollY>=200?(s.classList.remove("bigLogo"),c.classList.remove("flex-end")):(s.classList.add("bigLogo"),c.classList.add("flex-end"))})}},"./src/js/modules/pageUp.js":
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function menuBlock(trigger, menuLogo, bigLogo, wrapper, position, hamburger, hamburgerActive, sideMenu, menuActive) {
+  console.log(window.innerWidth);
+  const logo = document.querySelector(menuLogo);
+  const menuWrapper = document.querySelector(wrapper);
+  const hmb = document.querySelector(hamburger);
+  const sMenu = document.querySelector(sideMenu);
+  menuWrapper.addEventListener('click', e => {
+    const menuBtn = e.target.closest(trigger);
+    if (menuBtn) {
+      const rect = menuBtn.getBoundingClientRect();
+      let circle = document.createElement('div');
+      circle.classList.add('click');
+      circle.style.left = e.clientX - rect.left + 'px';
+      circle.style.top = e.clientY - rect.top + 'px';
+      menuBtn.appendChild(circle);
+      setTimeout(() => {
+        circle.remove();
+      }, 1000);
+    }
+  });
+  window.addEventListener('scroll', () => {
+    if (window.innerWidth >= 768) {
+      const isScrolled = scrollY >= 200;
+      logo.classList.toggle(bigLogo, !isScrolled);
+      menuWrapper.classList.toggle(position, !isScrolled);
+    } else {
+      logo.classList.add(bigLogo);
+      menuWrapper.classList.add(position);
+    }
+  });
+  hmb.addEventListener('click', () => {
+    hmb.classList.toggle(hamburgerActive);
+    sMenu.classList.toggle(menuActive);
+  });
+}
+/* harmony default export */ __webpack_exports__["default"] = (menuBlock);
+
+/***/ }),
+
+/***/ "./src/js/modules/pageUp.js":
 /*!**********************************!*\
   !*** ./src/js/modules/pageUp.js ***!
   \**********************************/
-/*! exports provided: default */function(e,t,n){"use strict";n.r(t);var o=n(/*! ../services/constFunctions */"./src/js/services/constFunctions.js");t.default=function(e){const t=document.querySelector(e);window.addEventListener("scroll",()=>{scrollY>=800?Object(o.fadeIn)(t,1e3,.7):Object(o.fadeOut)(t,1e3,0)})}},"./src/js/pages.js":
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _services_constFunctions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/constFunctions */ "./src/js/services/constFunctions.js");
+
+function pageUp(trigger) {
+  const pageUp = document.querySelector(trigger);
+  window.addEventListener('scroll', () => {
+    if (scrollY >= 800) {
+      Object(_services_constFunctions__WEBPACK_IMPORTED_MODULE_0__["fadeIn"])(pageUp, 1000, 0.7);
+    } else {
+      Object(_services_constFunctions__WEBPACK_IMPORTED_MODULE_0__["fadeOut"])(pageUp, 1000, 0);
+    }
+  });
+}
+/* harmony default export */ __webpack_exports__["default"] = (pageUp);
+
+/***/ }),
+
+/***/ "./src/js/pages.js":
 /*!*************************!*\
   !*** ./src/js/pages.js ***!
   \*************************/
-/*! no exports provided */function(e,t,n){"use strict";n.r(t);var o=n(/*! ./modules/menu */"./src/js/modules/menu.js"),r=n(/*! ./modules/pageUp */"./src/js/modules/pageUp.js"),s=n(/*! ./services/constFunctions */"./src/js/services/constFunctions.js");window.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector(".preload");window.addEventListener("load",(function(){document.querySelector("body").removeAttribute("style"),e.remove()})),Object(o.default)(".menu__item_link",".menu__logo","bigLogo",".menu__wrapper","flex-end"),Object(r.default)(".pageup"),Object(s.videoHeight)(".curs__video")})},"./src/js/services/constFunctions.js":
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/menu */ "./src/js/modules/menu.js");
+/* harmony import */ var _modules_pageUp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/pageUp */ "./src/js/modules/pageUp.js");
+/* harmony import */ var _services_constFunctions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/constFunctions */ "./src/js/services/constFunctions.js");
+
+
+
+
+
+window.addEventListener('DOMContentLoaded', () => {
+  const preload = document.querySelector('.preload');
+  function ready() {
+    document.querySelector('body').removeAttribute('style');
+    preload.remove();
+  }
+  window.addEventListener("load", ready);
+  Object(_modules_menu__WEBPACK_IMPORTED_MODULE_0__["default"])('.menu__wrapper', '.menu__item_link', '.menu__logo', 'bigLogo', '.menu__wrapper', 'flex-end');
+  Object(_modules_pageUp__WEBPACK_IMPORTED_MODULE_1__["default"])('.pageup');
+  Object(_services_constFunctions__WEBPACK_IMPORTED_MODULE_2__["videoHeight"])('.curs__video');
+});
+
+/***/ }),
+
+/***/ "./src/js/services/constFunctions.js":
 /*!*******************************************!*\
   !*** ./src/js/services/constFunctions.js ***!
   \*******************************************/
-/*! exports provided: fadeIn, fadeOut, videoHeight */function(e,t,n){"use strict";n.r(t),n.d(t,"fadeIn",(function(){return o})),n.d(t,"fadeOut",(function(){return r})),n.d(t,"videoHeight",(function(){return s}));const o=(e,t,n,o,r)=>{e.style.opacity=n||1,e.style.visibility=o||"visible",e.style.display=r||"block",e.style.transition=`all ${t}ms`},r=(e,t,n,o)=>{e.style.opacity=n||0,e.style.visibility=o||"hidden",e.style.transition=`all ${t}ms`};function s(e){const t=document.querySelector(e);if(t){const e=t.querySelector("iframe"),n=window.getComputedStyle(e,null).getPropertyValue("width"),o=Math.round(.5625*+n.slice(0,-2));t.style.height=o+"px"}}}});
+/*! exports provided: fadeIn, fadeOut, videoHeight */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fadeIn", function() { return fadeIn; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fadeOut", function() { return fadeOut; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "videoHeight", function() { return videoHeight; });
+const fadeIn = (el, timeout, opacity, visibility, display) => {
+  el.style.opacity = opacity || 1;
+  el.style.visibility = visibility || 'visible';
+  el.style.display = display || 'block';
+  el.style.transition = `all ${timeout}ms`;
+};
+const fadeOut = (el, timeout, opacity, visibility) => {
+  el.style.opacity = opacity || 0;
+  el.style.visibility = visibility || 'hidden';
+  el.style.transition = `all ${timeout}ms`;
+};
+function videoHeight(classTrigger) {
+  const sectionVideo = document.querySelector(classTrigger);
+  if (sectionVideo) {
+    const videoBlock = sectionVideo.querySelector('iframe');
+    const widthVideoBlock = window.getComputedStyle(videoBlock, null).getPropertyValue('width');
+    const heightVideoBlock = Math.round(+widthVideoBlock.slice(0, -2) * 0.5625);
+    sectionVideo.style.height = `${heightVideoBlock}px`;
+  }
+}
+
+
+/***/ })
+
+/******/ });
 //# sourceMappingURL=pages.js.map
