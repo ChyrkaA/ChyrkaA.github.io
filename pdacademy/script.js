@@ -196,7 +196,7 @@ function cursesBlock(containerBtn, btn, lineOne, lineTwo, activeStyle, activeCon
       line2.classList.toggle(activeLine2);
       if (btns.classList.contains(activeStyle)) {
         if (window.innerWidth < 768) {
-          btns.nextElementSibling.style.maxHeight = '1000px';
+          btns.nextElementSibling.style.maxHeight = '1200px';
         } else {
           btns.nextElementSibling.style.maxHeight = '600px';
         }
