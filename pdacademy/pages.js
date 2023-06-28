@@ -159,6 +159,27 @@ function pageUp(trigger) {
 
 /***/ }),
 
+/***/ "./src/js/modules/promo.js":
+/*!*********************************!*\
+  !*** ./src/js/modules/promo.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _services_constFunctions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/constFunctions */ "./src/js/services/constFunctions.js");
+
+function promoBlock(trigger) {
+  Object(_services_constFunctions__WEBPACK_IMPORTED_MODULE_0__["videoHeight"])(trigger);
+  window.addEventListener('resize', () => {
+    Object(_services_constFunctions__WEBPACK_IMPORTED_MODULE_0__["videoHeight"])(trigger);
+  });
+}
+/* harmony default export */ __webpack_exports__["default"] = (promoBlock);
+
+/***/ }),
+
 /***/ "./src/js/pages.js":
 /*!*************************!*\
   !*** ./src/js/pages.js ***!
@@ -170,7 +191,9 @@ function pageUp(trigger) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/menu */ "./src/js/modules/menu.js");
 /* harmony import */ var _modules_pageUp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/pageUp */ "./src/js/modules/pageUp.js");
-/* harmony import */ var _services_constFunctions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/constFunctions */ "./src/js/services/constFunctions.js");
+/* harmony import */ var _modules_promo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/promo */ "./src/js/modules/promo.js");
+/* harmony import */ var _services_constFunctions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/constFunctions */ "./src/js/services/constFunctions.js");
+
 
 
 
@@ -183,9 +206,9 @@ window.addEventListener('DOMContentLoaded', () => {
     preload.remove();
   }
   window.addEventListener("load", ready);
-  Object(_modules_menu__WEBPACK_IMPORTED_MODULE_0__["default"])('.menu__wrapper', '.menu__item_link', '.menu__logo', 'bigLogo', '.menu__wrapper', 'flex-end');
+  Object(_modules_menu__WEBPACK_IMPORTED_MODULE_0__["default"])('.menu__item_link', '.menu__logo', 'bigLogo', '.menu__wrapper', 'flex-end', '.hamburger', 'hamburger__active', '.menu', 'menu__active');
   Object(_modules_pageUp__WEBPACK_IMPORTED_MODULE_1__["default"])('.pageup');
-  Object(_services_constFunctions__WEBPACK_IMPORTED_MODULE_2__["videoHeight"])('.curs__video');
+  Object(_modules_promo__WEBPACK_IMPORTED_MODULE_2__["default"])('.curs__video');
 });
 
 /***/ }),
