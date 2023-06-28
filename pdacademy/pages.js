@@ -104,6 +104,10 @@ function menuBlock(trigger, menuLogo, bigLogo, wrapper, position, hamburger, ham
   menuWrapper.addEventListener('click', e => {
     const menuBtn = e.target.closest(trigger);
     if (menuBtn) {
+      if (hmb.classList.contains(hamburgerActive) && sMenu.classList.contains(menuActive)) {
+        hmb.classList.remove(hamburgerActive);
+        sMenu.classList.remove(menuActive);
+      }
       const rect = menuBtn.getBoundingClientRect();
       let circle = document.createElement('div');
       circle.classList.add('click');
