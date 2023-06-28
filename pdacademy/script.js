@@ -367,6 +367,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_constFunctions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/constFunctions */ "./src/js/services/constFunctions.js");
 
 function promoBlock(trigger) {
+  Object(_services_constFunctions__WEBPACK_IMPORTED_MODULE_0__["videoHeight"])(trigger);
   window.addEventListener('resize', () => {
     Object(_services_constFunctions__WEBPACK_IMPORTED_MODULE_0__["videoHeight"])(trigger);
   });
