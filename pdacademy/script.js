@@ -100,10 +100,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_swiper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/swiper.js */ "./src/js/modules/swiper.js");
 /* harmony import */ var _modules_POST_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/POST.js */ "./src/js/modules/POST.js");
 /* harmony import */ var _modules_curses_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/curses.js */ "./src/js/modules/curses.js");
-/* harmony import */ var _modules_offline_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/offline.js */ "./src/js/modules/offline.js");
-/* harmony import */ var _modules_pageUp_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/pageUp.js */ "./src/js/modules/pageUp.js");
-/* harmony import */ var _modules_modal_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/modal.js */ "./src/js/modules/modal.js");
-
+/* harmony import */ var _modules_pageUp_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/pageUp.js */ "./src/js/modules/pageUp.js");
+/* harmony import */ var _modules_modal_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/modal.js */ "./src/js/modules/modal.js");
 
 
 
@@ -120,14 +118,13 @@ window.addEventListener('DOMContentLoaded', () => {
     preload.remove();
   }
   window.addEventListener("load", ready);
-  Object(_modules_menu_js__WEBPACK_IMPORTED_MODULE_0__["default"])('.menu__item_link', '.menu__logo', 'bigLogo', '.menu__wrapper', 'flex-end', '.hamburger', 'hamburger__active', '.menu', 'menu__active');
+  Object(_modules_menu_js__WEBPACK_IMPORTED_MODULE_0__["default"])('.menu__item_link', '.menu__logo', 'bigLogo', '.menu__wrapper', 'flex-end', '.hamburger', 'hamburger__active', '.menu__wrapper', 'menu__active', '.hamburger__overlay', 'hamburger__overlay__active', '.hamburger__logo', 'hamburger__logo_active');
   Object(_modules_promo_js__WEBPACK_IMPORTED_MODULE_1__["default"])('.promo__video');
   Object(_modules_swiper_js__WEBPACK_IMPORTED_MODULE_2__["default"])('.swiper', '.swiper-pagination');
   Object(_modules_curses_js__WEBPACK_IMPORTED_MODULE_4__["default"])('.curses__items', '.curses__accordion_heading', '.line1', '.line2', 'active-style', 'active-content', 'active_line1', 'active_line2');
-  Object(_modules_offline_js__WEBPACK_IMPORTED_MODULE_5__["default"])('.offline__descr_btn');
-  Object(_modules_POST_js__WEBPACK_IMPORTED_MODULE_3__["default"])('form', '#modal-offline', '#modal-thanks', '.overlay', '.menu', '.container', 'body');
-  Object(_modules_pageUp_js__WEBPACK_IMPORTED_MODULE_6__["default"])('.pageup');
-  Object(_modules_modal_js__WEBPACK_IMPORTED_MODULE_7__["closeModal"])('.modal__close');
+  Object(_modules_POST_js__WEBPACK_IMPORTED_MODULE_3__["default"])('form', '#modal-offline', '#modal-thanks', '.overlay', 'body');
+  Object(_modules_pageUp_js__WEBPACK_IMPORTED_MODULE_5__["default"])('.pageup');
+  Object(_modules_modal_js__WEBPACK_IMPORTED_MODULE_6__["modal"])('.modal__close', '.offline__descr_btn');
 });
 
 /***/ }),
@@ -143,7 +140,7 @@ window.addEventListener('DOMContentLoaded', () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modal */ "./src/js/modules/modal.js");
 
-function post(trigger, modal, modalThanks, overlay, menu, container, body) {
+function post(trigger, modal, modalThanks, overlay, body) {
   const forms = document.querySelectorAll(trigger);
   forms.forEach(form => {
     form.addEventListener('submit', function (e) {
@@ -156,10 +153,10 @@ function post(trigger, modal, modalThanks, overlay, menu, container, body) {
           form.querySelectorAll('input').forEach(input => {
             input.value = '';
           });
-          Object(_modal__WEBPACK_IMPORTED_MODULE_0__["actionModal"])('close', modal, overlay, menu, container, body);
-          Object(_modal__WEBPACK_IMPORTED_MODULE_0__["actionModal"])('open', modalThanks, overlay, menu, container, body);
+          Object(_modal__WEBPACK_IMPORTED_MODULE_0__["actionModal"])('close', modal, overlay, body);
+          Object(_modal__WEBPACK_IMPORTED_MODULE_0__["actionModal"])('open', modalThanks, overlay, body);
           setTimeout(function () {
-            Object(_modal__WEBPACK_IMPORTED_MODULE_0__["actionModal"])('close', modalThanks, overlay, menu, container, body);
+            Object(_modal__WEBPACK_IMPORTED_MODULE_0__["actionModal"])('close', modalThanks, overlay, body);
           }, 5000);
           form.reset();
         }
@@ -219,18 +216,24 @@ function cursesBlock(containerBtn, btn, lineOne, lineTwo, activeStyle, activeCon
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function menuBlock(trigger, menuLogo, bigLogo, wrapper, position, hamburger, hamburgerActive, sideMenu, menuActive) {
-  console.log(window.innerWidth);
+function menuBlock(trigger, menuLogo, bigLogo, wrapper, position, hamburger, hamburgerActive, sideMenu, menuActive, overlay, overlayActive, hamburgerLogo, hamburgerLogoActive) {
   const logo = document.querySelector(menuLogo);
   const menuWrapper = document.querySelector(wrapper);
   const hmb = document.querySelector(hamburger);
   const sMenu = document.querySelector(sideMenu);
-  menuWrapper.addEventListener('click', e => {
-    const menuBtn = e.target.closest(trigger);
-    if (menuBtn) {
+  const overlayMenu = document.querySelector(overlay);
+  const hmbLogo = document.querySelector(hamburgerLogo);
+  function actionClass(action) {
+    hmb.classList[action](hamburgerActive);
+    sMenu.classList[action](menuActive);
+    overlayMenu.classList[action](overlayActive);
+    hmbLogo.classList[action](hamburgerLogoActive);
+  }
+  document.body.addEventListener('click', e => {
+    if (e.target.closest(trigger)) {
+      const menuBtn = e.target.closest(trigger);
       if (hmb.classList.contains(hamburgerActive) && sMenu.classList.contains(menuActive)) {
-        hmb.classList.remove(hamburgerActive);
-        sMenu.classList.remove(menuActive);
+        actionClass('remove');
       }
       const rect = menuBtn.getBoundingClientRect();
       let circle = document.createElement('div');
@@ -241,8 +244,38 @@ function menuBlock(trigger, menuLogo, bigLogo, wrapper, position, hamburger, ham
       setTimeout(() => {
         circle.remove();
       }, 1000);
+    } else if (e.target.closest(overlay)) {
+      actionClass('remove');
+    } else if (e.target.closest(hamburger)) {
+      actionClass('toggle');
     }
   });
+
+  // menuWrapper.addEventListener('click', (e) => {
+  //     const menuBtn = e.target.closest(trigger);
+
+  //     if (menuBtn) {
+  //         if (hmb.classList.contains(hamburgerActive) && sMenu.classList.contains(menuActive)) {
+  //             actionClass('remove');
+  //         }
+  //         const rect = menuBtn.getBoundingClientRect();
+
+  //         let circle = document.createElement('div');
+  //         circle.classList.add('click');
+  //         circle.style.left = (e.clientX - rect.left) + 'px';
+  //         circle.style.top = (e.clientY - rect.top) + 'px';
+  //         menuBtn.appendChild(circle);
+
+  //         setTimeout(() => {
+  //             circle.remove()
+  //         }, 1000);
+  //     }
+  // });
+
+  // overlayMenu.addEventListener('click', () => {
+  //     actionClass('remove');
+  // })
+
   window.addEventListener('scroll', () => {
     if (window.innerWidth >= 768) {
       const isScrolled = scrollY >= 200;
@@ -253,11 +286,12 @@ function menuBlock(trigger, menuLogo, bigLogo, wrapper, position, hamburger, ham
       menuWrapper.classList.add(position);
     }
   });
-  hmb.addEventListener('click', () => {
-    hmb.classList.toggle(hamburgerActive);
-    sMenu.classList.toggle(menuActive);
-  });
+
+  // hmb.addEventListener('click', () => {
+  //     actionClass('toggle');
+  // })
 }
+
 /* harmony default export */ __webpack_exports__["default"] = (menuBlock);
 
 /***/ }),
@@ -266,71 +300,62 @@ function menuBlock(trigger, menuLogo, bigLogo, wrapper, position, hamburger, ham
 /*!*********************************!*\
   !*** ./src/js/modules/modal.js ***!
   \*********************************/
-/*! exports provided: actionModal, closeModal */
+/*! exports provided: actionModal, modal */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "actionModal", function() { return actionModal; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "closeModal", function() { return closeModal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modal", function() { return modal; });
 /* harmony import */ var _services_constFunctions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/constFunctions */ "./src/js/services/constFunctions.js");
 /* harmony import */ var _scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scroll */ "./src/js/modules/scroll.js");
 
 
-function closeModal(trigger) {
+function modal(trigger, btn) {
   const closeModal = document.querySelectorAll(trigger);
   closeModal.forEach(closeBtn => {
     closeBtn.addEventListener('click', () => {
       if (closeBtn.closest('#modal-offline')) {
-        actionModal('close', '#modal-offline', '.overlay', '.menu', '.container', 'body');
+        actionModal('close', '#modal-offline', '.overlay', 'body');
       } else {
-        actionModal('close', '#modal-thanks', '.overlay', '.menu', '.container', 'body');
+        actionModal('close', '#modal-thanks', '.overlay', 'body');
       }
     });
   });
+  const offlineBtn = document.querySelector(btn);
+  offlineBtn.addEventListener('click', () => {
+    actionModal('open', '#modal-offline', '.overlay', 'body');
+    clearTimeout(timeOut);
+    window.removeEventListener('scroll', onScroll);
+  });
+  const timeOut = setTimeout(() => {
+    offlineBtn.click();
+  }, 30000);
+  function onScroll() {
+    let scrollHeight = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight);
+    if (window.scrollY + document.documentElement.clientHeight >= scrollHeight - 1) {
+      offlineBtn.click();
+    }
+  }
+  window.addEventListener('scroll', onScroll);
 }
-function actionModal(action, modalBlock, overlayBlock, menuBlock, containerBlock, bodyBlock) {
+function actionModal(action, modalBlock, overlayBlock, bodyBlock) {
   const modal = document.querySelector(modalBlock);
   const overlay = document.querySelector(overlayBlock);
-  const menu = document.querySelector(menuBlock).querySelector(containerBlock);
   const body = document.querySelector(bodyBlock);
   const scroll = Object(_scroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
   if (action == 'open') {
-    Object(_services_constFunctions__WEBPACK_IMPORTED_MODULE_0__["fadeIn"])(overlay, 300, 1, 'visible');
-    Object(_services_constFunctions__WEBPACK_IMPORTED_MODULE_0__["fadeIn"])(modal, 300, 1, 'visible');
-    menu.style.transform = `translateX(-${scroll - 8.5}px)`;
+    overlay.classList.add('overlay__active');
+    modal.classList.add('modal__active');
     body.style.marginRight = `${scroll}px`;
     body.style.overflowY = 'hidden';
   } else if (action == 'close') {
-    Object(_services_constFunctions__WEBPACK_IMPORTED_MODULE_0__["fadeOut"])(overlay, 300, 0, 'hidden');
-    Object(_services_constFunctions__WEBPACK_IMPORTED_MODULE_0__["fadeOut"])(modal, 300, 0, 'hidden');
-    menu.style.transform = `translateX(0px)`;
-    body.style.marginRight = 0;
-    body.style.overflowY = 'scroll';
+    overlay.classList.remove('overlay__active');
+    modal.classList.remove('modal__active');
+    body.removeAttribute('style');
   }
 }
 
-
-/***/ }),
-
-/***/ "./src/js/modules/offline.js":
-/*!***********************************!*\
-  !*** ./src/js/modules/offline.js ***!
-  \***********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modal */ "./src/js/modules/modal.js");
-
-function offlineBlock(trigger) {
-  const offlineBtn = document.querySelector(trigger);
-  offlineBtn.addEventListener('click', () => {
-    Object(_modal__WEBPACK_IMPORTED_MODULE_0__["actionModal"])('open', '#modal-offline', '.overlay', '.menu', '.container', 'body');
-  });
-}
-/* harmony default export */ __webpack_exports__["default"] = (offlineBlock);
 
 /***/ }),
 

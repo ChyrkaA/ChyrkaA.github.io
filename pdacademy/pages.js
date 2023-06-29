@@ -95,18 +95,24 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function menuBlock(trigger, menuLogo, bigLogo, wrapper, position, hamburger, hamburgerActive, sideMenu, menuActive) {
-  console.log(window.innerWidth);
+function menuBlock(trigger, menuLogo, bigLogo, wrapper, position, hamburger, hamburgerActive, sideMenu, menuActive, overlay, overlayActive, hamburgerLogo, hamburgerLogoActive) {
   const logo = document.querySelector(menuLogo);
   const menuWrapper = document.querySelector(wrapper);
   const hmb = document.querySelector(hamburger);
   const sMenu = document.querySelector(sideMenu);
-  menuWrapper.addEventListener('click', e => {
-    const menuBtn = e.target.closest(trigger);
-    if (menuBtn) {
+  const overlayMenu = document.querySelector(overlay);
+  const hmbLogo = document.querySelector(hamburgerLogo);
+  function actionClass(action) {
+    hmb.classList[action](hamburgerActive);
+    sMenu.classList[action](menuActive);
+    overlayMenu.classList[action](overlayActive);
+    hmbLogo.classList[action](hamburgerLogoActive);
+  }
+  document.body.addEventListener('click', e => {
+    if (e.target.closest(trigger)) {
+      const menuBtn = e.target.closest(trigger);
       if (hmb.classList.contains(hamburgerActive) && sMenu.classList.contains(menuActive)) {
-        hmb.classList.remove(hamburgerActive);
-        sMenu.classList.remove(menuActive);
+        actionClass('remove');
       }
       const rect = menuBtn.getBoundingClientRect();
       let circle = document.createElement('div');
@@ -117,8 +123,38 @@ function menuBlock(trigger, menuLogo, bigLogo, wrapper, position, hamburger, ham
       setTimeout(() => {
         circle.remove();
       }, 1000);
+    } else if (e.target.closest(overlay)) {
+      actionClass('remove');
+    } else if (e.target.closest(hamburger)) {
+      actionClass('toggle');
     }
   });
+
+  // menuWrapper.addEventListener('click', (e) => {
+  //     const menuBtn = e.target.closest(trigger);
+
+  //     if (menuBtn) {
+  //         if (hmb.classList.contains(hamburgerActive) && sMenu.classList.contains(menuActive)) {
+  //             actionClass('remove');
+  //         }
+  //         const rect = menuBtn.getBoundingClientRect();
+
+  //         let circle = document.createElement('div');
+  //         circle.classList.add('click');
+  //         circle.style.left = (e.clientX - rect.left) + 'px';
+  //         circle.style.top = (e.clientY - rect.top) + 'px';
+  //         menuBtn.appendChild(circle);
+
+  //         setTimeout(() => {
+  //             circle.remove()
+  //         }, 1000);
+  //     }
+  // });
+
+  // overlayMenu.addEventListener('click', () => {
+  //     actionClass('remove');
+  // })
+
   window.addEventListener('scroll', () => {
     if (window.innerWidth >= 768) {
       const isScrolled = scrollY >= 200;
@@ -129,11 +165,12 @@ function menuBlock(trigger, menuLogo, bigLogo, wrapper, position, hamburger, ham
       menuWrapper.classList.add(position);
     }
   });
-  hmb.addEventListener('click', () => {
-    hmb.classList.toggle(hamburgerActive);
-    sMenu.classList.toggle(menuActive);
-  });
+
+  // hmb.addEventListener('click', () => {
+  //     actionClass('toggle');
+  // })
 }
+
 /* harmony default export */ __webpack_exports__["default"] = (menuBlock);
 
 /***/ }),
