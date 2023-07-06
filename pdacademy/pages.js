@@ -175,6 +175,55 @@ function menuBlock(trigger, menuLogo, bigLogo, wrapper, position, hamburger, ham
 
 /***/ }),
 
+/***/ "./src/js/modules/oneCurs.js":
+/*!***********************************!*\
+  !*** ./src/js/modules/oneCurs.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function oneCursBlock(overlayBlock, overlayActive, imgBlock, close, bigImgBlock) {
+  const overlay = document.querySelector(overlayBlock);
+  const bigImg = document.querySelector(bigImgBlock);
+  function closeOverlay() {
+    bigImg.setAttribute('src', '');
+    overlay.classList.remove(overlayActive);
+    bigImg.removeEventListener('load', hideLoadingMessage);
+  }
+  function showLoadingMessage() {
+    const loadingMessage = document.createElement('div');
+    loadingMessage.textContent = 'Завантаження фото...';
+    loadingMessage.classList.add('loading-message');
+    overlay.appendChild(loadingMessage);
+  }
+  function hideLoadingMessage() {
+    const loadingMessage = document.querySelector('.loading-message');
+    if (loadingMessage) {
+      loadingMessage.remove();
+    }
+  }
+  document.body.addEventListener('click', e => {
+    if (e.target.closest(imgBlock)) {
+      showLoadingMessage();
+      const img = e.target.closest(imgBlock);
+      overlay.classList.add(overlayActive);
+      const linkImg = img.getAttribute('src');
+      const newLinkImg = linkImg.slice(0, -4) + '_big.jpg';
+      bigImg.setAttribute('src', newLinkImg);
+      bigImg.addEventListener('load', hideLoadingMessage);
+    } else if (e.target.closest(close)) {
+      closeOverlay();
+    } else if (e.target.classList.contains(overlayBlock.slice(1))) {
+      closeOverlay();
+    }
+  });
+}
+/* harmony default export */ __webpack_exports__["default"] = (oneCursBlock);
+
+/***/ }),
+
 /***/ "./src/js/modules/pageUp.js":
 /*!**********************************!*\
   !*** ./src/js/modules/pageUp.js ***!
@@ -233,7 +282,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/menu */ "./src/js/modules/menu.js");
 /* harmony import */ var _modules_pageUp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/pageUp */ "./src/js/modules/pageUp.js");
 /* harmony import */ var _modules_promo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/promo */ "./src/js/modules/promo.js");
-/* harmony import */ var _services_constFunctions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/constFunctions */ "./src/js/services/constFunctions.js");
+/* harmony import */ var _modules_oneCurs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/oneCurs */ "./src/js/modules/oneCurs.js");
 
 
 
@@ -247,7 +296,8 @@ window.addEventListener('DOMContentLoaded', () => {
     preload.remove();
   }
   window.addEventListener("load", ready);
-  Object(_modules_menu__WEBPACK_IMPORTED_MODULE_0__["default"])('.menu__item_link', '.menu__logo', 'bigLogo', '.menu__wrapper', 'flex-end', '.hamburger', 'hamburger__active', '.menu', 'menu__active');
+  Object(_modules_menu__WEBPACK_IMPORTED_MODULE_0__["default"])('.menu__item_link', '.menu__logo', 'bigLogo', '.menu__wrapper', 'flex-end', '.hamburger', 'hamburger__active', '.menu__wrapper', 'menu__active', '.hamburger__overlay', 'hamburger__overlay__active', '.hamburger__logo', 'hamburger__logo_active');
+  Object(_modules_oneCurs__WEBPACK_IMPORTED_MODULE_3__["default"])('.curs__overlay', 'curs__overlay_active', '.curs__img', '.curs__overlay_close', '.curs__overlay_img');
   Object(_modules_pageUp__WEBPACK_IMPORTED_MODULE_1__["default"])('.pageup');
   Object(_modules_promo__WEBPACK_IMPORTED_MODULE_2__["default"])('.curs__video');
 });
