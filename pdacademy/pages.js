@@ -221,13 +221,14 @@ function oneCursBlock(overlayBlock, overlayActive, imgBlock, close, bigImgBlock)
   });
   const contentWrapper = document.querySelector('.curs__content_wrapper');
   const imgWrapper = document.querySelector('.curs__img_wrapper');
+  const imgHeight = window.getComputedStyle(imgWrapper, null).getPropertyValue('height');
   const contentHeight = window.getComputedStyle(contentWrapper, null).getPropertyValue('height');
-  imgWrapper.style.minHeight = contentHeight;
-  console.log(contentHeight);
-  // const heightVideoBlock = Math.round(+(widthVideoBlock.slice(0, -2)) * 0.5625);
-  // sectionVideo.style.height = `${heightVideoBlock}px`;
+  if (+contentHeight.slice(0, -2) > +imgHeight.slice(0, -2)) {
+    imgWrapper.style.minHeight = contentHeight;
+  } else if (+contentHeight.slice(0, -2) < +imgHeight.slice(0, -2)) {
+    contentWrapper.style.minHeight = imgHeight;
+  }
 }
-
 /* harmony default export */ __webpack_exports__["default"] = (oneCursBlock);
 
 /***/ }),

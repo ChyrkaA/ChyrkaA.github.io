@@ -1,4 +1,0 @@
-<Files "smart.php">
-    Order Allow,Deny
-    Deny from all
-</Files>
