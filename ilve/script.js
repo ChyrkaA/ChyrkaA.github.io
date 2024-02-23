@@ -93,7 +93,23 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-
+function onDisplay(entry) {
+  entry.forEach(function (change) {
+    if (change.isIntersecting) {
+      change.target.classList.add("Delay");
+    } else {
+      change.target.classList.remove("Delay");
+    }
+  });
+}
+const elements = document.querySelectorAll(".animate");
+const options = {
+  threshold: [0.5]
+};
+const observer = new IntersectionObserver(onDisplay, options);
+for (let elm of elements) {
+  observer.observe(elm);
+}
 
 /***/ })
 
