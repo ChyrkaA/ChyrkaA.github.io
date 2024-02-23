@@ -104,12 +104,28 @@ function onDisplay(entry) {
 }
 const elements = document.querySelectorAll(".animate");
 const options = {
-  threshold: [0.5]
+  threshold: [0.7]
 };
 const observer = new IntersectionObserver(onDisplay, options);
 for (let elm of elements) {
   observer.observe(elm);
 }
+const menu = document.querySelector(".menu");
+let lastScrollTop = 0;
+window.addEventListener("scroll", () => {
+  let scrollTop = window.scrollY || document.documentElement.scrollTop;
+  if (scrollTop > lastScrollTop) {
+    menu.classList.add("hide__menu");
+  } else {
+    menu.classList.remove("hide__menu");
+  }
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  if (window.scrollY > 500) {
+    menu.classList.add("white__menu");
+  } else {
+    menu.classList.remove("white__menu");
+  }
+});
 
 /***/ })
 
