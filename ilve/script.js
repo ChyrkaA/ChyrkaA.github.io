@@ -114,7 +114,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
   const elements = document.querySelectorAll(".animate");
   const options = {
-    threshold: [1]
+    threshold: [0.7]
   };
   const observer = new IntersectionObserver(onDisplay, options);
   for (let elm of elements) {
