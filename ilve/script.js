@@ -155,7 +155,7 @@ window.addEventListener("DOMContentLoaded", () => {
       menuList.classList.toggle("menu__list_hide");
     }
   });
-  const arrows = document.querySelector(".promo__arrows");
+  const arrows = document.querySelector(".arrows");
   const fadeIn = (el, timeout, opacity, visibility, display) => {
     el.style.opacity = opacity || 1;
     el.style.display = display || "block";
