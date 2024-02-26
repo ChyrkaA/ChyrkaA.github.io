@@ -174,6 +174,26 @@ window.addEventListener("DOMContentLoaded", () => {
       fadeIn(arrows, 1000, 1, "visible", "flex");
     }
   });
+  const styles = document.querySelector(".styles");
+  const btnStyles = document.querySelector(".btn__styles");
+  styles.addEventListener("click", e => {
+    if (!e.target.classList.contains("styles__link") && !e.target.classList.contains("styles__title")) {
+      styles.classList.remove("style__show");
+    }
+  });
+  btnStyles.addEventListener("click", () => {
+    styles.classList.add("style__show");
+  });
+  const stylesLink = document.querySelectorAll(".styles__link");
+  const stylesImg = document.querySelectorAll(".styles__img");
+  stylesLink.forEach((item, i) => {
+    item.addEventListener("mouseover", () => {
+      stylesImg[i].classList.add("styles__img_show");
+    });
+    item.addEventListener("mouseout", () => {
+      stylesImg[i].classList.remove("styles__img_show");
+    });
+  });
 });
 
 /***/ })
