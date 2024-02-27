@@ -123,13 +123,19 @@ window.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger");
   const menuBig = document.querySelector(".menu__big");
   const menuList = document.querySelector(".menu__list");
+  const menuProducts = document.querySelector(".menu__bigproducts");
   hamburger.addEventListener("click", () => {
-    if (menu.classList.contains("menu__height")) {
+    if (menu.classList.contains("menu__full_white") && !menu.classList.contains("menu__forbigproduct")) {
+      console.log(1);
       window.addEventListener("scroll", showTopMenu);
       menuBig.classList.toggle("menu__big_show");
-      menu.classList.toggle("menu__height");
       menu.classList.toggle("menu__full_white");
       menuList.classList.toggle("menu__list_hide");
+    } else if (menu.classList.contains("menu__full_white") && menu.classList.contains("menu__forbigproduct")) {
+      menu.classList.toggle("menu__full_white");
+      menu.classList.toggle("menu__forbigproduct");
+      menuProducts.classList.toggle("show");
+      body.classList.toggle("overflow_hidden");
     } else {
       removeEventListener("scroll", showTopMenu);
       menuBig.classList.toggle("menu__big_show");
@@ -171,11 +177,19 @@ window.addEventListener("DOMContentLoaded", () => {
   const stylesImg = document.querySelectorAll(".styles__img");
   stylesLink.forEach((item, i) => {
     item.addEventListener("mouseover", () => {
-      stylesImg[i].classList.add("styles__img_show");
+      stylesImg[i].classList.add("show");
     });
     item.addEventListener("mouseout", () => {
-      stylesImg[i].classList.remove("styles__img_show");
+      stylesImg[i].classList.remove("show");
     });
+  });
+  const products = document.querySelector(".products");
+  const body = document.querySelector("body");
+  products.addEventListener("click", () => {
+    menu.classList.toggle("menu__full_white");
+    menu.classList.toggle("menu__forbigproduct");
+    menuProducts.classList.toggle("show");
+    body.classList.toggle("overflow_hidden");
   });
 });
 
