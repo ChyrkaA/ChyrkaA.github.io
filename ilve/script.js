@@ -143,11 +143,18 @@ window.addEventListener("DOMContentLoaded", () => {
   const menuProducts = document.querySelector(".menu__bigproducts");
   hamburger.addEventListener("click", () => {
     if (menu.classList.contains("menu__full_white") && !menu.classList.contains("menu__forbigproduct")) {
-      console.log(1);
       window.addEventListener("scroll", showTopMenu);
       menuBig.classList.toggle("menu__big_show");
       menu.classList.toggle("menu__full_white");
       menuList.classList.toggle("menu__list_hide");
+      menuProducts.classList.toggle("menu__display_none");
+      menu.classList.remove("overflow_scroll");
+      if (window.innerWidth <= 575) {
+        menuSubtitleBlock.forEach(block => {
+          block.classList.remove("show");
+          block.classList.remove("height");
+        });
+      }
     } else if (menu.classList.contains("menu__full_white") && menu.classList.contains("menu__forbigproduct")) {
       menu.classList.toggle("menu__full_white");
       menu.classList.toggle("menu__forbigproduct");
@@ -156,9 +163,9 @@ window.addEventListener("DOMContentLoaded", () => {
     } else {
       removeEventListener("scroll", showTopMenu);
       menuBig.classList.toggle("menu__big_show");
-      menu.classList.toggle("menu__height");
       menu.classList.toggle("menu__full_white");
       menuList.classList.toggle("menu__list_hide");
+      menuProducts.classList.toggle("menu__display_none");
     }
   });
   const arrows = document.querySelector(".arrows");
@@ -207,6 +214,26 @@ window.addEventListener("DOMContentLoaded", () => {
     menu.classList.toggle("menu__forbigproduct");
     menuProducts.classList.toggle("show");
     body.classList.toggle("overflow_hidden");
+  });
+  const menuSubtitle = document.querySelectorAll(".menu__subtitle");
+  const menuSubtitleBlock = document.querySelectorAll(".menu__subtitle_block");
+  menuSubtitle.forEach((item, i) => {
+    item.addEventListener("click", () => {
+      if (window.innerWidth <= 575) {
+        if (menuSubtitleBlock[i].classList.contains("show")) {
+          menuSubtitleBlock[i].classList.remove("show");
+          menuSubtitleBlock[i].classList.remove("height");
+        } else {
+          menuSubtitleBlock.forEach(block => {
+            block.classList.remove("show");
+            block.classList.remove("height");
+          });
+          menuSubtitleBlock[i].classList.add("show");
+          menuSubtitleBlock[i].classList.add("height");
+        }
+        menu.classList.add("overflow_scroll");
+      }
+    });
   });
 });
 
