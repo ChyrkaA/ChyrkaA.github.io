@@ -118,14 +118,14 @@ window.addEventListener("DOMContentLoaded", () => {
   Object(_services_observer__WEBPACK_IMPORTED_MODULE_1__["default"])("Delay", ".animate");
   window.addEventListener("scroll", _modules_showTopMenu__WEBPACK_IMPORTED_MODULE_5__["default"]);
   window.addEventListener("click", e => {
-    if (e.target.classList.contains("styles") || e.target.closest(".btn__styles")) {
-      Object(_modules_styles__WEBPACK_IMPORTED_MODULE_2__["default"])(e.target, ".btn__styles", "styles__link", "styles__title", "style__show");
+    if (e.target.closest(".hamburger")) {
+      Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_6__["default"])("menu__full_white", "menu__forbigproduct", "menu__big_show", "menu__list_hide", "menu__display_none", "overflow_scroll", "show", "height");
     } else if (e.target.closest(".products")) {
       Object(_modules_products__WEBPACK_IMPORTED_MODULE_3__["default"])("menu__full_white", "menu__forbigproduct", "show", "overflow_hidden");
     } else if (e.target.closest(".menu__subtitle")) {
       Object(_modules_smallMenu__WEBPACK_IMPORTED_MODULE_4__["default"])(e.target, "show", "height", "overflow_scroll");
-    } else if (e.target.closest(".hamburger")) {
-      Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_6__["default"])("menu__full_white", "menu__forbigproduct", "menu__big_show", "menu__list_hide", "menu__display_none", "overflow_scroll", "show", "height");
+    } else if (e.target.classList.contains("styles") || e.target.closest(".btn__styles")) {
+      Object(_modules_styles__WEBPACK_IMPORTED_MODULE_2__["default"])(e.target, ".btn__styles", "styles__link", "styles__title", "style__show");
     }
   });
   _services_variables__WEBPACK_IMPORTED_MODULE_7__["stylesLink"].forEach((item, i) => {
