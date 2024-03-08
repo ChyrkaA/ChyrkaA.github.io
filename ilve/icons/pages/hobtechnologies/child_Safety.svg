@@ -1,0 +1,18 @@
+<svg id="Black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184.25 184.25">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #222221;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="92.13" cy="92.13" r="89.29"/>
+  <g>
+    <rect class="cls-1" x="46.7" y="71.87" width="90.86" height="65.73"/>
+    <path class="cls-1" d="M124.18,71.87V59.64A32.18,32.18,0,0,0,92,27.46h0A32.17,32.17,0,0,0,59.83,59.64V71.87"/>
+    <path class="cls-1" d="M85.82,102.76a10.65,10.65,0,1,1,12.35,0L101.7,128H82.28Z"/>
+  </g>
+</svg>
