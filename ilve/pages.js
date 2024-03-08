@@ -270,16 +270,15 @@ __webpack_require__.r(__webpack_exports__);
 window.addEventListener("DOMContentLoaded", () => {
   Object(_modules_preload__WEBPACK_IMPORTED_MODULE_0__["default"])(".overlay", "body", "style");
   window.addEventListener("scroll", _modules_showTopMenu__WEBPACK_IMPORTED_MODULE_5__["default"]);
-  window.addEventListener("click", e => {
-    if (e.target.closest(".hamburger")) {
-      Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_1__["default"])("menu__full_white", "menu__forbigproduct", "menu__big_show", "menu__list_hide", "menu__display_none", "overflow_scroll", "show", "height");
-    } else if (e.target.classList.contains("styles") || e.target.closest(".btn__styles")) {
-      Object(_modules_styles__WEBPACK_IMPORTED_MODULE_2__["default"])(e.target, ".btn__styles", "styles__link", "styles__title", "style__show");
-    } else if (e.target.closest(".products")) {
-      Object(_modules_products__WEBPACK_IMPORTED_MODULE_3__["default"])("menu__full_white", "menu__forbigproduct", "show", "overflow_hidden");
-    } else if (e.target.closest(".menu__subtitle")) {
-      Object(_modules_smallMenu__WEBPACK_IMPORTED_MODULE_4__["default"])(e.target, "show", "height", "overflow_scroll");
+  const styles = document.querySelector(".styles");
+  const btnStyles = document.querySelector(".btn__styles");
+  styles.addEventListener("click", e => {
+    if (!e.target.classList.contains("styles__link") && !e.target.classList.contains("styles__title")) {
+      styles.classList.remove("style__show");
     }
+  });
+  btnStyles.addEventListener("click", () => {
+    styles.classList.add("style__show");
   });
   _services_variables__WEBPACK_IMPORTED_MODULE_6__["stylesLink"].forEach((item, i) => {
     item.addEventListener("mouseover", () => {
@@ -287,6 +286,80 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     item.addEventListener("mouseout", () => {
       _services_variables__WEBPACK_IMPORTED_MODULE_6__["stylesImg"][i].classList.remove("show");
+    });
+  });
+  const products = document.querySelector(".products");
+  products.addEventListener("click", () => {
+    menu.classList.toggle("menu__full_white");
+    menu.classList.toggle("menu__forbigproduct");
+    menuProducts.classList.toggle("show");
+    body.classList.toggle("overflow_hidden");
+  });
+  function showTopMenu() {
+    let scrollTop = window.scrollY || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+      menu.classList.add("hide__menu");
+    } else {
+      menu.classList.remove("hide__menu");
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    if (window.scrollY > 500) {
+      menu.classList.add("white__menu");
+    } else {
+      menu.classList.remove("white__menu");
+    }
+  }
+  const hamburger = document.querySelector(".hamburger");
+  const menuBig = document.querySelector(".menu__big");
+  const menuList = document.querySelector(".menu__list");
+  const menuProducts = document.querySelector(".menu__bigproducts");
+  const menu = document.querySelector(".menu");
+  const body = document.querySelector("body");
+  const menuSubtitleBlock = document.querySelectorAll(".menu__subtitle_block");
+  hamburger.addEventListener("click", () => {
+    if (menu.classList.contains("menu__full_white") && !menu.classList.contains("menu__forbigproduct")) {
+      window.addEventListener("scroll", showTopMenu);
+      menuBig.classList.toggle("menu__big_show");
+      menu.classList.toggle("menu__full_white");
+      menuList.classList.toggle("menu__list_hide");
+      menuProducts.classList.toggle("menu__display_none");
+      menu.classList.remove("overflow_scroll");
+      if (window.innerWidth <= 575) {
+        menuSubtitleBlock.forEach(block => {
+          block.classList.remove("show");
+          block.classList.remove("height");
+        });
+      }
+    } else if (menu.classList.contains("menu__full_white") && menu.classList.contains("menu__forbigproduct")) {
+      menu.classList.toggle("menu__full_white");
+      menu.classList.toggle("menu__forbigproduct");
+      menuProducts.classList.toggle("show");
+      body.classList.toggle("overflow_hidden");
+    } else {
+      removeEventListener("scroll", showTopMenu);
+      menuBig.classList.toggle("menu__big_show");
+      menu.classList.toggle("menu__full_white");
+      menuList.classList.toggle("menu__list_hide");
+      menuProducts.classList.toggle("menu__display_none");
+    }
+  });
+  const menuSubtitle = document.querySelectorAll(".menu__subtitle");
+  menuSubtitle.forEach((item, i) => {
+    item.addEventListener("click", () => {
+      if (window.innerWidth <= 575) {
+        if (menuSubtitleBlock[i].classList.contains("show")) {
+          menuSubtitleBlock[i].classList.remove("show");
+          menuSubtitleBlock[i].classList.remove("height");
+        } else {
+          menuSubtitleBlock.forEach(block => {
+            block.classList.remove("show");
+            block.classList.remove("height");
+          });
+          menuSubtitleBlock[i].classList.add("show");
+          menuSubtitleBlock[i].classList.add("height");
+        }
+        menu.classList.add("overflow_scroll");
+      }
     });
   });
 });
