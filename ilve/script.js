@@ -146,12 +146,27 @@ window.addEventListener("DOMContentLoaded", () => {
       _services_variables__WEBPACK_IMPORTED_MODULE_7__["stylesImg"][i].classList.remove("show");
     });
   });
+  function showTopMenu() {
+    let scrollTop = window.scrollY || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+      menu.classList.add("hide__menu");
+    } else {
+      menu.classList.remove("hide__menu");
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    if (window.scrollY > 500) {
+      menu.classList.add("white__menu");
+    } else {
+      menu.classList.remove("white__menu");
+    }
+  }
   const hamburger = document.querySelector(".hamburger");
   const menuBig = document.querySelector(".menu__big");
   const menuList = document.querySelector(".menu__list");
   const menuProducts = document.querySelector(".menu__bigproducts");
   const menu = document.querySelector(".menu");
   const body = document.querySelector("body");
+  const menuSubtitleBlock = document.querySelectorAll(".menu__subtitle_block");
   hamburger.addEventListener("click", () => {
     if (menu.classList.contains("menu__full_white") && !menu.classList.contains("menu__forbigproduct")) {
       window.addEventListener("scroll", showTopMenu);
