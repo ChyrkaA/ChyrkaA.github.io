@@ -110,34 +110,7 @@ window.addEventListener("DOMContentLoaded", () => {
     preload.remove();
   }
   window.addEventListener("load", ready);
-  window.addEventListener("scroll", showTopMenu);
-  const styles = document.querySelector(".styles");
-  const btnStyles = document.querySelector(".btn__styles");
-  styles.addEventListener("click", e => {
-    if (!e.target.classList.contains("styles__link") && !e.target.classList.contains("styles__title")) {
-      styles.classList.remove("style__show");
-    }
-  });
-  btnStyles.addEventListener("click", () => {
-    styles.classList.add("style__show");
-  });
-  const stylesLink = document.querySelectorAll(".styles__link");
-  const stylesImg = document.querySelectorAll(".styles__img");
-  stylesLink.forEach((item, i) => {
-    item.addEventListener("mouseover", () => {
-      stylesImg[i].classList.add("show");
-    });
-    item.addEventListener("mouseout", () => {
-      stylesImg[i].classList.remove("show");
-    });
-  });
-  const products = document.querySelector(".products");
-  products.addEventListener("click", () => {
-    menu.classList.toggle("menu__full_white");
-    menu.classList.toggle("menu__forbigproduct");
-    menuProducts.classList.toggle("show");
-    body.classList.toggle("overflow_hidden");
-  });
+  const menu = document.querySelector(".menu");
   let lastScrollTop = 0;
   function showTopMenu() {
     let scrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -153,13 +126,11 @@ window.addEventListener("DOMContentLoaded", () => {
       menu.classList.remove("white__menu");
     }
   }
+  window.addEventListener("scroll", showTopMenu);
   const hamburger = document.querySelector(".hamburger");
   const menuBig = document.querySelector(".menu__big");
   const menuList = document.querySelector(".menu__list");
   const menuProducts = document.querySelector(".menu__bigproducts");
-  const menu = document.querySelector(".menu");
-  const body = document.querySelector("body");
-  const menuSubtitleBlock = document.querySelectorAll(".menu__subtitle_block");
   hamburger.addEventListener("click", () => {
     if (menu.classList.contains("menu__full_white") && !menu.classList.contains("menu__forbigproduct")) {
       window.addEventListener("scroll", showTopMenu);
@@ -187,7 +158,55 @@ window.addEventListener("DOMContentLoaded", () => {
       menuProducts.classList.toggle("menu__display_none");
     }
   });
+  const arrows = document.querySelector(".arrows");
+  const fadeIn = (el, timeout, opacity, visibility, display) => {
+    el.style.opacity = opacity || 1;
+    el.style.display = display || "block";
+    el.style.visibility = visibility || "visible";
+    el.style.transition = `all ${timeout}ms`;
+  };
+  const fadeOut = (el, timeout, opacity, visibility) => {
+    el.style.opacity = opacity || 0;
+    el.style.visibility = visibility || "hidden";
+    el.style.transition = `all ${timeout}ms`;
+  };
+  window.addEventListener("scroll", () => {
+    if (window.scrollY >= 300) {
+      fadeOut(arrows, 1000);
+    } else {
+      fadeIn(arrows, 1000, 1, "visible", "flex");
+    }
+  });
+  const styles = document.querySelector(".styles");
+  const btnStyles = document.querySelector(".btn__styles");
+  styles.addEventListener("click", e => {
+    if (!e.target.classList.contains("styles__link") && !e.target.classList.contains("styles__title")) {
+      styles.classList.remove("style__show");
+    }
+  });
+  btnStyles.addEventListener("click", () => {
+    styles.classList.add("style__show");
+  });
+  const stylesLink = document.querySelectorAll(".styles__link");
+  const stylesImg = document.querySelectorAll(".styles__img");
+  stylesLink.forEach((item, i) => {
+    item.addEventListener("mouseover", () => {
+      stylesImg[i].classList.add("show");
+    });
+    item.addEventListener("mouseout", () => {
+      stylesImg[i].classList.remove("show");
+    });
+  });
+  const products = document.querySelector(".products");
+  const body = document.querySelector("body");
+  products.addEventListener("click", () => {
+    menu.classList.toggle("menu__full_white");
+    menu.classList.toggle("menu__forbigproduct");
+    menuProducts.classList.toggle("show");
+    body.classList.toggle("overflow_hidden");
+  });
   const menuSubtitle = document.querySelectorAll(".menu__subtitle");
+  const menuSubtitleBlock = document.querySelectorAll(".menu__subtitle_block");
   menuSubtitle.forEach((item, i) => {
     item.addEventListener("click", () => {
       if (window.innerWidth <= 575) {
