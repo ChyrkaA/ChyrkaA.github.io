@@ -1,0 +1,21 @@
+<svg id="Black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184.25 184.25">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #222221;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g>
+    <circle class="cls-1" cx="92.13" cy="92.13" r="89.29"/>
+    <path class="cls-1" d="M127.57,42.51a61,61,0,1,0,14.07,14"/>
+    <circle class="cls-1" cx="92.13" cy="92.13" r="32.33" transform="translate(-18.7 23.63) rotate(-13.28)"/>
+    <path class="cls-1" d="M101.49,92.13a9.37,9.37,0,1,0-9.36,9.36A9.37,9.37,0,0,0,101.49,92.13Z"/>
+    <line class="cls-1" x1="92.13" y1="92.13" x2="142.32" y2="41.93"/>
+    <polyline class="cls-1" points="125.8 58.46 139.29 58.46 155.69 41.93 142.32 41.93 142.32 28.48 125.8 45 125.8 58.37"/>
+    <circle class="cls-1" cx="92.52" cy="91.82" r="1"/>
+  </g>
+</svg>

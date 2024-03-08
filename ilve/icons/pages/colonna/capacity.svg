@@ -1,0 +1,30 @@
+<svg id="Black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184.25 184.25">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #222221;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="92.13" cy="92.47" r="89.29" transform="translate(-38.4 92.23) rotate(-45)"/>
+  <circle class="cls-1" cx="92.13" cy="92.47" r="15.59" transform="translate(-18.78 23.64) rotate(-13.28)"/>
+  <g>
+    <polyline class="cls-1" points="120.05 38.55 146.04 38.55 146.04 64.54"/>
+    <line class="cls-1" x1="112.58" y1="72.02" x2="146.04" y2="38.55"/>
+  </g>
+  <g>
+    <polyline class="cls-1" points="64.2 146.38 38.21 146.38 38.21 120.39"/>
+    <line class="cls-1" x1="71.68" y1="112.91" x2="38.21" y2="146.38"/>
+  </g>
+  <g>
+    <polyline class="cls-1" points="146.04 120.39 146.04 146.38 120.05 146.38"/>
+    <line class="cls-1" x1="112.58" y1="112.91" x2="146.04" y2="146.38"/>
+  </g>
+  <g>
+    <polyline class="cls-1" points="38.21 64.54 38.21 38.55 64.2 38.55"/>
+    <line class="cls-1" x1="71.68" y1="72.02" x2="38.21" y2="38.55"/>
+  </g>
+</svg>

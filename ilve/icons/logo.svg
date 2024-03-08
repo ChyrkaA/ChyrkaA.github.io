@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="241px" height="78px" viewBox="0 0 241 78" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-1" transform="translate(-71.000000, -23.000000)" fill="#1C1C1B">
+            <g id="Group" transform="translate(71.000000, 23.000000)">
+                <path d="M23.3908345,0 L0,38.9995017 L23.3908345,78 L67.607173,78 L91,38.9995017 L67.607173,0 L23.3908345,0 Z M9.08176872,38.9995017 L27.7952334,7.79910309 L63.2047666,7.79910309 L81.9202238,38.9995017 L63.2047666,70.1979072 L27.7952334,70.1979072 L9.08176872,38.9995017 Z" id="Fill-1"></path>
+                <polygon id="Fill-2" points="38 66 54 66 54 29 38 29"></polygon>
+                <polygon id="Fill-3" points="38 23 54 23 54 13 38 13"></polygon>
+                <polygon id="Fill-4" points="108 65 118 65 118 13 108 13"></polygon>
+                <polygon id="Fill-5" points="132 65 132 13 142.505489 13 142.505489 54.6380456 166 54.6380456 166 65 142.505489 65"></polygon>
+                <polygon id="Fill-6" points="174.795566 65 158 13 168.313693 13 180.000496 53.2636226 191.684324 13 202 13 185.20146 65"></polygon>
+                <polygon id="Fill-7" points="207 13 207 65 217.505489 65 241 65 241 54.6382441 217.505489 54.6382441 217.505489 44.1838658 241 44.1838658 241 33.820118 217.505489 33.820118 217.505489 23.3637478 241 23.3637478 241 13"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
