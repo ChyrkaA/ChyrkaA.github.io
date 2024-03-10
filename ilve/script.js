@@ -181,17 +181,6 @@ window.addEventListener("DOMContentLoaded", () => {
       Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_6__["default"])("menu__full_white", "menu__forbigproduct", "menu__big_show", "menu__list_hide", "menu__display_none", "overflow_scroll", "show", "height");
     }
   });
-  window.addEventListener("touchstart", e => {
-    if (e.target.classList.contains("style__show") || e.target.closest(".btn__styles")) {
-      Object(_modules_styles__WEBPACK_IMPORTED_MODULE_2__["default"])(e.target, ".btn__styles", "styles__link", "styles__title", "style__show");
-    } else if (e.target.closest(".products")) {
-      Object(_modules_products__WEBPACK_IMPORTED_MODULE_3__["default"])("menu__full_white", "menu__forbigproduct", "show", "overflow_hidden");
-    } else if (e.target.closest(".menu__subtitle")) {
-      Object(_modules_smallMenu__WEBPACK_IMPORTED_MODULE_4__["default"])(e.target, "show", "height", "overflow_scroll");
-    } else if (e.target.closest(".hamburger") || e.target.classList.contains(".hamburger")) {
-      Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_6__["default"])("menu__full_white", "menu__forbigproduct", "menu__big_show", "menu__list_hide", "menu__display_none", "overflow_scroll", "show", "height");
-    }
-  });
   const stylesLink = document.querySelectorAll(".styles__link");
   const stylesImg = document.querySelectorAll(".styles__img");
   stylesLink.forEach((item, i) => {
