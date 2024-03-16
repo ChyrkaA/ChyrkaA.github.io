@@ -1,0 +1,82 @@
+.promo {
+	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+		url(../img/promo.webp) top (center/cover) no-repeat;
+	padding: 100px 0;
+	&__wrapper {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__img {
+		width: 45%;
+	}
+	&__content {
+		width: 45%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+	&__title {
+		font-weight: 600;
+		font-size: 50px;
+		color: $text-color;
+	}
+	&__list {
+		list-style: url(../icons/bird.svg) inside;
+		margin-top: 20px;
+	}
+	&__item {
+		color: $text-color;
+		font-size: 20px;
+		font-weight: 300;
+		margin-top: 15px;
+	}
+	&__form {
+		margin-top: 20px;
+		width: 100%;
+		padding: 20px;
+		border: 2px solid $text-color;
+		border-radius: 20px;
+		&__wrapper {
+			display: flex;
+			justify-content: space-around;
+			margin-top: 20px;
+		}
+	}
+	&__formheader {
+		color: $text-color;
+		font-weight: 400;
+		font-size: 25px;
+		text-align: center;
+	}
+	&__input {
+		width: 250px;
+		height: 40px;
+		border-radius: 15px;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+		input {
+			padding: 5px 10px;
+			width: 100%;
+			height: 100%;
+			border-radius: 15px;
+		}
+	}
+	&__triggers {
+		&_btn {
+			height: 40px;
+			width: 150px;
+			border-radius: 15px;
+			border: none;
+			background-color: orange;
+			font-weight: 500;
+			font-size: 20px;
+			color: $text-color-dark;
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+			transition: 0.3s all ease-in-out;
+			&:hover {
+				transform: scale(1.05);
+			}
+		}
+	}
+}

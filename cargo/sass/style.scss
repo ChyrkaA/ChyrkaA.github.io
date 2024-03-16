@@ -1,0 +1,25 @@
+@import "libs/variables";
+@import "libs/bootstrap-reboot.min";
+@import "libs/fonts";
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Calibri", sans-serif;
+}
+
+.container {
+	max-width: 1140px;
+	margin: 0 auto;
+}
+
+@import "blocks/top";
+@import "blocks/promo";
+@import "blocks/transport";
+@import "blocks/benefits";
+@import "blocks/work";
+@import "blocks/about";
+@import "blocks/footer";
+@import "blocks/modal";
+@import "blocks/media";

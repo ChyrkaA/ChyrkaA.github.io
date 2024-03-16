@@ -1,0 +1,45 @@
+.footer {
+	background-color: rgb(245, 248, 255);
+	padding: 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	&__logo {
+		height: 130px;
+	}
+	&__text {
+		width: 55%;
+		font-size: 16px;
+		font-weight: 400;
+		text-align: center;
+		margin: 0;
+	}
+	&__contacts {
+		display: flex;
+		justify-content: space-between;
+		width: 10%;
+	}
+	&__phones {
+		display: flex;
+		flex-direction: column;
+		margin-left: 10px;
+	}
+	&__phoneimg {
+		height: 50px;
+	}
+	&__phone {
+		font-size: 16px;
+		font-weight: 700;
+		text-decoration: none;
+		color: $text-color-dark;
+		&:hover {
+			color: $text-color-dark;
+		}
+	}
+	&__waiting {
+		text-align: center;
+		font-size: 16px;
+		font-weight: 400;
+		margin: 0;
+	}
+}
