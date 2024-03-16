@@ -2,7 +2,8 @@
 
 $name = $_POST['name'];
 $phone = $_POST['number'];
-
+$email = $_POST['email'];
+$text = $_POST['text'];
 
 require_once('phpmailer/PHPMailerAutoload.php');
 $mail = new PHPMailer;
@@ -13,13 +14,13 @@ $mail->CharSet = 'utf-8';
 $mail->isSMTP(); // Set mailer to use SMTP
 $mail->Host = 'smtp.gmail.com'; // Specify main and backup SMTP servers
 $mail->SMTPAuth = true; // Enable SMTP authentication
-$mail->Username = 'andrey.chirka@gmail.com'; // Наш логин
-$mail->Password = 'iqrb broq zvlm wyyt'; // Наш пароль от ящика
+$mail->Username = 'pdacademy.info@gmail.com'; // Наш логин
+$mail->Password = 'pdwtjvgzmdqfgzlj'; // Наш пароль от ящика
 $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465; // TCP port to connect to
 
-$mail->setFrom('andrey.chirka@gmail.com', 'PDA'); // От кого письмо 
-$mail->addAddress('andrey.chirka@gmail.com'); // Add a recipient
+$mail->setFrom('pdacademy.info@gmail.com', 'PDA'); // От кого письмо 
+$mail->addAddress('pdacademy.info@gmail.com'); // Add a recipient
 //$mail->addAddress('ellen@example.com');               // Name is optional
 //$mail->addReplyTo('info@example.com', 'Information');
 //$mail->addCC('cc@example.com');
@@ -32,7 +33,9 @@ $mail->Subject = 'Дані';
 $mail->Body = '
 		Користувач лишив такі дані <br> 
 	Ім’я: ' . $name . ' <br>
-	Номер телефону: ' . $phone ;
+	Номер телефону: ' . $phone . '<br>
+	E-mail: ' . $email . '<br>
+	Текст повідомлення: ' . $text . '';
 
 if (!$mail->send()) {
 	return false;
