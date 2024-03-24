@@ -100,16 +100,19 @@ window.addEventListener("DOMContentLoaded", () => {
   const overlay = document.querySelectorAll(".overlay");
   const catalogItem = document.querySelectorAll(".catalog__link");
   const catalogHeader = document.querySelectorAll(".catalog__header");
+  const catalogImg = document.querySelectorAll(".catalog__img");
   catalogItem.forEach((item, i) => {
     item.addEventListener("mouseover", () => {
       overlay[i].classList.add("active__overlay");
       catalogHeader[i].classList.add("active__header");
+      catalogImg[i].classList.add("transform__scale");
     });
   });
   catalogItem.forEach((item, i) => {
     item.addEventListener("mouseout", () => {
       overlay[i].classList.remove("active__overlay");
       catalogHeader[i].classList.remove("active__header");
+      catalogImg[i].classList.remove("transform__scale");
     });
   });
   const showText = document.querySelector(".about__link");
@@ -123,9 +126,9 @@ window.addEventListener("DOMContentLoaded", () => {
   const menuTop = document.querySelector(".menuTop");
   window.addEventListener("scroll", () => {
     if (scrollY > 200) {
-      menuTop.classList.add("tranform");
+      menuTop.classList.add("transform");
     } else {
-      menuTop.classList.remove("tranform");
+      menuTop.classList.remove("transform");
     }
   });
   function onDisplay(entry) {
