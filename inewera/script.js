@@ -117,12 +117,14 @@ window.addEventListener("DOMContentLoaded", () => {
   });
   const showText = document.querySelector(".about__link");
   const text = document.querySelectorAll(".about__text");
-  showText.addEventListener("click", e => {
-    e.preventDefault;
-    text.forEach(item => {
-      item.classList.toggle("hidden");
+  if (showText) {
+    showText.addEventListener("click", e => {
+      e.preventDefault;
+      text.forEach(item => {
+        item.classList.toggle("hidden");
+      });
     });
-  });
+  }
   const menuTop = document.querySelector(".menuTop");
   window.addEventListener("scroll", () => {
     if (scrollY > 200) {
