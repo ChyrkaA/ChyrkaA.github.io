@@ -116,13 +116,14 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
   const menuTop = document.querySelector(".menuTop");
-  window.addEventListener("scroll", () => {
+  function scrolling() {
     if (scrollY > 200) {
       menuTop.classList.add("transform");
     } else {
       menuTop.classList.remove("transform");
     }
-  });
+  }
+  window.addEventListener("scroll", scrolling);
   function onDisplay(entry) {
     entry.forEach(function (change) {
       if (change.isIntersecting) {
@@ -181,13 +182,16 @@ window.addEventListener("DOMContentLoaded", () => {
       return false;
     });
   });
+  let dataObj = "";
+  let namesStartingWithLetter = [];
   fetch("data.json").then(function (response) {
     if (!response.ok) {
       throw new Error("Failed to load data: " + response.status);
     }
     return response.json();
   }).then(function (jsonData) {
-    console.log(jsonData);
+    dataObj = jsonData;
+    console.log(dataObj);
   }).catch(function (error) {
     console.error("Request failed:", error.message);
   });
@@ -200,10 +204,11 @@ window.addEventListener("DOMContentLoaded", () => {
     length: 26
   }, (_, i) => String.fromCharCode(65 + i));
   const createSlide = letter => {
-    const slide = createElement("a", "brendy__slider_slide");
-    slide.href = "#";
+    const slide = createElement("div", "brendy__slider_slide");
     const overlay = createElement("div", "brendy__slider_slide-overlay");
     const overlayBlack = createElement("div", "brendy__slider_slide-overlayBlack");
+    const overlayBorder = createElement("div", "brendy__slider_slide-border");
+    const overlayBorderBox = createElement("div", "brendy__slider_slide-border-box");
     const letterDiv = createElement("div", "brendy__slider_slide-letter");
     letterDiv.textContent = letter;
     const letterSmallDiv = createElement("div", "brendy__slider_slide-letterSmall");
@@ -211,9 +216,11 @@ window.addEventListener("DOMContentLoaded", () => {
     const img = createElement("img", "brendy__slider_slide-bckg");
     img.src = `img/brendy/slider/${letter}.webp`;
     img.alt = "bckg";
-    slide.appendChild(overlay);
-    slide.appendChild(overlayBlack);
+    overlayBorder.appendChild(overlayBorderBox);
     slide.appendChild(letterDiv);
+    slide.appendChild(overlayBlack);
+    slide.appendChild(overlay);
+    slide.appendChild(overlayBorder);
     slide.appendChild(letterSmallDiv);
     slide.appendChild(img);
     return slide;
@@ -238,18 +245,64 @@ window.addEventListener("DOMContentLoaded", () => {
   const brendySlide = document.querySelectorAll(".brendy__slider_slide");
   const letter = document.querySelectorAll(".brendy__slider_slide-letter");
   const letterSmall = document.querySelectorAll(".brendy__slider_slide-letterSmall");
+  const brendySliderOverlayBlack = document.querySelectorAll(".brendy__slider_slide-overlayBlack");
+  const brendySlideerBorder = document.querySelectorAll(".brendy__slider_slide-border");
   brendySlide.forEach((item, i) => {
     item.addEventListener("mouseover", () => {
       brendySliderOverlay[i].classList.add("active__overlay");
+      brendySliderOverlayBlack[i].classList.add("active__overlay");
+      brendySlideerBorder[i].classList.add("active__header");
       letterSmall[i].classList.add("active__letterSmall");
       letter[i].classList.add("hidden__letter");
     });
     item.addEventListener("mouseout", () => {
       brendySliderOverlay[i].classList.remove("active__overlay");
+      brendySlideerBorder[i].classList.remove("active__header");
+      brendySliderOverlayBlack[i].classList.remove("active__overlay");
       letterSmall[i].classList.remove("active__letterSmall");
       letter[i].classList.remove("hidden__letter");
     });
   });
+  const brendySlideerSlide = document.querySelectorAll(".brendy__slider_slide");
+  const brendyLetter = document.querySelector(".brendy__letter");
+  let letterContent = "";
+  brendySlideerSlide.forEach((item, i) => {
+    item.addEventListener("click", () => {
+      letterContent = letter[i].textContent;
+      brendyLetter.textContent = letterContent;
+      filterData(letterContent, dataObj);
+    });
+  });
+  const buttonCat = document.querySelectorAll(".button__Category");
+  const menuBig = document.querySelector(".menuBig");
+  const menuBigClose = document.querySelector(".menuBig__close");
+  buttonCat.forEach(item => {
+    item.addEventListener("click", () => {
+      menuBig.classList.add("top");
+      window.removeEventListener("scroll", scrolling);
+      menuTop.classList.add("transform");
+    });
+  });
+  menuBigClose.addEventListener("click", () => {
+    menuBig.classList.remove("top");
+    window.addEventListener("scroll", scrolling);
+  });
+  function filterData(letter, arr) {
+    namesStartingWithLetter = arr.filter(object => object.phone.startsWith(`${letter}`)).map(object => object.phone);
+    let listContainer = document.querySelector(".brendy__list");
+    listContainer.innerHTML = "";
+    if (namesStartingWithLetter.length > 0) {
+      let ul = document.createElement("ul");
+      namesStartingWithLetter.forEach(name => {
+        let li = document.createElement("li");
+        li.textContent = name;
+        ul.appendChild(li);
+      });
+      listContainer.appendChild(ul);
+    } else {
+      listContainer.textContent = "No elements";
+    }
+  }
 });
 
 /***/ })
