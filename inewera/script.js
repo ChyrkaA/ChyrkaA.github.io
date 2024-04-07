@@ -126,13 +126,14 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
   const menuTop = document.querySelector(".menuTop");
-  window.addEventListener("scroll", () => {
+  function scrolling() {
     if (scrollY > 200) {
       menuTop.classList.add("transform");
     } else {
       menuTop.classList.remove("transform");
     }
-  });
+  }
+  window.addEventListener("scroll", scrolling);
   function onDisplay(entry) {
     entry.forEach(function (change) {
       if (change.isIntersecting) {
@@ -189,6 +190,20 @@ window.addEventListener("DOMContentLoaded", () => {
       });
       return false;
     });
+  });
+  const buttonCat = document.querySelectorAll(".button__Category");
+  const menuBig = document.querySelector(".menuBig");
+  const menuBigClose = document.querySelector(".menuBig__close");
+  buttonCat.forEach(item => {
+    item.addEventListener("click", () => {
+      menuBig.classList.add("top");
+      window.removeEventListener("scroll", scrolling);
+      menuTop.classList.add("transform");
+    });
+  });
+  menuBigClose.addEventListener("click", () => {
+    menuBig.classList.remove("top");
+    window.addEventListener("scroll", scrolling);
   });
 });
 
