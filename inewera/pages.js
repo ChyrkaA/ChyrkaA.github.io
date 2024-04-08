@@ -303,6 +303,22 @@ window.addEventListener("DOMContentLoaded", () => {
       listContainer.textContent = "No elements";
     }
   }
+  const overlayBlock = document.querySelector(".photo__overlay");
+  const bigImg = document.querySelector(".photo__overlay_img");
+  document.body.addEventListener("click", e => {
+    if (e.target.closest(".photo__img")) {
+      // showLoadingMessage();
+      const img = e.target.closest(".photo__img");
+      overlayBlock.classList.add("photo__overlay_active");
+      const linkImg = img.getAttribute("src");
+      bigImg.setAttribute("src", linkImg);
+      // bigImg.addEventListener('load', hideLoadingMessage);
+    } else if (e.target.closest(".photo__overlay_close")) {
+      overlayBlock.classList.remove("photo__overlay_active");
+    } else if (e.target.classList.contains("photo__overlay")) {
+      overlayBlock.classList.remove("photo__overlay_active");
+    }
+  });
 });
 
 /***/ })
