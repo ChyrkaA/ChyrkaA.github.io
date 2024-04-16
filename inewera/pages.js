@@ -281,11 +281,16 @@ window.addEventListener("DOMContentLoaded", () => {
       menuBig.classList.add("top");
       window.removeEventListener("scroll", scrolling);
       menuTop.classList.add("transform");
+      menuTopLine.classList.remove("transform__translateX");
+      menuBigLogp.classList.remove("hidden__letter");
+      hamburger.classList.remove("hamburger__cross");
     });
   });
   menuBigClose.addEventListener("click", () => {
     menuBig.classList.remove("top");
-    window.addEventListener("scroll", scrolling);
+    if (window.innerWidth >= 991) {
+      window.addEventListener("scroll", scrolling);
+    }
   });
   function filterData(letter, arr) {
     namesStartingWithLetter = arr.filter(object => object.phone.startsWith(`${letter}`)).map(object => object.phone);
@@ -307,17 +312,34 @@ window.addEventListener("DOMContentLoaded", () => {
   const bigImg = document.querySelector(".photo__overlay_img");
   document.body.addEventListener("click", e => {
     if (e.target.closest(".photo__img")) {
-      // showLoadingMessage();
       const img = e.target.closest(".photo__img");
       overlayBlock.classList.add("photo__overlay_active");
       const linkImg = img.getAttribute("src");
       bigImg.setAttribute("src", linkImg);
-      // bigImg.addEventListener('load', hideLoadingMessage);
     } else if (e.target.closest(".photo__overlay_close")) {
       overlayBlock.classList.remove("photo__overlay_active");
     } else if (e.target.classList.contains("photo__overlay")) {
       overlayBlock.classList.remove("photo__overlay_active");
     }
+  });
+  function resize() {
+    if (window.innerWidth <= 991) {
+      window.removeEventListener("scroll", scrolling);
+      menuTop.classList.add("transform");
+    } else {
+      window.addEventListener("scroll", scrolling);
+      menuTop.classList.remove("transform");
+    }
+  }
+  resize();
+  window.addEventListener("resize", resize);
+  const hamburger = document.querySelector(".hamburger");
+  const menuTopLine = document.querySelector(".menuTop__line");
+  const menuBigLogp = document.querySelector(".menuTop__bigLogo");
+  hamburger.addEventListener("click", () => {
+    menuTopLine.classList.toggle("transform__translateX");
+    menuBigLogp.classList.toggle("hidden__letter");
+    hamburger.classList.toggle("hamburger__cross");
   });
 });
 

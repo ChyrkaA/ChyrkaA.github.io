@@ -133,6 +133,7 @@ window.addEventListener("DOMContentLoaded", () => {
       menuTop.classList.remove("transform");
     }
   }
+  scrolling();
   window.addEventListener("scroll", scrolling);
   function onDisplay(entry) {
     entry.forEach(function (change) {
@@ -199,11 +200,35 @@ window.addEventListener("DOMContentLoaded", () => {
       menuBig.classList.add("top");
       window.removeEventListener("scroll", scrolling);
       menuTop.classList.add("transform");
+      menuTopLine.classList.remove("transform__translateX");
+      menuBigLogp.classList.remove("hidden__letter");
+      hamburger.classList.remove("hamburger__cross");
     });
   });
   menuBigClose.addEventListener("click", () => {
     menuBig.classList.remove("top");
-    window.addEventListener("scroll", scrolling);
+    if (window.innerWidth >= 991) {
+      window.addEventListener("scroll", scrolling);
+    }
+  });
+  function resize() {
+    if (window.innerWidth <= 991) {
+      window.removeEventListener("scroll", scrolling);
+      menuTop.classList.add("transform");
+    } else {
+      window.addEventListener("scroll", scrolling);
+      menuTop.classList.remove("transform");
+    }
+  }
+  resize();
+  window.addEventListener("resize", resize);
+  const hamburger = document.querySelector(".hamburger");
+  const menuTopLine = document.querySelector(".menuTop__line");
+  const menuBigLogp = document.querySelector(".menuTop__bigLogo");
+  hamburger.addEventListener("click", () => {
+    menuTopLine.classList.toggle("transform__translateX");
+    menuBigLogp.classList.toggle("hidden__letter");
+    hamburger.classList.toggle("hamburger__cross");
   });
 });
 
