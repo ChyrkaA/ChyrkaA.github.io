@@ -281,9 +281,6 @@ window.addEventListener("DOMContentLoaded", () => {
       menuBig.classList.add("top");
       window.removeEventListener("scroll", scrolling);
       menuTop.classList.add("transform");
-      menuTopLine.classList.remove("transform__translateX");
-      menuBigLogp.classList.remove("hidden__letter");
-      hamburger.classList.remove("hamburger__cross");
     });
   });
   menuBigClose.addEventListener("click", () => {
@@ -340,6 +337,12 @@ window.addEventListener("DOMContentLoaded", () => {
     menuTopLine.classList.toggle("transform__translateX");
     menuBigLogp.classList.toggle("hidden__letter");
     hamburger.classList.toggle("hamburger__cross");
+  });
+  const menuBigKontakty = document.querySelectorAll(".menuTop__items_link");
+  menuBigKontakty.forEach(item => {
+    item.addEventListener("click", () => {
+      hamburger.click();
+    });
   });
 });
 

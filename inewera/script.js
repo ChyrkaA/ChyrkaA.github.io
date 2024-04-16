@@ -101,20 +101,22 @@ window.addEventListener("DOMContentLoaded", () => {
   const catalogItem = document.querySelectorAll(".catalog__link");
   const catalogHeader = document.querySelectorAll(".catalog__header");
   const catalogImg = document.querySelectorAll(".catalog__img");
-  catalogItem.forEach((item, i) => {
-    item.addEventListener("mouseover", () => {
-      overlay[i].classList.add("active__overlay");
-      catalogHeader[i].classList.add("active__header");
-      catalogImg[i].classList.add("transform__scale");
+  if (innerWidth > 575) {
+    catalogItem.forEach((item, i) => {
+      item.addEventListener("mouseover", () => {
+        overlay[i].classList.add("active__overlay");
+        catalogHeader[i].classList.add("active__header");
+        catalogImg[i].classList.add("transform__scale");
+      });
     });
-  });
-  catalogItem.forEach((item, i) => {
-    item.addEventListener("mouseout", () => {
-      overlay[i].classList.remove("active__overlay");
-      catalogHeader[i].classList.remove("active__header");
-      catalogImg[i].classList.remove("transform__scale");
+    catalogItem.forEach((item, i) => {
+      item.addEventListener("mouseout", () => {
+        overlay[i].classList.remove("active__overlay");
+        catalogHeader[i].classList.remove("active__header");
+        catalogImg[i].classList.remove("transform__scale");
+      });
     });
-  });
+  }
   const showText = document.querySelector(".about__link");
   const text = document.querySelectorAll(".about__text");
   if (showText) {
@@ -200,9 +202,6 @@ window.addEventListener("DOMContentLoaded", () => {
       menuBig.classList.add("top");
       window.removeEventListener("scroll", scrolling);
       menuTop.classList.add("transform");
-      menuTopLine.classList.remove("transform__translateX");
-      menuBigLogp.classList.remove("hidden__letter");
-      hamburger.classList.remove("hamburger__cross");
     });
   });
   menuBigClose.addEventListener("click", () => {
@@ -229,6 +228,12 @@ window.addEventListener("DOMContentLoaded", () => {
     menuTopLine.classList.toggle("transform__translateX");
     menuBigLogp.classList.toggle("hidden__letter");
     hamburger.classList.toggle("hamburger__cross");
+  });
+  const menuBigKontakty = document.querySelectorAll(".menuTop__items_link");
+  menuBigKontakty.forEach(item => {
+    item.addEventListener("click", () => {
+      hamburger.click();
+    });
   });
 });
 
