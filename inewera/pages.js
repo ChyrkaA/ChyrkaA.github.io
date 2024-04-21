@@ -265,7 +265,8 @@ window.addEventListener("DOMContentLoaded", () => {
         const parrent = e.target.closest(".brendy__slider_slide");
         const letterContent = parrent.querySelector(".brendy__slider_slide-letter").textContent;
         Object(_services_filterData__WEBPACK_IMPORTED_MODULE_8__["default"])(letterContent, _services_loadData__WEBPACK_IMPORTED_MODULE_6__["dataObj"]);
-      } else if (e.target.closest( true && innerWidth >= 768)) {
+      } else if (e.target.closest(".button__Category") && innerWidth >= 768) {
+        console.log(1);
         Object(_modules_menuBig__WEBPACK_IMPORTED_MODULE_4__["showBigMenu"])("top", "scroll", "transform");
       } else if (e.target.closest(".menuBig__close")) {
         Object(_modules_menuBig__WEBPACK_IMPORTED_MODULE_4__["hideBigMenu"])("top", "scroll");
