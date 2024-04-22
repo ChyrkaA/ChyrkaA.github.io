@@ -114,12 +114,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 window.addEventListener("DOMContentLoaded", () => {
+  window.addEventListener("scroll", _services_scrolling__WEBPACK_IMPORTED_MODULE_1__["default"]);
   Object(_services_mouseAction__WEBPACK_IMPORTED_MODULE_7__["default"])();
   Object(_services_forms__WEBPACK_IMPORTED_MODULE_6__["default"])();
   Object(_services_observer__WEBPACK_IMPORTED_MODULE_4__["default"])();
   Object(_services_resize__WEBPACK_IMPORTED_MODULE_5__["default"])();
-  Object(_services_scrolling__WEBPACK_IMPORTED_MODULE_1__["default"])();
-  window.addEventListener("scroll", _services_scrolling__WEBPACK_IMPORTED_MODULE_1__["default"]);
+  // scrolling();
+
   function eventListener(action) {
     window.addEventListener(action, e => {
       if (e.target.classList.contains("button")) {
@@ -143,7 +144,8 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
   eventListener("click");
-  eventListener("touchend");
+  // eventListener("touchend");
+
   window.addEventListener("resize", _services_resize__WEBPACK_IMPORTED_MODULE_5__["default"]);
 });
 
@@ -363,6 +365,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function resize() {
   if (window.innerWidth <= 991) {
+    console.log(1);
     window.removeEventListener("scroll", _scrolling__WEBPACK_IMPORTED_MODULE_0__["default"]);
     _variables__WEBPACK_IMPORTED_MODULE_1__["menuTop"].classList.add("transform");
   } else {
