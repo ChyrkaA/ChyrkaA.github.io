@@ -514,6 +514,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function resize() {
   if (window.innerWidth <= 991) {
+    console.log(1);
     window.removeEventListener("scroll", _scrolling__WEBPACK_IMPORTED_MODULE_0__["default"]);
     _variables__WEBPACK_IMPORTED_MODULE_1__["menuTop"].classList.add("transform");
   } else {
