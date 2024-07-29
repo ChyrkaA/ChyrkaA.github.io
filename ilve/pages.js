@@ -354,7 +354,7 @@ function scrollAction(menuAction, menuColor) {
 /*!**************************************!*\
   !*** ./src/js/services/variables.js ***!
   \**************************************/
-/*! exports provided: menu, menuBig, menuList, menuProducts, body, menuSubtitleBlock, stylesLink, stylesImg, overlay, styles, arrows, modal */
+/*! exports provided: menu, menuBig, menuList, menuProducts, body, menuSubtitleBlock, stylesLink, stylesImg, overlay, styles, arrows, modal, modalWrapper */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -371,6 +371,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "styles", function() { return styles; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "arrows", function() { return arrows; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modal", function() { return modal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalWrapper", function() { return modalWrapper; });
 const menu = document.querySelector(".menu");
 const menuBig = document.querySelector(".menu__big");
 const menuList = document.querySelector(".menu__list");
@@ -383,6 +384,7 @@ const overlay = document.querySelector(".overlay");
 const styles = document.querySelector(".styles");
 const arrows = document.querySelector(".arrows");
 const modal = document.querySelector(".modal");
+const modalWrapper = document.querySelector(".modal__wrapper");
 
 
 /***/ })
