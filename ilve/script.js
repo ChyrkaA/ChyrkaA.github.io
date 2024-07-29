@@ -31611,6 +31611,33 @@ window.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("load", () => {
     Object(core_js__WEBPACK_IMPORTED_MODULE_9__["setTimeout"])(_modules_modal__WEBPACK_IMPORTED_MODULE_7__["default"], 1000);
   });
+  const forms = document.querySelectorAll("form");
+  const modalMini = document.querySelector(".modal__mini");
+  forms.forEach(form => {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      fetch("mailer/smart.php", {
+        method: "POST",
+        body: new FormData(this)
+      }).then(function (response) {
+        if (response.ok) {
+          form.querySelectorAll("input").forEach(input => {
+            input.value = "";
+          });
+          _services_variables__WEBPACK_IMPORTED_MODULE_8__["modalWrapper"].classList.remove("show");
+          modalMini.classList.add("show");
+          Object(core_js__WEBPACK_IMPORTED_MODULE_9__["setTimeout"])(function () {
+            _services_variables__WEBPACK_IMPORTED_MODULE_8__["modal"].classList.remove("show");
+            modalMini.classList.remove("show");
+          }, 5000);
+          form.reset();
+        }
+      }).catch(error => {
+        console.log("Error:", error);
+      });
+      return false;
+    });
+  });
 });
 
 /***/ }),
@@ -31672,6 +31699,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function modalShow() {
   _services_variables__WEBPACK_IMPORTED_MODULE_0__["modal"].classList.add("show");
+  _services_variables__WEBPACK_IMPORTED_MODULE_0__["modalWrapper"].classList.add("show");
 }
 /* harmony default export */ __webpack_exports__["default"] = (modalShow);
 
@@ -31878,7 +31906,7 @@ function scrollAction(menuAction, menuColor) {
 /*!**************************************!*\
   !*** ./src/js/services/variables.js ***!
   \**************************************/
-/*! exports provided: menu, menuBig, menuList, menuProducts, body, menuSubtitleBlock, stylesLink, stylesImg, overlay, styles, arrows, modal */
+/*! exports provided: menu, menuBig, menuList, menuProducts, body, menuSubtitleBlock, stylesLink, stylesImg, overlay, styles, arrows, modal, modalWrapper */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31895,6 +31923,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "styles", function() { return styles; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "arrows", function() { return arrows; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modal", function() { return modal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalWrapper", function() { return modalWrapper; });
 const menu = document.querySelector(".menu");
 const menuBig = document.querySelector(".menu__big");
 const menuList = document.querySelector(".menu__list");
@@ -31907,6 +31936,7 @@ const overlay = document.querySelector(".overlay");
 const styles = document.querySelector(".styles");
 const arrows = document.querySelector(".arrows");
 const modal = document.querySelector(".modal");
+const modalWrapper = document.querySelector(".modal__wrapper");
 
 
 /***/ })
