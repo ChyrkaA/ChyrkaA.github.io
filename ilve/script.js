@@ -31596,7 +31596,7 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (e.target.closest(".hamburger") || e.target.classList.contains(".hamburger")) {
         Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_6__["default"])("menu__full_white", "menu__forbigproduct", "menu__big_show", "menu__list_hide", "menu__display_none", "overflow_scroll", "show", "height");
       } else if (e.target.closest(".modal__close")) {
-        _services_variables__WEBPACK_IMPORTED_MODULE_8__["modal"].classList.remove("show");
+        _services_variables__WEBPACK_IMPORTED_MODULE_8__["modal"].classList.remove("show__modal");
       }
     });
   }
@@ -31698,7 +31698,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_variables__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/variables */ "./src/js/services/variables.js");
 
 function modalShow() {
-  _services_variables__WEBPACK_IMPORTED_MODULE_0__["modal"].classList.add("show");
+  _services_variables__WEBPACK_IMPORTED_MODULE_0__["modal"].classList.add("show__modal");
   _services_variables__WEBPACK_IMPORTED_MODULE_0__["modalWrapper"].classList.add("show");
 }
 /* harmony default export */ __webpack_exports__["default"] = (modalShow);
