@@ -99,7 +99,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_variables__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/variables */ "./src/js/services/variables.js");
 
 
-function hamburger(menuFullWhite, menuForBigProduct, showBigMenu, hideMenuList, menuDisplayNone, overflowScroll, show, menuHeight) {
+function hamburger(menuFullWhite, menuForBigProduct, showBigMenu, hideMenuList, menuDisplayNone, overflowScroll, overflowHidden, show, menuHeight) {
   if (_services_variables__WEBPACK_IMPORTED_MODULE_1__["menu"].classList.contains(menuFullWhite) && !_services_variables__WEBPACK_IMPORTED_MODULE_1__["menu"].classList.contains(menuForBigProduct)) {
     window.addEventListener("scroll", _showTopMenu__WEBPACK_IMPORTED_MODULE_0__["default"]);
     _services_variables__WEBPACK_IMPORTED_MODULE_1__["menuBig"].classList.toggle(showBigMenu);
@@ -117,7 +117,7 @@ function hamburger(menuFullWhite, menuForBigProduct, showBigMenu, hideMenuList, 
     _services_variables__WEBPACK_IMPORTED_MODULE_1__["menu"].classList.toggle(menuFullWhite);
     _services_variables__WEBPACK_IMPORTED_MODULE_1__["menu"].classList.toggle(menuForBigProduct);
     _services_variables__WEBPACK_IMPORTED_MODULE_1__["menuProducts"].classList.toggle(show);
-    _services_variables__WEBPACK_IMPORTED_MODULE_1__["body"].classList.toggle(overflowScroll);
+    _services_variables__WEBPACK_IMPORTED_MODULE_1__["body"].classList.toggle(overflowHidden);
   } else {
     removeEventListener("scroll", _showTopMenu__WEBPACK_IMPORTED_MODULE_0__["default"]);
     _services_variables__WEBPACK_IMPORTED_MODULE_1__["menuBig"].classList.toggle(showBigMenu);
@@ -281,7 +281,7 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (e.target.closest(".menu__subtitle")) {
         Object(_modules_smallMenu__WEBPACK_IMPORTED_MODULE_4__["default"])(e.target, "show", "height", "overflow_scroll");
       } else if (e.target.closest(".hamburger") || e.target.classList.contains(".hamburger")) {
-        Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_1__["default"])("menu__full_white", "menu__forbigproduct", "menu__big_show", "menu__list_hide", "menu__display_none", "overflow_scroll", "show", "height");
+        Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_1__["default"])("menu__full_white", "menu__forbigproduct", "menu__big_show", "menu__list_hide", "menu__display_none", "overflow_scroll", "overflow_hidden", "show", "height");
       }
     });
   }
