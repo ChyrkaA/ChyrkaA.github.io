@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+        content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
     <!--    <link rel="preload"-->
     <!--          as="style"-->
@@ -14,1163 +14,1212 @@
     <!--          href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"-->
     <!--          media="print"-->
     <!--          onload="this.media='all'">-->
-    <link rel="stylesheet"
-          href="css/style.css">
+    <!-- <link rel="stylesheet"
+          href="css/style.css"> -->
+    <link rel="preload"
+        as="style"
+        href="css/style.css"
+        onload="this.rel='stylesheet'; this.onload=null;">
 </head>
 
 <body>
-<header id="up">
-    <div class="container">
-        <nav class="menu">
-            <div class="menu__wrapper">
-                <div class="menu__left">
-                    <img src="img/menu/logo.svg"
-                         alt="logo"
-                         class="menu__left-logo"
-                         loading="lazy">
-                    <div class="menu__left-text">Ocean<span>NFT</span></div>
+    <header id="up">
+        <div class="container">
+            <nav class="menu">
+                <div class="menu__wrapper">
+                    <div class="menu__left">
+                        <img src="img/menu/logo.svg"
+                            alt="logo"
+                            class="menu__left-logo"
+                            loading="lazy">
+                        <div class="menu__left-text">Ocean<span>NFT</span></div>
+                    </div>
+                    <div class="menu__center">
+                        <ul class="menu__list">
+                            <li class="menu__items">
+                                <a class="menu__items-link"
+                                    href="#">Market
+                                </a>
+                            </li>
+                            <li class="menu__items">
+                                <a class="menu__items-link"
+                                    href="#">Features
+                                </a>
+                            </li>
+                            <li class="menu__items">
+                                <a class="menu__items-link"
+                                    href="#">Community
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu__buttons">
+                        <a class="menu__basket"
+                            href="#">
+                            <img loading="lazy"
+                                src="img/menu/basket.svg"
+                                alt="basket"
+                                class="menu__basket-img">
+                        </a>
+                        <a class="menu__profile"
+                            href="#">
+                            <img loading="lazy"
+                                src="img/menu/profile.svg"
+                                alt="profile"
+                                class="menu__profile-img">
+                        </a>
+                    </div>
+                    <div class="hamburger">
+                        <span class="spans"></span>
+                        <span class="spans"></span>
+                        <span class="spans"></span>
+                    </div>
                 </div>
-                <div class="menu__center">
-                    <ul class="menu__list">
-                        <li class="menu__items">
-                            <a class="menu__items-link"
-                               href="#">Market
-                            </a>
-                        </li>
-                        <li class="menu__items">
-                            <a class="menu__items-link"
-                               href="#">Features
-                            </a>
-                        </li>
-                        <li class="menu__items">
-                            <a class="menu__items-link"
-                               href="#">Community
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="menu__buttons">
-                    <a class="menu__basket"
-                       href="#">
-                        <img loading="lazy" src="img/menu/basket.svg"
-                             alt="basket"
-                             class="menu__basket-img">
+
+            </nav>
+        </div>
+        <nav class="menu__big-menu">
+            <div class="menu__big-menu-overlay"></div>
+            <ul class="menu__big-menu-list">
+                <li class="menu__big-menu-items">
+                    <a class="menu__big-menu-items-link"
+                        href="#">Market
                     </a>
-                    <a class="menu__profile"
-                       href="#">
-                        <img loading="lazy" src="img/menu/profile.svg"
-                             alt="profile"
-                             class="menu__profile-img">
+                </li>
+                <li class="menu__big-menu-items">
+                    <a class="menu__big-menu-items-link"
+                        href="#">Features
+                    </a>
+                </li>
+                <li class="menu__big-menu-items">
+                    <a class="menu__big-menu-items-link"
+                        href="#">Community
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="discover">
+        <div class="container">
+            <div class="discover__wrapper">
+                <h1 class="discover__title">Discover, collect, and sell <span>Timeless</span>
+                    NFTs</h1>
+                <p class="discover__text">The world’s first and largest digital marketplace
+                    for crypto collectibles and
+                    non- fungible tokens (NFTs). </p>
+                <div class="discover__links">
+                    <div class="discover__btns">
+                        <a class="discover__btns-btn"
+                            href="#">Explore
+                            <img loading="lazy"
+                                src="img/discover/arrow.svg"
+                                alt="arrow"
+                                class="discover__btns-btn-img">
+                        </a>
+                        <div class="discover__btns-shadow"></div>
+                    </div>
+                    <a class="discover__links-link"
+                        href="#">Create NFT’s
                     </a>
                 </div>
-                <div class="hamburger">
-                    <span class="spans"></span>
-                    <span class="spans"></span>
-                    <span class="spans"></span>
+
+                <div class="discover__counters">
+                    <div class="discover__counter">
+                        <div class="discover__counter-title">35m+</div>
+                        <div class="discover__counter-subtitle">Artwork</div>
+                    </div>
+
+                    <div class="discover__counter">
+                        <div class="discover__counter-title">18m+</div>
+                        <div class="discover__counter-subtitle">Auctions</div>
+                    </div>
+
+                    <div class="discover__counter">
+                        <div class="discover__counter-title">500k+</div>
+                        <div class="discover__counter-subtitle">Artists</div>
+                    </div>
+                </div>
+
+                <div class="discover__card">
+                    <img loading="lazy"
+                        src="img/discover/img.webp"
+                        alt="img"
+                        width="324"
+                        height="386"
+                        class="discover__img">
+
+                    <div class="discover__block">
+                        <div class="discover__info">
+                            <div class="discover__left">
+                                <div class="discover__left-title">
+                                    3D Abstract Hand
+                                </div>
+
+                                <div class="discover__left-user">
+                                    <img loading="lazy"
+                                        src="img/discover/avatar.webp"
+                                        alt="avatar"
+                                        class="discover__left-user-photo">
+                                    <div class="discover__left-user-nickname">@jhonartist
+                                    </div>
+                                    <img loading="lazy"
+                                        src="img/discover/point.webp"
+                                        alt="point"
+                                        class="discover__left-user-point">
+                                </div>
+                                <div class="discover__left-subtitle">Reserve price</div>
+                                <div class="discover__left-etherum">
+                                    <img loading="lazy"
+                                        src="img/discover/logo.svg"
+                                        alt="logo"
+                                        class="discover__left-etherum-img">
+                                    <div class="discover__left-etherum-title">ETH 9.31</div>
+                                    <div class="discover__left-etherum-subtitle">($29,8846)
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="discover__right">
+                                <div class="discover__right-title">Auction Ends in</div>
+                                <div class="discover__right-counters">
+                                    <div class="discover__right-counter">
+                                        <div class="discover__right-counter-title">18</div>
+                                        <div class="discover__right-counter-subtitle">Hours
+                                        </div>
+                                    </div>
+                                    <div class="discover__right-counter">
+                                        <div class="discover__right-counter-title">25</div>
+                                        <div class="discover__right-counter-subtitle">Mins
+                                        </div>
+                                    </div>
+                                    <div class="discover__right-counter">
+                                        <div class="discover__right-counter-title">44</div>
+                                        <div class="discover__right-counter-subtitle">Secs
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="discover__btns-btn discover__right-btn"
+                                    href="#">Place Bid
+                                    <img loading="lazy"
+                                        src="img/discover/arrow.svg"
+                                        alt="arrow"
+                                        class="discover__right-btn-img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="discover__bckg"></div>
+                    </div>
+                </div>
+                <div class="wave">
+                    <div class="wave__line"
+                        data-text="xxxxxxxxxxxxxx">
+
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+    </section>
+    <section class="company">
+        <div class="container">
+            <div class="company__wrapper">
+                <img loading="lazy"
+                    src="img/company/bin.svg"
+                    alt="binance"
+                    class="company__logo">
+                <img loading="lazy"
+                    src="img/company/eth.svg"
+                    alt="etherum"
+                    class="company__logo">
+                <img loading="lazy"
+                    src="img/company/block.svg"
+                    alt="blockchain"
+                    class="company__logo">
+                <img loading="lazy"
+                    src="img/company/bit.svg"
+                    alt="bitmex"
+                    class="company__logo">
+            </div>
+        </div>
+    </section>
 
-        </nav>
-    </div>
-    <nav class="menu__big-menu">
-        <div class="menu__big-menu-overlay"></div>
-        <ul class="menu__big-menu-list">
-            <li class="menu__big-menu-items">
-                <a class="menu__big-menu-items-link"
-                   href="#">Market
-                </a>
-            </li>
-            <li class="menu__big-menu-items">
-                <a class="menu__big-menu-items-link"
-                   href="#">Features
-                </a>
-            </li>
-            <li class="menu__big-menu-items">
-                <a class="menu__big-menu-items-link"
-                   href="#">Community
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
+    <!--<section class="nft">-->
+    <!--    <div class="container">-->
+    <!--        <div class="nft__wrapper">-->
+    <!--            <div class="nft__text">-->
+    <!--                <h2 class="nft__title">Top NFT’s now</h2>-->
+    <!--                <a class="nft__view"-->
+    <!--                   href="#">-->
+    <!--                    <div class="nft__view-text">View all</div>-->
+    <!--                    <img loading="lazy" src="img/discover/arrow.svg"-->
+    <!--                         alt="arrow"-->
+    <!--                         class="nft__view-arrow">-->
+    <!--                </a>-->
+    <!--            </div>-->
+    <!--            <div class="nft__cards_container">-->
+    <!--                <div class="nft__cards swiper-wrapper">-->
+    <!--                    <div class="nft__card swiper-slide">-->
+    <!--                        <img loading="lazy" src="img/nft/3.webp"-->
+    <!--                             alt="1"-->
+    <!--                             class="nft__img">-->
+    <!--                        <div class="discover__block">-->
+    <!--                            <div class="discover__info">-->
+    <!--                                <div class="discover__left">-->
+    <!--                                    <div class="discover__left-title">Apollo Eth #1289-->
+    <!--                                        NFT-->
+    <!--                                    </div>-->
+    <!--                                    <div class="discover__left-user">-->
+    <!--                                        <img loading="lazy" src="img/nft/ell1.webp"-->
+    <!--                                             alt="avatar"-->
+    <!--                                             class="discover__left-user-photo">-->
+    <!--                                        <div class="discover__left-user-nickname">-->
+    <!--                                            @jhonartist-->
+    <!--                                        </div>-->
+    <!--                                        <img loading="lazy" src="img/discover/point.webp"-->
+    <!--                                             alt="point"-->
+    <!--                                             class="discover__left-user-point">-->
+    <!--                                    </div>-->
+    <!--                                    <div class="discover__left-subtitle">Reserve price-->
+    <!--                                    </div>-->
+    <!--                                    <div class="discover__left-etherum">-->
+    <!--                                        <img loading="lazy" src="img/discover/logo.svg"-->
+    <!--                                             alt="logo"-->
+    <!--                                             class="discover__left-etherum-img">-->
+    <!--                                        <div class="discover__left-etherum-title">ETH-->
+    <!--                                            9.31-->
+    <!--                                        </div>-->
+    <!--                                        <div class="discover__left-etherum-subtitle">-->
+    <!--                                            ($29,8846)-->
+    <!--                                        </div>-->
+    <!--                                    </div>-->
+    <!--                                </div>-->
+    <!--                                <div class="discover__right">-->
+    <!--                                    <div class="discover__right-title">Auction Ends in-->
+    <!--                                    </div>-->
+    <!--                                    <div class="discover__right-counters">-->
+    <!--                                        <div class="discover__right-counter">-->
+    <!--                                            <div class="discover__right-counter-title">-->
+    <!--                                                18-->
+    <!--                                            </div>-->
+    <!--                                            <div class="discover__right-counter-subtitle">-->
+    <!--                                                Hours-->
+    <!--                                            </div>-->
+    <!--                                        </div>-->
+    <!--                                        <div class="discover__right-counter">-->
+    <!--                                            <div class="discover__right-counter-title">-->
+    <!--                                                25-->
+    <!--                                            </div>-->
+    <!--                                            <div class="discover__right-counter-subtitle">-->
+    <!--                                                Mins-->
+    <!--                                            </div>-->
+    <!--                                        </div>-->
+    <!--                                        <div class="discover__right-counter">-->
+    <!--                                            <div class="discover__right-counter-title">-->
+    <!--                                                44-->
+    <!--                                            </div>-->
+    <!--                                            <div class="discover__right-counter-subtitle">-->
+    <!--                                                Secs-->
+    <!--                                            </div>-->
+    <!--                                        </div>-->
+    <!--                                    </div>-->
+    <!--                                    <a class="discover__btns-btn discover__right-btn"-->
+    <!--                                       href="#">Place Bid-->
+    <!--                                        <img loading="lazy" src="img/discover/arrow.svg"-->
+    <!--                                             alt="arrow"-->
+    <!--                                             class="discover__right-btn-img">-->
+    <!--                                    </a>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                    <div class="nft__card swiper-slide">-->
+    <!--                        <img loading="lazy" src="img/nft/2.webp"-->
+    <!--                             alt="2"-->
+    <!--                             class="nft__img">-->
+    <!--                        <div class="discover__block">-->
+    <!--                            <div class="discover__info">-->
+    <!--                                <div class="discover__left">-->
+    <!--                                    <div class="discover__left-title">Sassy Bull #1169-->
+    <!--                                        Art-->
+    <!--                                    </div>-->
+    <!--                                    <div class="discover__left-user">-->
+    <!--                                        <img loading="lazy" src="img/nft/all2.webp"-->
+    <!--                                             alt="avatar"-->
+    <!--                                             class="discover__left-user-photo">-->
+    <!--                                        <div class="discover__left-user-nickname">-->
+    <!--                                            @jhonartist-->
+    <!--                                        </div>-->
+    <!--                                        <img loading="lazy" src="img/discover/point.webp"-->
+    <!--                                             alt="point"-->
+    <!--                                             class="discover__left-user-point">-->
+    <!--                                    </div>-->
+    <!--                                    <div class="discover__left-subtitle">Reserve price-->
+    <!--                                    </div>-->
+    <!--                                    <div class="discover__left-etherum">-->
+    <!--                                        <img loading="lazy" src="img/discover/logo.svg"-->
+    <!--                                             alt="logo"-->
+    <!--                                             class="discover__left-etherum-img">-->
+    <!--                                        <div class="discover__left-etherum-title">ETH-->
+    <!--                                            9.31-->
+    <!--                                        </div>-->
+    <!--                                        <div class="discover__left-etherum-subtitle">-->
+    <!--                                            ($29,8846)-->
+    <!--                                        </div>-->
+    <!--                                    </div>-->
+    <!--                                </div>-->
+    <!--                                <div class="discover__right">-->
+    <!--                                    <div class="discover__right-title">Auction Ends in-->
+    <!--                                    </div>-->
+    <!--                                    <div class="discover__right-counters">-->
+    <!--                                        <div class="discover__right-counter">-->
+    <!--                                            <div class="discover__right-counter-title">-->
+    <!--                                                09-->
+    <!--                                            </div>-->
+    <!--                                            <div class="discover__right-counter-subtitle">-->
+    <!--                                                Hours-->
+    <!--                                            </div>-->
+    <!--                                        </div>-->
+    <!--                                        <div class="discover__right-counter">-->
+    <!--                                            <div class="discover__right-counter-title">-->
+    <!--                                                15-->
+    <!--                                            </div>-->
+    <!--                                            <div class="discover__right-counter-subtitle">-->
+    <!--                                                Mins-->
+    <!--                                            </div>-->
+    <!--                                        </div>-->
+    <!--                                        <div class="discover__right-counter">-->
+    <!--                                            <div class="discover__right-counter-title">-->
+    <!--                                                23-->
+    <!--                                            </div>-->
+    <!--                                            <div class="discover__right-counter-subtitle">-->
+    <!--                                                Secs-->
+    <!--                                            </div>-->
+    <!--                                        </div>-->
+    <!--                                    </div>-->
+    <!--                                    <a class="discover__btns-btn discover__right-btn"-->
+    <!--                                       href="#">Place Bid-->
+    <!--                                        <img loading="lazy" src="img/discover/arrow.svg"-->
+    <!--                                             alt="arrow"-->
+    <!--                                             class="discover__right-btn-img">-->
+    <!--                                    </a>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                    <div class="nft__card swiper-slide">-->
+    <!--                        <img loading="lazy" src="img/nft/1.webp"-->
+    <!--                             alt="3"-->
+    <!--                             class="nft__img">-->
+    <!--                        <div class="discover__block">-->
+    <!--                            <div class="discover__info">-->
+    <!--                                <div class="discover__left">-->
+    <!--                                    <div class="discover__left-title">Satisfying 3D Art-->
+    <!--                                    </div>-->
+    <!--                                    <div class="discover__left-user">-->
+    <!--                                        <img loading="lazy" src="img/nft/ell3.webp"-->
+    <!--                                             alt="avatar"-->
+    <!--                                             class="discover__left-user-photo">-->
+    <!--                                        <div class="discover__left-user-nickname">-->
+    <!--                                            @jhonartist-->
+    <!--                                        </div>-->
+    <!--                                        <img loading="lazy" src="img/discover/point.webp"-->
+    <!--                                             alt="point"-->
+    <!--                                             class="discover__left-user-point">-->
+    <!--                                    </div>-->
+    <!--                                    <div class="discover__left-subtitle">Reserve price-->
+    <!--                                    </div>-->
+    <!--                                    <div class="discover__left-etherum">-->
+    <!--                                        <img loading="lazy" src="img/discover/logo.svg"-->
+    <!--                                             alt="logo"-->
+    <!--                                             class="discover__left-etherum-img">-->
+    <!--                                        <div class="discover__left-etherum-title">ETH-->
+    <!--                                            9.31-->
+    <!--                                        </div>-->
+    <!--                                        <div class="discover__left-etherum-subtitle">-->
+    <!--                                            ($29,8846)-->
+    <!--                                        </div>-->
+    <!--                                    </div>-->
+    <!--                                </div>-->
+    <!--                                <div class="discover__right">-->
+    <!--                                    <div class="discover__right-title">Auction Ends in-->
+    <!--                                    </div>-->
+    <!--                                    <div class="discover__right-counters">-->
+    <!--                                        <div class="discover__right-counter">-->
+    <!--                                            <div class="discover__right-counter-title">-->
+    <!--                                                23-->
+    <!--                                            </div>-->
+    <!--                                            <div class="discover__right-counter-subtitle">-->
+    <!--                                                Hours-->
+    <!--                                            </div>-->
+    <!--                                        </div>-->
+    <!--                                        <div class="discover__right-counter">-->
+    <!--                                            <div class="discover__right-counter-title">-->
+    <!--                                                32-->
+    <!--                                            </div>-->
+    <!--                                            <div class="discover__right-counter-subtitle">-->
+    <!--                                                Mins-->
+    <!--                                            </div>-->
+    <!--                                        </div>-->
+    <!--                                        <div class="discover__right-counter">-->
+    <!--                                            <div class="discover__right-counter-title">-->
+    <!--                                                56-->
+    <!--                                            </div>-->
+    <!--                                            <div class="discover__right-counter-subtitle">-->
+    <!--                                                Secs-->
+    <!--                                            </div>-->
+    <!--                                        </div>-->
+    <!--                                    </div>-->
+    <!--                                    <a class="discover__btns-btn discover__right-btn"-->
+    <!--                                       href="#">Place Bid-->
+    <!--                                        <img loading="lazy" src="img/discover/arrow.svg"-->
+    <!--                                             alt="arrow"-->
+    <!--                                             class="discover__right-btn-img">-->
+    <!--                                    </a>-->
+    <!--                                </div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="discover__btns nft__btns">-->
+    <!--                <a class="discover__btns-btn"-->
+    <!--                   href="#">Explore-->
+    <!--                    <img loading="lazy" src="img/discover/arrow.svg"-->
+    <!--                         alt="arrow"-->
+    <!--                         class="discover__btns-btn-img">-->
+    <!--                </a>-->
+    <!--                <div class="discover__btns-shadow"></div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--    <div class="circle1"></div>-->
+    <!--    <div class="circle2"></div>-->
+    <!--</section>-->
+    <section class="collections">
+        <div class="container">
+            <div class="collections__wrapper">
+                <div class="collections__left">
+                    <h2 class="nft__title collections__title">Explore Collections</h2>
+                    <div class="collections__tabs">
+                        <div class="collections__tab">Photography</div>
+                        <div class="collections__tab">Sports</div>
+                        <div class="collections__tab">Brands</div>
+                        <div class="collections__tab">Collectibles</div>
+                        <div class="collections__tab collections__tab_active">Art</div>
+                        <div class="collections__tab">Utility</div>
+                        <div class="collections__tab">Brands</div>
+                        <div class="collections__tab">Collectibles</div>
+                    </div>
+                    <a class="nft__view collections__view"
+                        href="#">
+                        <div class="nft__view-text">View all</div>
+                        <img loading="lazy"
+                            src="img/discover/arrow.svg"
+                            alt="arrow"
+                            class="nft__view-arrow">
+                    </a>
+                </div>
+                <div class="collections__right">
+                    <img loading="lazy"
+                        src="img/collections/art.webp"
+                        alt="art"
+                        width="320"
+                        height="600"
+                        class="collections__right-img">
+                </div>
+            </div>
+        </div>
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+        <div class="circle3"></div>
+    </section>
+    <!--<section class="explorecol">-->
+    <!--    <div class="container">-->
+    <!--        <div class="explorecol__wrapper">-->
+    <!--            <div class="nft__text">-->
+    <!--                <h2 class="nft__title">Explore Collections</h2>-->
+    <!--                <a class="nft__view"-->
+    <!--                   href="#">-->
+    <!--                    <div class="nft__view-text">View all</div>-->
+    <!--                    <img loading="lazy" src="img/discover/arrow.svg"-->
+    <!--                         alt="arrow"-->
+    <!--                         class="nft__view-arrow">-->
+    <!--                </a>-->
+    <!--            </div>-->
+    <!--            <div class="explorecol__container">-->
+    <!--                <div class="explorecol__cards swiper-wrapper">-->
+    <!--                    <div class="explorecol__card swiper-slide">-->
+    <!--                        <img loading="lazy" src="img/explorercol/img.webp"-->
+    <!--                             alt="img"-->
+    <!--                             class="explorecol__img">-->
+    <!--                        <img loading="lazy" src="img/explorercol/nickey.webp"-->
+    <!--                             alt="nickey"-->
+    <!--                             class="explorecol__avatar">-->
+    <!--                        <div class="explorecol__name">Jhones Nickey</div>-->
+    <!--                        <div class="explorecol__nickname">-->
+    <!--                            <div class="explorecol__link">@jhonartist</div>-->
+    <!--                            <img loading="lazy" src="img/discover/point.webp"-->
+    <!--                                 alt="point"-->
+    <!--                                 class="explorecol__point">-->
+    <!--                        </div>-->
+    <!--                        <div class="explorecol__counters">-->
+    <!--                            <div class="explorecol__counter">-->
+    <!--                                <div class="explorecol__counter-number">125</div>-->
+    <!--                                <div class="explorecol__counter-name">Folowers</div>-->
+    <!--                            </div>-->
+    <!--                            <div class="explorecol__counter">-->
+    <!--                                <div class="explorecol__counter-number">256</div>-->
+    <!--                                <div class="explorecol__counter-name">Following</div>-->
+    <!--                            </div>-->
+    <!--                            <div class="explorecol__counter">-->
+    <!--                                <div class="explorecol__counter-number">129</div>-->
+    <!--                                <div class="explorecol__counter-name">Artworks</div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="discover__btns-btn discover__right-btn explorecol__btn">-->
+    <!--                            Follow-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                    <div class="explorecol__card swiper-slide">-->
+    <!--                        <img loading="lazy" src="img/explorercol/img.webp"-->
+    <!--                             alt="img"-->
+    <!--                             class="explorecol__img">-->
+    <!--                        <img loading="lazy" src="img/explorercol/fisher.webp"-->
+    <!--                             alt="fisher"-->
+    <!--                             class="explorecol__avatar">-->
+    <!--                        <div class="explorecol__name">Cody Fisher</div>-->
+    <!--                        <div class="explorecol__nickname">-->
+    <!--                            <div class="explorecol__link">@codyfishe</div>-->
+    <!--                            <img loading="lazy" src="img/discover/point.webp"-->
+    <!--                                 alt="point"-->
+    <!--                                 class="explorecol__point">-->
+    <!--                        </div>-->
+    <!--                        <div class="explorecol__counters">-->
+    <!--                            <div class="explorecol__counter">-->
+    <!--                                <div class="explorecol__counter-number">356</div>-->
+    <!--                                <div class="explorecol__counter-name">Folowers</div>-->
+    <!--                            </div>-->
+    <!--                            <div class="explorecol__counter">-->
+    <!--                                <div class="explorecol__counter-number">456</div>-->
+    <!--                                <div class="explorecol__counter-name">Following</div>-->
+    <!--                            </div>-->
+    <!--                            <div class="explorecol__counter">-->
+    <!--                                <div class="explorecol__counter-number">89</div>-->
+    <!--                                <div class="explorecol__counter-name">Artworks</div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="discover__btns-btn discover__right-btn explorecol__btn">-->
+    <!--                            Follow-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                    <div class="explorecol__card swiper-slide">-->
+    <!--                        <img loading="lazy" src="img/explorercol/img.webp"-->
+    <!--                             alt="img"-->
+    <!--                             class="explorecol__img">-->
+    <!--                        <img loading="lazy" src="img/explorercol/bell.webp"-->
+    <!--                             alt="bell"-->
+    <!--                             class="explorecol__avatar">-->
+    <!--                        <div class="explorecol__name">Jerome Bell</div>-->
+    <!--                        <div class="explorecol__nickname">-->
+    <!--                            <div class="explorecol__link">@jeromebt</div>-->
+    <!--                            <img loading="lazy" src="img/discover/point.webp"-->
+    <!--                                 alt="point"-->
+    <!--                                 class="explorecol__point">-->
+    <!--                        </div>-->
+    <!--                        <div class="explorecol__counters">-->
+    <!--                            <div class="explorecol__counter">-->
+    <!--                                <div class="explorecol__counter-number">546</div>-->
+    <!--                                <div class="explorecol__counter-name">Folowers</div>-->
+    <!--                            </div>-->
+    <!--                            <div class="explorecol__counter">-->
+    <!--                                <div class="explorecol__counter-number">789</div>-->
+    <!--                                <div class="explorecol__counter-name">Following</div>-->
+    <!--                            </div>-->
+    <!--                            <div class="explorecol__counter">-->
+    <!--                                <div class="explorecol__counter-number">54</div>-->
+    <!--                                <div class="explorecol__counter-name">Artworks</div>-->
+    <!--                            </div>-->
+    <!--                        </div>-->
+    <!--                        <div class="discover__btns-btn discover__right-btn explorecol__btn">-->
+    <!--                            Follow-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="discover__btns nft__btns">-->
+    <!--                <a class="discover__btns-btn"-->
+    <!--                   href="#">Explore-->
+    <!--                    <img loading="lazy" src="img/discover/arrow.svg"-->
+    <!--                         alt="arrow"-->
+    <!--                         class="discover__btns-btn-img">-->
+    <!--                </a>-->
+    <!--                <div class="discover__btns-shadow"></div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--    <div class="circle1"></div>-->
+    <!--</section>-->
 
-<section class="discover">
-    <div class="container">
-        <div class="discover__wrapper">
-            <h1 class="discover__title">Discover, collect, and sell <span>Timeless</span>
-                NFTs</h1>
-            <p class="discover__text">The world’s first and largest digital marketplace
-                for crypto collectibles and
-                non- fungible tokens (NFTs). </p>
-            <div class="discover__links">
-                <div class="discover__btns">
+    <section class="sellers">
+        <div class="container">
+            <div class="sellers__wrapper">
+                <h2 class="sellers__title">Top Sellers this
+                    <span>Month
+                        <img loading="lazy"
+                            src="img/sellers/chevron.svg"
+                            alt="chevron"
+                            width="13"
+                            height="8"
+                            class="sellers__title_chevron">
+                    </span>
+                </h2>
+                <p class="sellers__text">Amet minim mollit non deserunt ullamco est sit aliqua
+                    dolor do amet sint. Velit
+                    officia consequat duis enim minim mollit.</p>
+                <div class="sellers__tabs">
+                    <div class="sellers__tab">
+                        <div class="sellers__tab-left">
+                            <div class="sellers__tab-num">1</div>
+                            <img loading="lazy"
+                                src="img/sellers/1.webp"
+                                alt="1"
+                                class="sellers__tab-avatar">
+                            <div class="sellers__tab-info">
+                                <div class="sellers__tab-name">Eleanor Pena</div>
+                                <div class="sellers__tab-counter">
+                                    <img loading="lazy"
+                                        src="img/discover/logo.svg"
+                                        alt="logo"
+                                        class="sellers__tab-counter-img">
+                                    <div class="sellers__tab-counter-count">74875</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sellers__tab-percentage">+468.48%</div>
+                    </div>
+                    <div class="sellers__tab">
+                        <div class="sellers__tab-left">
+                            <div class="sellers__tab-num">2</div>
+                            <img loading="lazy"
+                                src="img/sellers/2.webp"
+                                alt="2"
+                                class="sellers__tab-avatar">
+                            <div class="sellers__tab-info">
+                                <div class="sellers__tab-name">Savannah Nguyen</div>
+                                <div class="sellers__tab-counter">
+                                    <img loading="lazy"
+                                        src="img/discover/logo.svg"
+                                        alt="logo"
+                                        class="sellers__tab-counter-img">
+                                    <div class="sellers__tab-counter-count">18599</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sellers__tab-percentage_red">+468.48%</div>
+                    </div>
+                    <div class="sellers__tab">
+                        <div class="sellers__tab-left">
+                            <div class="sellers__tab-num">3</div>
+                            <img loading="lazy"
+                                src="img/sellers/3.webp"
+                                alt="3"
+                                class="sellers__tab-avatar">
+                            <div class="sellers__tab-info">
+                                <div class="sellers__tab-name">Arlene McCoy</div>
+                                <div class="sellers__tab-counter">
+                                    <img loading="lazy"
+                                        src="img/discover/logo.svg"
+                                        alt="logo"
+                                        class="sellers__tab-counter-img">
+                                    <div class="sellers__tab-counter-count">45904</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sellers__tab-percentage">+468.48%</div>
+                    </div>
+                    <div class="sellers__tab">
+                        <div class="sellers__tab-left">
+                            <div class="sellers__tab-num">4</div>
+                            <img loading="lazy"
+                                src="img/sellers/4.webp"
+                                alt="4"
+                                class="sellers__tab-avatar">
+                            <div class="sellers__tab-info">
+                                <div class="sellers__tab-name">Esther Howard</div>
+                                <div class="sellers__tab-counter">
+                                    <img loading="lazy"
+                                        src="img/discover/logo.svg"
+                                        alt="logo"
+                                        class="sellers__tab-counter-img">
+                                    <div class="sellers__tab-counter-count">16627</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sellers__tab-percentage_red">+468.48%</div>
+                    </div>
+                    <div class="sellers__tab">
+                        <div class="sellers__tab-left">
+                            <div class="sellers__tab-num">5</div>
+                            <img loading="lazy"
+                                src="img/sellers/5.webp"
+                                alt="5"
+                                class="sellers__tab-avatar">
+                            <div class="sellers__tab-info">
+                                <div class="sellers__tab-name">Robert Fox</div>
+                                <div class="sellers__tab-counter">
+                                    <img loading="lazy"
+                                        src="img/discover/logo.svg"
+                                        alt="logo"
+                                        class="sellers__tab-counter-img">
+                                    <div class="sellers__tab-counter-count">9631</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sellers__tab-percentage">+468.48%</div>
+                    </div>
+                    <div class="sellers__tab">
+                        <div class="sellers__tab-left">
+                            <div class="sellers__tab-num">6</div>
+                            <img loading="lazy"
+                                src="img/sellers/6.webp"
+                                alt="6"
+                                class="sellers__tab-avatar">
+                            <div class="sellers__tab-info">
+                                <div class="sellers__tab-name">Darlene Robertson</div>
+                                <div class="sellers__tab-counter">
+                                    <img loading="lazy"
+                                        src="img/discover/logo.svg"
+                                        alt="logo"
+                                        class="sellers__tab-counter-img">
+                                    <div class="sellers__tab-counter-count">70443</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sellers__tab-percentage">+468.48%</div>
+                    </div>
+                    <div class="sellers__tab">
+                        <div class="sellers__tab-left">
+                            <div class="sellers__tab-num">7</div>
+                            <img loading="lazy"
+                                src="img/sellers/7.webp"
+                                alt="7"
+                                class="sellers__tab-avatar">
+                            <div class="sellers__tab-info">
+                                <div class="sellers__tab-name">Jacob Jones</div>
+                                <div class="sellers__tab-counter">
+                                    <img loading="lazy"
+                                        src="img/discover/logo.svg"
+                                        alt="logo"
+                                        class="sellers__tab-counter-img">
+                                    <div class="sellers__tab-counter-count">13671</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sellers__tab-percentage">+468.48%</div>
+                    </div>
+                    <div class="sellers__tab">
+                        <div class="sellers__tab-left">
+                            <div class="sellers__tab-num">8</div>
+                            <img loading="lazy"
+                                src="img/sellers/8.webp"
+                                alt="8"
+                                class="sellers__tab-avatar">
+                            <div class="sellers__tab-info">
+                                <div class="sellers__tab-name">Jerome Bell</div>
+                                <div class="sellers__tab-counter">
+                                    <img loading="lazy"
+                                        src="img/discover/logo.svg"
+                                        alt="logo"
+                                        class="sellers__tab-counter-img">
+                                    <div class="sellers__tab-counter-count">39235</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sellers__tab-percentage_red">+468.48%</div>
+                    </div>
+                    <div class="sellers__tab">
+                        <div class="sellers__tab-left">
+                            <div class="sellers__tab-num">9</div>
+                            <img loading="lazy"
+                                src="img/sellers/9.webp"
+                                alt="9"
+                                class="sellers__tab-avatar">
+                            <div class="sellers__tab-info">
+                                <div class="sellers__tab-name">Wade Warren</div>
+                                <div class="sellers__tab-counter">
+                                    <img loading="lazy"
+                                        src="img/discover/logo.svg"
+                                        alt="logo"
+                                        class="sellers__tab-counter-img">
+                                    <div class="sellers__tab-counter-count">43359</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sellers__tab-percentage_red">+468.48%</div>
+                    </div>
+                    <div class="sellers__tab">
+                        <div class="sellers__tab-left">
+                            <div class="sellers__tab-num">10</div>
+                            <img loading="lazy"
+                                src="img/sellers/10.webp"
+                                alt="10"
+                                class="sellers__tab-avatar">
+                            <div class="sellers__tab-info">
+                                <div class="sellers__tab-name">Jane Cooper</div>
+                                <div class="sellers__tab-counter">
+                                    <img loading="lazy"
+                                        src="img/discover/logo.svg"
+                                        alt="logo"
+                                        class="sellers__tab-counter-img">
+                                    <div class="sellers__tab-counter-count">95554</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sellers__tab-percentage_red">+468.48%</div>
+                    </div>
+                    <div class="sellers__tab">
+                        <div class="sellers__tab-left">
+                            <div class="sellers__tab-num">11</div>
+                            <img loading="lazy"
+                                src="img/sellers/11.webp"
+                                alt="11"
+                                class="sellers__tab-avatar">
+                            <div class="sellers__tab-info">
+                                <div class="sellers__tab-name">Kristin Watson</div>
+                                <div class="sellers__tab-counter">
+                                    <img loading="lazy"
+                                        src="img/discover/logo.svg"
+                                        alt="logo"
+                                        class="sellers__tab-counter-img">
+                                    <div class="sellers__tab-counter-count">20796</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sellers__tab-percentage">+468.48%</div>
+                    </div>
+                    <div class="sellers__tab">
+                        <div class="sellers__tab-left">
+                            <div class="sellers__tab-num">12</div>
+
+                            <img loading="lazy"
+                                src="img/sellers/12.webp"
+                                alt="12"
+                                class="sellers__tab-avatar">
+
+                            <div class="sellers__tab-info">
+                                <div class="sellers__tab-name">Kathryn Murphy</div>
+
+                                <div class="sellers__tab-counter">
+                                    <img loading="lazy"
+                                        src="img/discover/logo.svg"
+                                        alt="logo"
+                                        class="sellers__tab-counter-img">
+
+                                    <div class="sellers__tab-counter-count">
+                                        4339
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sellers__tab-percentage_red">+468.48%</div>
+                    </div>
+                </div>
+                <button class="discover__btns-btn discover__right-btn sellers__btn">Explore
+                    all
+                </button>
+                <div class="discover__btns nft__btns sellers__btns">
                     <a class="discover__btns-btn"
-                       href="#">Explore
-                        <img loading="lazy" src="img/discover/arrow.svg"
-                             alt="arrow"
-                             class="discover__btns-btn-img">
+                        href="#">Explore
+                        <img loading="lazy"
+                            src="img/discover/arrow.svg"
+                            alt="arrow"
+                            class="discover__btns-btn-img">
                     </a>
                     <div class="discover__btns-shadow"></div>
                 </div>
-                <a class="discover__links-link"
-                   href="#">Create NFT’s
+            </div>
+        </div>
+    </section>
+    <section class="whatare">
+        <div class="whatare__wrapper">
+            <h2 class="whatare__title">What are NFT’s ?</h2>
+            <p class="whatare__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Odio dolorem laboriosam
+                veritatis? Nesciunt, ea magnam? Et, nesciunt architecto molestias labore
+                excepturi explicabo temporibus
+                consequatur provident dolorum tenetur aliquid, reprehenderit mollitia.</p>
+            <div class="whatare__links">
+                <a class="whatare__link"
+                    href="#">Learn more
+                </a>
+                <a class="whatare__link"
+                    href="#">&#9654; Watch video
                 </a>
             </div>
-
-            <div class="discover__counters">
-                <div class="discover__counter">
-                    <div class="discover__counter-title">35m+</div>
-                    <div class="discover__counter-subtitle">Artwork</div>
+        </div>
+    </section>
+    <section class="subscribe">
+        <div class="container">
+            <div class="subscribe__wrapper">
+                <div class="subscribe__left">
+                    <img loading="lazy"
+                        src="img/subscribe/subscribe.webp"
+                        alt="subscribe"
+                        class="subscribe__img">
                 </div>
-
-                <div class="discover__counter">
-                    <div class="discover__counter-title">18m+</div>
-                    <div class="discover__counter-subtitle">Auctions</div>
-                </div>
-
-                <div class="discover__counter">
-                    <div class="discover__counter-title">500k+</div>
-                    <div class="discover__counter-subtitle">Artists</div>
+                <div class="subscribe__right">
+                    <h2 class="subscribe__title">Subscribe to us</h2>
+                    <div class="subscribe__text">Specially developed to help restore a more
+                        youthful appearance with
+                        improved radiance and bounce.
+                    </div>
+                    <form action="submit"
+                        class="subscribe__form">
+                        <input type="text"
+                            placeholder="Your work email address"
+                            class="subscribe__form-input">
+                        <button type="submit"
+                            class="discover__btns-btn discover__right-btn subscribe__form-btn">
+                            Subscribe
+                        </button>
+                    </form>
                 </div>
             </div>
-
-            <div class="discover__card">
-                <img loading="lazy" src="img/discover/img.webp"
-                     alt="img"
-                     width="324"
-                     height="386"
-                     class="discover__img">
-
-                <div class="discover__block">
-                    <div class="discover__info">
-                        <div class="discover__left">
-                            <div class="discover__left-title">
-                                3D Abstract Hand
-                            </div>
-
-                            <div class="discover__left-user">
-                                <img loading="lazy" src="img/discover/avatar.webp"
-                                     alt="avatar"
-                                     class="discover__left-user-photo">
-                                <div class="discover__left-user-nickname">@jhonartist
-                                </div>
-                                <img loading="lazy" src="img/discover/point.webp"
-                                     alt="point"
-                                     class="discover__left-user-point">
-                            </div>
-                            <div class="discover__left-subtitle">Reserve price</div>
-                            <div class="discover__left-etherum">
-                                <img loading="lazy" src="img/discover/logo.svg"
-                                     alt="logo"
-                                     class="discover__left-etherum-img">
-                                <div class="discover__left-etherum-title">ETH 9.31</div>
-                                <div class="discover__left-etherum-subtitle">($29,8846)
-                                </div>
-                            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="footer__columns">
+                    <div class="footer__left-column">
+                        <div class="footer__logo">
+                            <img loading="lazy"
+                                src="img/menu/logo.svg"
+                                alt="logo"
+                                class="footer__logo-img">
+                            <div class="footer__logo-title">OceanNFT</div>
                         </div>
-                        <div class="discover__right">
-                            <div class="discover__right-title">Auction Ends in</div>
-                            <div class="discover__right-counters">
-                                <div class="discover__right-counter">
-                                    <div class="discover__right-counter-title">18</div>
-                                    <div class="discover__right-counter-subtitle">Hours
-                                    </div>
-                                </div>
-                                <div class="discover__right-counter">
-                                    <div class="discover__right-counter-title">25</div>
-                                    <div class="discover__right-counter-subtitle">Mins
-                                    </div>
-                                </div>
-                                <div class="discover__right-counter">
-                                    <div class="discover__right-counter-title">44</div>
-                                    <div class="discover__right-counter-subtitle">Secs
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="discover__btns-btn discover__right-btn"
-                               href="#">Place Bid
-                                <img loading="lazy" src="img/discover/arrow.svg"
-                                     alt="arrow"
-                                     class="discover__right-btn-img">
+                        <div class="footer__text">Lorem ipsum dolor amet, consectetur
+                            adipiscing elit. Eget nisl nunc
+                            quam ac sed turpis volutpat. Cursus sed massa non nisi, placerat.
+                        </div>
+                        <div class="footer__socials">
+                            <a class="footer__socials-link"
+                                href="#">
+                                <img loading="lazy"
+                                    src="img/footer/1.svg"
+                                    alt="insta"
+                                    class="footer__socials-item">
+                            </a>
+                            <a class="footer__socials-link"
+                                href="#">
+                                <img loading="lazy"
+                                    src="img/footer/2.svg"
+                                    alt="discord"
+                                    class="footer__socials-item">
+                            </a>
+                            <a class="footer__socials-link"
+                                href="#">
+                                <img loading="lazy"
+                                    src="img/footer/3.svg"
+                                    alt="twitter"
+                                    class="footer__socials-item">
+                            </a>
+                            <a class="footer__socials-link"
+                                href="#">
+                                <img loading="lazy"
+                                    src="img/footer/4.svg"
+                                    alt="youtube"
+                                    class="footer__socials-item">
                             </a>
                         </div>
                     </div>
-                    <div class="discover__bckg"></div>
+                    <div class="footer__right-columns">
+                        <div class="footer__column">
+                            <h3 class="footer__column-title">Market place</h3>
+                            <ul class="footer__column-list">
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">Overview
+                                    </a>
+                                </li>
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">Features <span>new</span></a>
+                                </li>
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">Tutorials
+                                    </a>
+                                </li>
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">Pricing
+                                    </a>
+                                </li>
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">Releases
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer__column">
+                            <h3 class="footer__column-title">Collectibles</h3>
+                            <ul class="footer__column-list">
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">About
+                                    </a>
+                                </li>
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">Press
+                                    </a>
+                                </li>
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">Careers
+                                    </a>
+                                </li>
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">Contact
+                                    </a>
+                                </li>
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">Partners
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer__column">
+                            <h3 class="footer__column-title">Support</h3>
+                            <ul class="footer__column-list">
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">Help Center
+                                    </a>
+                                </li>
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">Safety Center
+                                    </a>
+                                </li>
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">Legal
+                                    </a>
+                                </li>
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">Privacy policy
+                                    </a>
+                                </li>
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">Status
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer__column">
+                            <h3 class="footer__column-title">Legal</h3>
+                            <ul class="footer__column-list">
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">Cookies Policy
+                                    </a>
+                                </li>
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">Privacy Policy
+                                    </a>
+                                </li>
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">Terms of Service
+                                    </a>
+                                </li>
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">Law Enforcement
+                                    </a>
+                                </li>
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">Status
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="footer__column">
+                            <h3 class="footer__column-title">Follow us</h3>
+                            <ul class="footer__column-list">
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">Facebook
+                                    </a>
+                                </li>
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">Twitter
+                                    </a>
+                                </li>
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">Dribbble
+                                    </a>
+                                </li>
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">Instagram
+                                    </a>
+                                </li>
+                                <li class="footer__column-item">
+                                    <a class="footer__column-item-link"
+                                        href="#">LinkedIn
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="wave">
-                <div class="wave__line"
-                     data-text="xxxxxxxxxxxxxx">
-
+            <div class="footer__copyrights">
+                <div class="footer__copyrights-left">© 2020 Landify UI Kit. All rights
+                    reserved
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="circle1"></div>
-    <div class="circle2"></div>
-    <div class="circle3"></div>
-</section>
-<section class="company">
-    <div class="container">
-        <div class="company__wrapper">
-            <img loading="lazy" src="img/company/bin.svg"
-                 alt="binance"
-                 class="company__logo">
-            <img loading="lazy" src="img/company/eth.svg"
-                 alt="etherum"
-                 class="company__logo">
-            <img loading="lazy" src="img/company/block.svg"
-                 alt="blockchain"
-                 class="company__logo">
-            <img loading="lazy" src="img/company/bit.svg"
-                 alt="bitmex"
-                 class="company__logo">
-        </div>
-    </div>
-</section>
-
-<!--<section class="nft">-->
-<!--    <div class="container">-->
-<!--        <div class="nft__wrapper">-->
-<!--            <div class="nft__text">-->
-<!--                <h2 class="nft__title">Top NFT’s now</h2>-->
-<!--                <a class="nft__view"-->
-<!--                   href="#">-->
-<!--                    <div class="nft__view-text">View all</div>-->
-<!--                    <img loading="lazy" src="img/discover/arrow.svg"-->
-<!--                         alt="arrow"-->
-<!--                         class="nft__view-arrow">-->
-<!--                </a>-->
-<!--            </div>-->
-<!--            <div class="nft__cards_container">-->
-<!--                <div class="nft__cards swiper-wrapper">-->
-<!--                    <div class="nft__card swiper-slide">-->
-<!--                        <img loading="lazy" src="img/nft/3.webp"-->
-<!--                             alt="1"-->
-<!--                             class="nft__img">-->
-<!--                        <div class="discover__block">-->
-<!--                            <div class="discover__info">-->
-<!--                                <div class="discover__left">-->
-<!--                                    <div class="discover__left-title">Apollo Eth #1289-->
-<!--                                        NFT-->
-<!--                                    </div>-->
-<!--                                    <div class="discover__left-user">-->
-<!--                                        <img loading="lazy" src="img/nft/ell1.webp"-->
-<!--                                             alt="avatar"-->
-<!--                                             class="discover__left-user-photo">-->
-<!--                                        <div class="discover__left-user-nickname">-->
-<!--                                            @jhonartist-->
-<!--                                        </div>-->
-<!--                                        <img loading="lazy" src="img/discover/point.webp"-->
-<!--                                             alt="point"-->
-<!--                                             class="discover__left-user-point">-->
-<!--                                    </div>-->
-<!--                                    <div class="discover__left-subtitle">Reserve price-->
-<!--                                    </div>-->
-<!--                                    <div class="discover__left-etherum">-->
-<!--                                        <img loading="lazy" src="img/discover/logo.svg"-->
-<!--                                             alt="logo"-->
-<!--                                             class="discover__left-etherum-img">-->
-<!--                                        <div class="discover__left-etherum-title">ETH-->
-<!--                                            9.31-->
-<!--                                        </div>-->
-<!--                                        <div class="discover__left-etherum-subtitle">-->
-<!--                                            ($29,8846)-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="discover__right">-->
-<!--                                    <div class="discover__right-title">Auction Ends in-->
-<!--                                    </div>-->
-<!--                                    <div class="discover__right-counters">-->
-<!--                                        <div class="discover__right-counter">-->
-<!--                                            <div class="discover__right-counter-title">-->
-<!--                                                18-->
-<!--                                            </div>-->
-<!--                                            <div class="discover__right-counter-subtitle">-->
-<!--                                                Hours-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                        <div class="discover__right-counter">-->
-<!--                                            <div class="discover__right-counter-title">-->
-<!--                                                25-->
-<!--                                            </div>-->
-<!--                                            <div class="discover__right-counter-subtitle">-->
-<!--                                                Mins-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                        <div class="discover__right-counter">-->
-<!--                                            <div class="discover__right-counter-title">-->
-<!--                                                44-->
-<!--                                            </div>-->
-<!--                                            <div class="discover__right-counter-subtitle">-->
-<!--                                                Secs-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    <a class="discover__btns-btn discover__right-btn"-->
-<!--                                       href="#">Place Bid-->
-<!--                                        <img loading="lazy" src="img/discover/arrow.svg"-->
-<!--                                             alt="arrow"-->
-<!--                                             class="discover__right-btn-img">-->
-<!--                                    </a>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="nft__card swiper-slide">-->
-<!--                        <img loading="lazy" src="img/nft/2.webp"-->
-<!--                             alt="2"-->
-<!--                             class="nft__img">-->
-<!--                        <div class="discover__block">-->
-<!--                            <div class="discover__info">-->
-<!--                                <div class="discover__left">-->
-<!--                                    <div class="discover__left-title">Sassy Bull #1169-->
-<!--                                        Art-->
-<!--                                    </div>-->
-<!--                                    <div class="discover__left-user">-->
-<!--                                        <img loading="lazy" src="img/nft/all2.webp"-->
-<!--                                             alt="avatar"-->
-<!--                                             class="discover__left-user-photo">-->
-<!--                                        <div class="discover__left-user-nickname">-->
-<!--                                            @jhonartist-->
-<!--                                        </div>-->
-<!--                                        <img loading="lazy" src="img/discover/point.webp"-->
-<!--                                             alt="point"-->
-<!--                                             class="discover__left-user-point">-->
-<!--                                    </div>-->
-<!--                                    <div class="discover__left-subtitle">Reserve price-->
-<!--                                    </div>-->
-<!--                                    <div class="discover__left-etherum">-->
-<!--                                        <img loading="lazy" src="img/discover/logo.svg"-->
-<!--                                             alt="logo"-->
-<!--                                             class="discover__left-etherum-img">-->
-<!--                                        <div class="discover__left-etherum-title">ETH-->
-<!--                                            9.31-->
-<!--                                        </div>-->
-<!--                                        <div class="discover__left-etherum-subtitle">-->
-<!--                                            ($29,8846)-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="discover__right">-->
-<!--                                    <div class="discover__right-title">Auction Ends in-->
-<!--                                    </div>-->
-<!--                                    <div class="discover__right-counters">-->
-<!--                                        <div class="discover__right-counter">-->
-<!--                                            <div class="discover__right-counter-title">-->
-<!--                                                09-->
-<!--                                            </div>-->
-<!--                                            <div class="discover__right-counter-subtitle">-->
-<!--                                                Hours-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                        <div class="discover__right-counter">-->
-<!--                                            <div class="discover__right-counter-title">-->
-<!--                                                15-->
-<!--                                            </div>-->
-<!--                                            <div class="discover__right-counter-subtitle">-->
-<!--                                                Mins-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                        <div class="discover__right-counter">-->
-<!--                                            <div class="discover__right-counter-title">-->
-<!--                                                23-->
-<!--                                            </div>-->
-<!--                                            <div class="discover__right-counter-subtitle">-->
-<!--                                                Secs-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    <a class="discover__btns-btn discover__right-btn"-->
-<!--                                       href="#">Place Bid-->
-<!--                                        <img loading="lazy" src="img/discover/arrow.svg"-->
-<!--                                             alt="arrow"-->
-<!--                                             class="discover__right-btn-img">-->
-<!--                                    </a>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="nft__card swiper-slide">-->
-<!--                        <img loading="lazy" src="img/nft/1.webp"-->
-<!--                             alt="3"-->
-<!--                             class="nft__img">-->
-<!--                        <div class="discover__block">-->
-<!--                            <div class="discover__info">-->
-<!--                                <div class="discover__left">-->
-<!--                                    <div class="discover__left-title">Satisfying 3D Art-->
-<!--                                    </div>-->
-<!--                                    <div class="discover__left-user">-->
-<!--                                        <img loading="lazy" src="img/nft/ell3.webp"-->
-<!--                                             alt="avatar"-->
-<!--                                             class="discover__left-user-photo">-->
-<!--                                        <div class="discover__left-user-nickname">-->
-<!--                                            @jhonartist-->
-<!--                                        </div>-->
-<!--                                        <img loading="lazy" src="img/discover/point.webp"-->
-<!--                                             alt="point"-->
-<!--                                             class="discover__left-user-point">-->
-<!--                                    </div>-->
-<!--                                    <div class="discover__left-subtitle">Reserve price-->
-<!--                                    </div>-->
-<!--                                    <div class="discover__left-etherum">-->
-<!--                                        <img loading="lazy" src="img/discover/logo.svg"-->
-<!--                                             alt="logo"-->
-<!--                                             class="discover__left-etherum-img">-->
-<!--                                        <div class="discover__left-etherum-title">ETH-->
-<!--                                            9.31-->
-<!--                                        </div>-->
-<!--                                        <div class="discover__left-etherum-subtitle">-->
-<!--                                            ($29,8846)-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <div class="discover__right">-->
-<!--                                    <div class="discover__right-title">Auction Ends in-->
-<!--                                    </div>-->
-<!--                                    <div class="discover__right-counters">-->
-<!--                                        <div class="discover__right-counter">-->
-<!--                                            <div class="discover__right-counter-title">-->
-<!--                                                23-->
-<!--                                            </div>-->
-<!--                                            <div class="discover__right-counter-subtitle">-->
-<!--                                                Hours-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                        <div class="discover__right-counter">-->
-<!--                                            <div class="discover__right-counter-title">-->
-<!--                                                32-->
-<!--                                            </div>-->
-<!--                                            <div class="discover__right-counter-subtitle">-->
-<!--                                                Mins-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                        <div class="discover__right-counter">-->
-<!--                                            <div class="discover__right-counter-title">-->
-<!--                                                56-->
-<!--                                            </div>-->
-<!--                                            <div class="discover__right-counter-subtitle">-->
-<!--                                                Secs-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    <a class="discover__btns-btn discover__right-btn"-->
-<!--                                       href="#">Place Bid-->
-<!--                                        <img loading="lazy" src="img/discover/arrow.svg"-->
-<!--                                             alt="arrow"-->
-<!--                                             class="discover__right-btn-img">-->
-<!--                                    </a>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="discover__btns nft__btns">-->
-<!--                <a class="discover__btns-btn"-->
-<!--                   href="#">Explore-->
-<!--                    <img loading="lazy" src="img/discover/arrow.svg"-->
-<!--                         alt="arrow"-->
-<!--                         class="discover__btns-btn-img">-->
-<!--                </a>-->
-<!--                <div class="discover__btns-shadow"></div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="circle1"></div>-->
-<!--    <div class="circle2"></div>-->
-<!--</section>-->
-<section class="collections">
-    <div class="container">
-        <div class="collections__wrapper">
-            <div class="collections__left">
-                <h2 class="nft__title collections__title">Explore Collections</h2>
-                <div class="collections__tabs">
-                    <div class="collections__tab">Photography</div>
-                    <div class="collections__tab">Sports</div>
-                    <div class="collections__tab">Brands</div>
-                    <div class="collections__tab">Collectibles</div>
-                    <div class="collections__tab collections__tab_active">Art</div>
-                    <div class="collections__tab">Utility</div>
-                    <div class="collections__tab">Brands</div>
-                    <div class="collections__tab">Collectibles</div>
-                </div>
-                <a class="nft__view collections__view"
-                   href="#">
-                    <div class="nft__view-text">View all</div>
-                    <img loading="lazy" src="img/discover/arrow.svg"
-                         alt="arrow"
-                         class="nft__view-arrow">
-                </a>
-            </div>
-            <div class="collections__right">
-                <img loading="lazy" src="img/collections/art.webp"
-                     alt="art"
-                     width="320"
-                     height="600"
-                     class="collections__right-img">
-            </div>
-        </div>
-    </div>
-    <div class="circle1"></div>
-    <div class="circle2"></div>
-    <div class="circle3"></div>
-</section>
-<!--<section class="explorecol">-->
-<!--    <div class="container">-->
-<!--        <div class="explorecol__wrapper">-->
-<!--            <div class="nft__text">-->
-<!--                <h2 class="nft__title">Explore Collections</h2>-->
-<!--                <a class="nft__view"-->
-<!--                   href="#">-->
-<!--                    <div class="nft__view-text">View all</div>-->
-<!--                    <img loading="lazy" src="img/discover/arrow.svg"-->
-<!--                         alt="arrow"-->
-<!--                         class="nft__view-arrow">-->
-<!--                </a>-->
-<!--            </div>-->
-<!--            <div class="explorecol__container">-->
-<!--                <div class="explorecol__cards swiper-wrapper">-->
-<!--                    <div class="explorecol__card swiper-slide">-->
-<!--                        <img loading="lazy" src="img/explorercol/img.webp"-->
-<!--                             alt="img"-->
-<!--                             class="explorecol__img">-->
-<!--                        <img loading="lazy" src="img/explorercol/nickey.webp"-->
-<!--                             alt="nickey"-->
-<!--                             class="explorecol__avatar">-->
-<!--                        <div class="explorecol__name">Jhones Nickey</div>-->
-<!--                        <div class="explorecol__nickname">-->
-<!--                            <div class="explorecol__link">@jhonartist</div>-->
-<!--                            <img loading="lazy" src="img/discover/point.webp"-->
-<!--                                 alt="point"-->
-<!--                                 class="explorecol__point">-->
-<!--                        </div>-->
-<!--                        <div class="explorecol__counters">-->
-<!--                            <div class="explorecol__counter">-->
-<!--                                <div class="explorecol__counter-number">125</div>-->
-<!--                                <div class="explorecol__counter-name">Folowers</div>-->
-<!--                            </div>-->
-<!--                            <div class="explorecol__counter">-->
-<!--                                <div class="explorecol__counter-number">256</div>-->
-<!--                                <div class="explorecol__counter-name">Following</div>-->
-<!--                            </div>-->
-<!--                            <div class="explorecol__counter">-->
-<!--                                <div class="explorecol__counter-number">129</div>-->
-<!--                                <div class="explorecol__counter-name">Artworks</div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="discover__btns-btn discover__right-btn explorecol__btn">-->
-<!--                            Follow-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="explorecol__card swiper-slide">-->
-<!--                        <img loading="lazy" src="img/explorercol/img.webp"-->
-<!--                             alt="img"-->
-<!--                             class="explorecol__img">-->
-<!--                        <img loading="lazy" src="img/explorercol/fisher.webp"-->
-<!--                             alt="fisher"-->
-<!--                             class="explorecol__avatar">-->
-<!--                        <div class="explorecol__name">Cody Fisher</div>-->
-<!--                        <div class="explorecol__nickname">-->
-<!--                            <div class="explorecol__link">@codyfishe</div>-->
-<!--                            <img loading="lazy" src="img/discover/point.webp"-->
-<!--                                 alt="point"-->
-<!--                                 class="explorecol__point">-->
-<!--                        </div>-->
-<!--                        <div class="explorecol__counters">-->
-<!--                            <div class="explorecol__counter">-->
-<!--                                <div class="explorecol__counter-number">356</div>-->
-<!--                                <div class="explorecol__counter-name">Folowers</div>-->
-<!--                            </div>-->
-<!--                            <div class="explorecol__counter">-->
-<!--                                <div class="explorecol__counter-number">456</div>-->
-<!--                                <div class="explorecol__counter-name">Following</div>-->
-<!--                            </div>-->
-<!--                            <div class="explorecol__counter">-->
-<!--                                <div class="explorecol__counter-number">89</div>-->
-<!--                                <div class="explorecol__counter-name">Artworks</div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="discover__btns-btn discover__right-btn explorecol__btn">-->
-<!--                            Follow-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="explorecol__card swiper-slide">-->
-<!--                        <img loading="lazy" src="img/explorercol/img.webp"-->
-<!--                             alt="img"-->
-<!--                             class="explorecol__img">-->
-<!--                        <img loading="lazy" src="img/explorercol/bell.webp"-->
-<!--                             alt="bell"-->
-<!--                             class="explorecol__avatar">-->
-<!--                        <div class="explorecol__name">Jerome Bell</div>-->
-<!--                        <div class="explorecol__nickname">-->
-<!--                            <div class="explorecol__link">@jeromebt</div>-->
-<!--                            <img loading="lazy" src="img/discover/point.webp"-->
-<!--                                 alt="point"-->
-<!--                                 class="explorecol__point">-->
-<!--                        </div>-->
-<!--                        <div class="explorecol__counters">-->
-<!--                            <div class="explorecol__counter">-->
-<!--                                <div class="explorecol__counter-number">546</div>-->
-<!--                                <div class="explorecol__counter-name">Folowers</div>-->
-<!--                            </div>-->
-<!--                            <div class="explorecol__counter">-->
-<!--                                <div class="explorecol__counter-number">789</div>-->
-<!--                                <div class="explorecol__counter-name">Following</div>-->
-<!--                            </div>-->
-<!--                            <div class="explorecol__counter">-->
-<!--                                <div class="explorecol__counter-number">54</div>-->
-<!--                                <div class="explorecol__counter-name">Artworks</div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="discover__btns-btn discover__right-btn explorecol__btn">-->
-<!--                            Follow-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="discover__btns nft__btns">-->
-<!--                <a class="discover__btns-btn"-->
-<!--                   href="#">Explore-->
-<!--                    <img loading="lazy" src="img/discover/arrow.svg"-->
-<!--                         alt="arrow"-->
-<!--                         class="discover__btns-btn-img">-->
-<!--                </a>-->
-<!--                <div class="discover__btns-shadow"></div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="circle1"></div>-->
-<!--</section>-->
-
-<section class="sellers">
-    <div class="container">
-        <div class="sellers__wrapper">
-            <h2 class="sellers__title">Top Sellers this
-                <span>Month
-                    <img loading="lazy"
-                         src="img/sellers/chevron.svg"
-                         alt="chevron"
-                         width="13"
-                         height="8"
-                         class="sellers__title_chevron">
-                </span>
-            </h2>
-            <p class="sellers__text">Amet minim mollit non deserunt ullamco est sit aliqua
-                dolor do amet sint. Velit
-                officia consequat duis enim minim mollit.</p>
-            <div class="sellers__tabs">
-                <div class="sellers__tab">
-                    <div class="sellers__tab-left">
-                        <div class="sellers__tab-num">1</div>
-                        <img loading="lazy" src="img/sellers/1.webp"
-                             alt="1"
-                             class="sellers__tab-avatar">
-                        <div class="sellers__tab-info">
-                            <div class="sellers__tab-name">Eleanor Pena</div>
-                            <div class="sellers__tab-counter">
-                                <img loading="lazy" src="img/discover/logo.svg"
-                                     alt="logo"
-                                     class="sellers__tab-counter-img">
-                                <div class="sellers__tab-counter-count">74875</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sellers__tab-percentage">+468.48%</div>
-                </div>
-                <div class="sellers__tab">
-                    <div class="sellers__tab-left">
-                        <div class="sellers__tab-num">2</div>
-                        <img loading="lazy" src="img/sellers/2.webp"
-                             alt="2"
-                             class="sellers__tab-avatar">
-                        <div class="sellers__tab-info">
-                            <div class="sellers__tab-name">Savannah Nguyen</div>
-                            <div class="sellers__tab-counter">
-                                <img loading="lazy" src="img/discover/logo.svg"
-                                     alt="logo"
-                                     class="sellers__tab-counter-img">
-                                <div class="sellers__tab-counter-count">18599</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sellers__tab-percentage_red">+468.48%</div>
-                </div>
-                <div class="sellers__tab">
-                    <div class="sellers__tab-left">
-                        <div class="sellers__tab-num">3</div>
-                        <img loading="lazy" src="img/sellers/3.webp"
-                             alt="3"
-                             class="sellers__tab-avatar">
-                        <div class="sellers__tab-info">
-                            <div class="sellers__tab-name">Arlene McCoy</div>
-                            <div class="sellers__tab-counter">
-                                <img loading="lazy" src="img/discover/logo.svg"
-                                     alt="logo"
-                                     class="sellers__tab-counter-img">
-                                <div class="sellers__tab-counter-count">45904</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sellers__tab-percentage">+468.48%</div>
-                </div>
-                <div class="sellers__tab">
-                    <div class="sellers__tab-left">
-                        <div class="sellers__tab-num">4</div>
-                        <img loading="lazy" src="img/sellers/4.webp"
-                             alt="4"
-                             class="sellers__tab-avatar">
-                        <div class="sellers__tab-info">
-                            <div class="sellers__tab-name">Esther Howard</div>
-                            <div class="sellers__tab-counter">
-                                <img loading="lazy" src="img/discover/logo.svg"
-                                     alt="logo"
-                                     class="sellers__tab-counter-img">
-                                <div class="sellers__tab-counter-count">16627</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sellers__tab-percentage_red">+468.48%</div>
-                </div>
-                <div class="sellers__tab">
-                    <div class="sellers__tab-left">
-                        <div class="sellers__tab-num">5</div>
-                        <img loading="lazy" src="img/sellers/5.webp"
-                             alt="5"
-                             class="sellers__tab-avatar">
-                        <div class="sellers__tab-info">
-                            <div class="sellers__tab-name">Robert Fox</div>
-                            <div class="sellers__tab-counter">
-                                <img loading="lazy" src="img/discover/logo.svg"
-                                     alt="logo"
-                                     class="sellers__tab-counter-img">
-                                <div class="sellers__tab-counter-count">9631</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sellers__tab-percentage">+468.48%</div>
-                </div>
-                <div class="sellers__tab">
-                    <div class="sellers__tab-left">
-                        <div class="sellers__tab-num">6</div>
-                        <img loading="lazy" src="img/sellers/6.webp"
-                             alt="6"
-                             class="sellers__tab-avatar">
-                        <div class="sellers__tab-info">
-                            <div class="sellers__tab-name">Darlene Robertson</div>
-                            <div class="sellers__tab-counter">
-                                <img loading="lazy" src="img/discover/logo.svg"
-                                     alt="logo"
-                                     class="sellers__tab-counter-img">
-                                <div class="sellers__tab-counter-count">70443</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sellers__tab-percentage">+468.48%</div>
-                </div>
-                <div class="sellers__tab">
-                    <div class="sellers__tab-left">
-                        <div class="sellers__tab-num">7</div>
-                        <img loading="lazy" src="img/sellers/7.webp"
-                             alt="7"
-                             class="sellers__tab-avatar">
-                        <div class="sellers__tab-info">
-                            <div class="sellers__tab-name">Jacob Jones</div>
-                            <div class="sellers__tab-counter">
-                                <img loading="lazy" src="img/discover/logo.svg"
-                                     alt="logo"
-                                     class="sellers__tab-counter-img">
-                                <div class="sellers__tab-counter-count">13671</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sellers__tab-percentage">+468.48%</div>
-                </div>
-                <div class="sellers__tab">
-                    <div class="sellers__tab-left">
-                        <div class="sellers__tab-num">8</div>
-                        <img loading="lazy" src="img/sellers/8.webp"
-                             alt="8"
-                             class="sellers__tab-avatar">
-                        <div class="sellers__tab-info">
-                            <div class="sellers__tab-name">Jerome Bell</div>
-                            <div class="sellers__tab-counter">
-                                <img loading="lazy" src="img/discover/logo.svg"
-                                     alt="logo"
-                                     class="sellers__tab-counter-img">
-                                <div class="sellers__tab-counter-count">39235</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sellers__tab-percentage_red">+468.48%</div>
-                </div>
-                <div class="sellers__tab">
-                    <div class="sellers__tab-left">
-                        <div class="sellers__tab-num">9</div>
-                        <img loading="lazy" src="img/sellers/9.webp"
-                             alt="9"
-                             class="sellers__tab-avatar">
-                        <div class="sellers__tab-info">
-                            <div class="sellers__tab-name">Wade Warren</div>
-                            <div class="sellers__tab-counter">
-                                <img loading="lazy" src="img/discover/logo.svg"
-                                     alt="logo"
-                                     class="sellers__tab-counter-img">
-                                <div class="sellers__tab-counter-count">43359</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sellers__tab-percentage_red">+468.48%</div>
-                </div>
-                <div class="sellers__tab">
-                    <div class="sellers__tab-left">
-                        <div class="sellers__tab-num">10</div>
-                        <img loading="lazy" src="img/sellers/10.webp"
-                             alt="10"
-                             class="sellers__tab-avatar">
-                        <div class="sellers__tab-info">
-                            <div class="sellers__tab-name">Jane Cooper</div>
-                            <div class="sellers__tab-counter">
-                                <img loading="lazy" src="img/discover/logo.svg"
-                                     alt="logo"
-                                     class="sellers__tab-counter-img">
-                                <div class="sellers__tab-counter-count">95554</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sellers__tab-percentage_red">+468.48%</div>
-                </div>
-                <div class="sellers__tab">
-                    <div class="sellers__tab-left">
-                        <div class="sellers__tab-num">11</div>
-                        <img loading="lazy" src="img/sellers/11.webp"
-                             alt="11"
-                             class="sellers__tab-avatar">
-                        <div class="sellers__tab-info">
-                            <div class="sellers__tab-name">Kristin Watson</div>
-                            <div class="sellers__tab-counter">
-                                <img loading="lazy" src="img/discover/logo.svg"
-                                     alt="logo"
-                                     class="sellers__tab-counter-img">
-                                <div class="sellers__tab-counter-count">20796</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sellers__tab-percentage">+468.48%</div>
-                </div>
-                <div class="sellers__tab">
-                    <div class="sellers__tab-left">
-                        <div class="sellers__tab-num">12</div>
-
-                        <img loading="lazy" src="img/sellers/12.webp"
-                             alt="12"
-                             class="sellers__tab-avatar">
-
-                        <div class="sellers__tab-info">
-                            <div class="sellers__tab-name">Kathryn Murphy</div>
-
-                            <div class="sellers__tab-counter">
-                                <img loading="lazy" src="img/discover/logo.svg"
-                                     alt="logo"
-                                     class="sellers__tab-counter-img">
-
-                                <div class="sellers__tab-counter-count">
-                                    4339
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sellers__tab-percentage_red">+468.48%</div>
-                </div>
-            </div>
-            <button class="discover__btns-btn discover__right-btn sellers__btn">Explore
-                all
-            </button>
-            <div class="discover__btns nft__btns sellers__btns">
-                <a class="discover__btns-btn"
-                   href="#">Explore
-                    <img loading="lazy" src="img/discover/arrow.svg"
-                         alt="arrow"
-                         class="discover__btns-btn-img">
-                </a>
-                <div class="discover__btns-shadow"></div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="whatare">
-    <div class="whatare__wrapper">
-        <h2 class="whatare__title">What are NFT’s ?</h2>
-        <p class="whatare__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Odio dolorem laboriosam
-            veritatis? Nesciunt, ea magnam? Et, nesciunt architecto molestias labore
-            excepturi explicabo temporibus
-            consequatur provident dolorum tenetur aliquid, reprehenderit mollitia.</p>
-        <div class="whatare__links">
-            <a class="whatare__link"
-               href="#">Learn more
-            </a>
-            <a class="whatare__link"
-               href="#">&#9654; Watch video
-            </a>
-        </div>
-    </div>
-</section>
-<section class="subscribe">
-    <div class="container">
-        <div class="subscribe__wrapper">
-            <div class="subscribe__left">
-                <img loading="lazy" src="img/subscribe/subscribe.webp"
-                     alt="subscribe"
-                     class="subscribe__img">
-            </div>
-            <div class="subscribe__right">
-                <h2 class="subscribe__title">Subscribe to us</h2>
-                <div class="subscribe__text">Specially developed to help restore a more
-                    youthful appearance with
-                    improved radiance and bounce.
-                </div>
-                <form action="submit"
-                      class="subscribe__form">
-                    <input type="text"
-                           placeholder="Your work email address"
-                           class="subscribe__form-input">
-                    <button type="submit"
-                            class="discover__btns-btn discover__right-btn subscribe__form-btn">
-                        Subscribe
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-<footer class="footer">
-    <div class="container">
-        <div class="footer__wrapper">
-            <div class="footer__columns">
-                <div class="footer__left-column">
-                    <div class="footer__logo">
-                        <img loading="lazy" src="img/menu/logo.svg"
-                             alt="logo"
-                             class="footer__logo-img">
-                        <div class="footer__logo-title">OceanNFT</div>
-                    </div>
-                    <div class="footer__text">Lorem ipsum dolor amet, consectetur
-                        adipiscing elit. Eget nisl nunc
-                        quam ac sed turpis volutpat. Cursus sed massa non nisi, placerat.
-                    </div>
-                    <div class="footer__socials">
-                        <a class="footer__socials-link"
-                           href="#">
-                            <img loading="lazy" src="img/footer/1.svg"
-                                 alt="insta"
-                                 class="footer__socials-item">
-                        </a>
-                        <a class="footer__socials-link"
-                           href="#">
-                            <img loading="lazy" src="img/footer/2.svg"
-                                 alt="discord"
-                                 class="footer__socials-item">
-                        </a>
-                        <a class="footer__socials-link"
-                           href="#">
-                            <img loading="lazy" src="img/footer/3.svg"
-                                 alt="twitter"
-                                 class="footer__socials-item">
-                        </a>
-                        <a class="footer__socials-link"
-                           href="#">
-                            <img loading="lazy" src="img/footer/4.svg"
-                                 alt="youtube"
-                                 class="footer__socials-item">
-                        </a>
-                    </div>
-                </div>
-                <div class="footer__right-columns">
-                    <div class="footer__column">
-                        <h3 class="footer__column-title">Market place</h3>
-                        <ul class="footer__column-list">
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">Overview
-                                </a>
-                            </li>
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">Features <span>new</span></a>
-                            </li>
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">Tutorials
-                                </a>
-                            </li>
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">Pricing
-                                </a>
-                            </li>
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">Releases
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer__column">
-                        <h3 class="footer__column-title">Collectibles</h3>
-                        <ul class="footer__column-list">
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">About
-                                </a>
-                            </li>
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">Press
-                                </a>
-                            </li>
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">Careers
-                                </a>
-                            </li>
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">Contact
-                                </a>
-                            </li>
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">Partners
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer__column">
-                        <h3 class="footer__column-title">Support</h3>
-                        <ul class="footer__column-list">
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">Help Center
-                                </a>
-                            </li>
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">Safety Center
-                                </a>
-                            </li>
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">Legal
-                                </a>
-                            </li>
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">Privacy policy
-                                </a>
-                            </li>
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">Status
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer__column">
-                        <h3 class="footer__column-title">Legal</h3>
-                        <ul class="footer__column-list">
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">Cookies Policy
-                                </a>
-                            </li>
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">Privacy Policy
-                                </a>
-                            </li>
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">Terms of Service
-                                </a>
-                            </li>
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">Law Enforcement
-                                </a>
-                            </li>
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">Status
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="footer__column">
-                        <h3 class="footer__column-title">Follow us</h3>
-                        <ul class="footer__column-list">
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">Facebook
-                                </a>
-                            </li>
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">Twitter
-                                </a>
-                            </li>
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">Dribbble
-                                </a>
-                            </li>
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">Instagram
-                                </a>
-                            </li>
-                            <li class="footer__column-item">
-                                <a class="footer__column-item-link"
-                                   href="#">LinkedIn
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="footer__copyrights-right">
+                    <a class="footer__copyrights-link"
+                        href="#">Terms & Conditions
+                    </a>
+                    <a class="footer__copyrights-link"
+                        href="#">Privacy Policy
+                    </a>
+                    <a class="footer__copyrights-link"
+                        href="#">Sitemap
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="footer__copyrights">
-            <div class="footer__copyrights-left">© 2020 Landify UI Kit. All rights
-                reserved
-            </div>
-            <div class="footer__copyrights-right">
-                <a class="footer__copyrights-link"
-                   href="#">Terms & Conditions
-                </a>
-                <a class="footer__copyrights-link"
-                   href="#">Privacy Policy
-                </a>
-                <a class="footer__copyrights-link"
-                   href="#">Sitemap
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="circle1"></div>
-    <div class="circle2"></div>
-</footer>
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+    </footer>
 
 </body>
 <!--<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>-->
