@@ -103,27 +103,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	listenerAction("click");
 
-	initSwiper();
+	// initSwiper();
 
-	function initSwiper() {
-		if (window.matchMedia("(max-width: 991px)").matches) {
-			if (!document.querySelector(".nft__cards_container").swiper) {
-				new Swiper(".nft__cards_container", {
-					slidesPerView: "auto",
-					loop: false,
-					spaceBetween: 25,
-				});
-			}
+	// function initSwiper() {
+	// 	if (window.matchMedia("(max-width: 991px)").matches) {
+	// 		if (!document.querySelector(".nft__cards_container").swiper) {
+	// 			new Swiper(".nft__cards_container", {
+	// 				slidesPerView: "auto",
+	// 				loop: false,
+	// 				spaceBetween: 25,
+	// 			});
+	// 		}
 
-			if (!document.querySelector(".explorecol__container").swiper) {
-				new Swiper(".explorecol__container", {
-					slidesPerView: "auto",
-					loop: false,
-					spaceBetween: 25,
-				});
-			}
-		}
-	}
+	// 		if (!document.querySelector(".explorecol__container").swiper) {
+	// 			new Swiper(".explorecol__container", {
+	// 				slidesPerView: "auto",
+	// 				loop: false,
+	// 				spaceBetween: 25,
+	// 			});
+	// 		}
+	// 	}
+	// }
 
 	changeTabs();
 
