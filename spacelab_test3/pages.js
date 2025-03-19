@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
   updateFilterDisplay();
   const newsTitle = document.querySelector(".news__title");
   function changeNewsTitle() {
-    if (innerWidth < 768) {
+    if (window.innerWidth < 768) {
       newsTitle.innerText = "Our news";
     } else {
       newsTitle.innerText = "Our latest news";
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   const loremMailTextarea = document.querySelector('.lmail__textarea');
   function changeLoremMailText() {
-    if (innerWidth <= 1399) {
+    if (window.innerWidth <= 1399) {
       loremMailTextarea.innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper eu mauris vitae posuere. Ut at luctus ligula. Nunc ante felis, aliquam eu enim sed, ornare pretium velit.";
     } else {
       loremMailTextarea.innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper eu mauris vitae posuere. Ut at luctus ligula. Nunc ante felis, aliquam.';
@@ -171,6 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateFilterDisplay();
     changeLoremMailText();
     deleteSpanFromRangeLabels();
+    changeTitleModal();
   });
   const requestBtn = document.querySelector(".menu__request");
   const body = document.querySelector("body");
@@ -201,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   function deleteSpanFromRangeLabels() {
-    if (innerWidth <= 767) {
+    if (window.innerWidth <= 1023) {
       [2, 3, 4, 6].forEach(index => {
         spans[index].style.display = "none";
       });
@@ -217,7 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
     requestBtn.classList.toggle("menu__request_active");
     menu.classList.toggle("menu_modifikator");
     menu.style.background === 'transparent' ? menu.style.background = 'rgba(255, 255, 255, 0.8)' : menu.style.background = 'transparent';
-    if (innerWidth <= 1399 && window.scrollY >= 400) {
+    if (window.innerWidth <= 1399 && window.scrollY >= 400) {
       menu.classList.toggle("menu_active");
     }
     if (body.style.overflow === "hidden") {
@@ -229,6 +230,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   deleteSpanFromRangeLabels();
+  const titleModal = document.querySelector(".modal__form-title");
+  function changeTitleModal() {
+    window.innerWidth <= 1399 ? titleModal.innerHTML = 'Make request' : titleModal.innerHTML = 'Calculate the cost of work';
+  }
+  changeTitleModal();
 });
 
 /***/ })

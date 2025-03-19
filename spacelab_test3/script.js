@@ -1772,7 +1772,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   function deleteSpanFromRangeLabels() {
-    if (innerWidth <= 767) {
+    if (innerWidth <= 1023) {
       [2, 3, 4, 6].forEach(index => {
         spans[index].style.display = "none";
       });
@@ -1793,6 +1793,7 @@ document.addEventListener("DOMContentLoaded", () => {
     innerWidth <= 767 ? changeImgTitle() : null;
     innerWidth <= 767 ? changeLoremTitle() : null;
     deleteSpanFromRangeLabels();
+    changeTitleModal();
   });
   const hamburger = document.querySelector(".hamburger");
   const bigMenu = document.querySelector(".menu__big-menu");
@@ -1803,7 +1804,7 @@ document.addEventListener("DOMContentLoaded", () => {
     bigMenu.classList.toggle("menu__big-menu_active");
     hamburger.classList.toggle("hamburger_active");
     requestBtn.classList.toggle("menu__request_active");
-    if (innerWidth <= 1399 && window.scrollY >= 400) {
+    if (window.innerWidth <= 1399 && window.scrollY >= 400) {
       menu.classList.toggle("menu_active");
     }
     if (body.style.overflow === "hidden") {
@@ -1914,6 +1915,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   inputPhone.addEventListener('input', validatePhone);
   inputEmail.addEventListener('input', validateEmail);
+  const titleModal = document.querySelector(".modal__form-title");
+  function changeTitleModal() {
+    window.innerWidth <= 1399 ? titleModal.innerHTML = 'Make request' : titleModal.innerHTML = 'Calculate the cost of work';
+  }
+  changeTitleModal();
 });
 
 /***/ })
