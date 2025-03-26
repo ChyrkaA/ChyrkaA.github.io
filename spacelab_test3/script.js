@@ -1737,32 +1737,32 @@ document.addEventListener("DOMContentLoaded", () => {
   const spans = modal.querySelectorAll(".modal__form-range-labels span");
   function changeFooterTitle() {
     if (innerWidth <= 1399) {
-      footerTitle.innerHTML = 'Get in touch';
+      footerTitle.innerHTML = "Get in touch";
     }
   }
   function changeLoremTitle() {
     if (innerWidth <= 767) {
-      loremTitle.innerHTML = '@hilight.design';
+      loremTitle.innerHTML = "@hilight.design";
     }
   }
   function changeTelMail() {
     if (innerWidth <= 1399) {
       tel.forEach(elem => {
-        elem.innerHTML = '+380935705222';
-        elem.href = 'tel:+380935705222';
+        elem.innerHTML = "+380935705222";
+        elem.href = "tel:+380935705222";
       });
       mail.forEach(elem => {
         elem.innerHTML = "info@hi-light.pl";
-        elem.href = 'mailto:info@hi-light.pl';
+        elem.href = "mailto:info@hi-light.pl";
       });
     } else {
       tel.forEach(elem => {
         elem.innerHTML = "+380983527547";
-        elem.href = 'tel:+380983527547';
+        elem.href = "tel:+380983527547";
       });
       mail.forEach(elem => {
         elem.innerHTML = "E: info@gmail.com";
-        elem.href = 'mailto:info@gmail.com';
+        elem.href = "mailto:info@gmail.com";
       });
     }
   }
@@ -1794,6 +1794,7 @@ document.addEventListener("DOMContentLoaded", () => {
     innerWidth <= 767 ? changeLoremTitle() : null;
     deleteSpanFromRangeLabels();
     changeTitleModal();
+    changeThumbInputModal();
   });
   const hamburger = document.querySelector(".hamburger");
   const bigMenu = document.querySelector(".menu__big-menu");
@@ -1831,9 +1832,9 @@ document.addEventListener("DOMContentLoaded", () => {
       prevEl: ".swiper-button-prev"
     }
   });
-  swiper.on('slideChangeTransitionEnd', () => {
-    const activeSlide = document.querySelector('.swiper-slide-active');
-    const currentSlideNumber = activeSlide.getAttribute('aria-label').split(' / ')[0];
+  swiper.on("slideChangeTransitionEnd", () => {
+    const activeSlide = document.querySelector(".swiper-slide-active");
+    const currentSlideNumber = activeSlide.getAttribute("aria-label").split(" / ")[0];
     num[0].innerHTML = `0${currentSlideNumber}`;
   });
   const tablets = document.querySelector(".projects__tablets");
@@ -1847,19 +1848,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const target = e.target.closest(".projects__tablet");
     if (target) {
       target.classList.remove("projects__tablet_active");
-    }
-  });
-  const cards = document.querySelector(".projects__cards-wrapper");
-  cards.addEventListener("mouseover", e => {
-    const target = e.target.closest(".projects__cards-wrapper-card");
-    if (target) {
-      target.classList.add("projects__cards-wrapper-card_active");
-    }
-  });
-  cards.addEventListener("mouseout", e => {
-    const target = e.target.closest(".projects__cards-wrapper-card");
-    if (target) {
-      target.classList.remove("projects__cards-wrapper-card_active");
     }
   });
   const modalClose = document.querySelector(".modal__close");
@@ -1884,42 +1872,106 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   const menu = document.querySelector(".menu");
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     window.scrollY >= 400 ? menu.classList.add("menu_active") : menu.classList.remove("menu_active");
   });
-  const inputPhone = document.querySelector('.modal__form-input-phone');
-  const inputEmail = document.querySelector('.modal__form-input-mail');
+  const inputPhone = document.querySelector(".modal__form-input-phone");
+  const inputEmail = document.querySelector(".modal__form-input-mail");
   const cleave = new cleave_js__WEBPACK_IMPORTED_MODULE_0__["default"](inputPhone, {
-    delimiters: ['(', ') ', '-', '-'],
+    delimiters: ["(", ") ", "-", "-"],
     blocks: [0, 3, 3, 2, 2],
-    prefix: '',
+    prefix: "",
     rawValueTrimPrefix: false,
     numericOnly: true
   });
   function validatePhone() {
-    const phoneValue = inputPhone.value.replace(/[^\d]/g, '');
+    const phoneValue = inputPhone.value.replace(/[^\d]/g, "");
     if (phoneValue.length === 10) {
-      inputPhone.setCustomValidity('');
+      inputPhone.setCustomValidity("");
     } else {
-      inputPhone.setCustomValidity('Номер телефону має мати мінімум 10 цифр');
+      inputPhone.setCustomValidity("Номер телефону має мати мінімум 10 цифр");
     }
   }
   function validateEmail() {
     const emailValue = inputEmail.value;
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Просте регулярне вираження для email
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Просте
+    // регулярне
+    // вираження
+    // для
+    // email
     if (emailPattern.test(emailValue)) {
-      inputEmail.setCustomValidity('');
+      inputEmail.setCustomValidity("");
     } else {
-      inputEmail.setCustomValidity('Введіть коректний email');
+      inputEmail.setCustomValidity("Введіть коректний email");
     }
   }
-  inputPhone.addEventListener('input', validatePhone);
-  inputEmail.addEventListener('input', validateEmail);
+  inputPhone.addEventListener("input", validatePhone);
+  inputEmail.addEventListener("input", validateEmail);
   const titleModal = document.querySelector(".modal__form-title");
   function changeTitleModal() {
-    window.innerWidth <= 1399 ? titleModal.innerHTML = 'Make request' : titleModal.innerHTML = 'Calculate the cost of work';
+    window.innerWidth <= 1399 ? titleModal.innerHTML = "Make request" : titleModal.innerHTML = "Calculate the cost of work";
   }
   changeTitleModal();
+
+  // preloader
+  const preloaderPercent = document.querySelector(".preloader__percent");
+  const progressBar = document.querySelector(".preloader__progress-fill");
+  let loadedResources = 0;
+  let totalResources = 0;
+  function updateProgress() {
+    const percent = Math.floor(loadedResources / totalResources * 100);
+    preloaderPercent.textContent = `HI ${percent}%`;
+    progressBar.style.width = `${percent}%`;
+    setTimeout(() => {
+      if (percent === 100) {
+        preloaderPercent.textContent = `HILIGHT`;
+      }
+    }, 500);
+  }
+  function countResources() {
+    totalResources = document.images.length + document.styleSheets.length + document.scripts.length;
+  }
+  function trackResourceLoading() {
+    const checkResourcesLoaded = () => {
+      loadedResources++;
+      updateProgress();
+    };
+    const trackResource = resource => {
+      resource.onload = checkResourcesLoaded;
+      resource.onerror = checkResourcesLoaded;
+    };
+    [...document.images, ...document.styleSheets, ...document.scripts].forEach(trackResource);
+  }
+  countResources();
+  trackResourceLoading();
+  window.addEventListener("load", () => {
+    loadedResources = totalResources;
+    updateProgress();
+    if (loadedResources === totalResources) {
+      setTimeout(() => {
+        document.querySelector(".preloader").style.display = "none";
+      }, 1000);
+    }
+  });
+  function changeThumbInputModal() {
+    if (window.innerWidth < 1024) {
+      const sliderOne = document.querySelector(".modal__form-slider-one .modal__form-slider");
+      const sliderTwo = document.querySelector(".modal__form-slider-two .modal__form-slider");
+      function toggleSliders(event) {
+        console.log(1);
+        if (event.target === sliderOne) {
+          sliderTwo.classList.add("hidden");
+          sliderOne.classList.remove("hidden");
+        } else if (event.target === sliderTwo) {
+          sliderOne.classList.add("hidden");
+          sliderTwo.classList.remove("hidden");
+        }
+      }
+      sliderOne.addEventListener("pointerdown", toggleSliders);
+      sliderTwo.addEventListener("pointerdown", toggleSliders);
+    }
+  }
+  changeThumbInputModal();
 });
 
 /***/ })

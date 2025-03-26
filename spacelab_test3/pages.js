@@ -93,12 +93,12 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-'use script';
+"use script";
 
 document.addEventListener("DOMContentLoaded", () => {
   const menu = document.querySelector(".menu");
-  window.addEventListener('scroll', () => {
-    window.scrollY >= 400 ? menu.style.background = 'rgba(255, 255, 255, 0.8)' : menu.style.background = '';
+  window.addEventListener("scroll", () => {
+    window.scrollY >= 400 ? menu.style.background = "rgba(255, 255, 255, 0.8)" : menu.style.background = "";
   });
   const cards = document.querySelector(".news__cards");
   cards.addEventListener("mouseover", e => {
@@ -113,35 +113,35 @@ document.addEventListener("DOMContentLoaded", () => {
       target.classList.remove("news__cards-card_active");
     }
   });
-  const filterTabsContainer = document.querySelector('.news__filter-tabs');
-  const filterSelect = document.querySelector('.news__filter-select');
-  const filterTabs = document.querySelectorAll('.news__filter-tab');
-  const card = document.querySelectorAll('.news__cards > div');
+  const filterTabsContainer = document.querySelector(".news__filter-tabs");
+  const filterSelect = document.querySelector(".news__filter-select");
+  const filterTabs = document.querySelectorAll(".news__filter-tab");
+  const card = document.querySelectorAll(".news__cards > div");
   function updateFilterDisplay() {
     if (window.innerWidth < 768) {
-      filterTabsContainer.style.display = 'none';
-      filterSelect.style.display = '';
-      filterSelect[0].innerHTML = 'Apartments';
-      filterSelect.addEventListener('change', function () {
+      filterTabsContainer.style.display = "none";
+      filterSelect.style.display = "";
+      filterSelect[0].innerHTML = "Apartments";
+      filterSelect.addEventListener("change", function () {
         const selectedTab = this.value;
         console.log(selectedTab);
         card.forEach(card => {
-          const cardTab = card.getAttribute('data-tab');
-          selectedTab === 'all' || selectedTab === cardTab ? card.style.display = '' : card.style.display = 'none';
+          const cardTab = card.getAttribute("data-tab");
+          selectedTab === "all" || selectedTab === cardTab ? card.style.display = "" : card.style.display = "none";
         });
       });
     } else {
-      filterTabsContainer.style.display = '';
-      filterSelect.style.display = 'none';
+      filterTabsContainer.style.display = "";
+      filterSelect.style.display = "none";
       filterTabs.forEach(tab => {
-        tab.addEventListener('click', function () {
-          filterTabs.forEach(item => item.classList.remove('news__filter-tab-active'));
-          this.classList.add('news__filter-tab-active');
-          const selectedTab = this.getAttribute('data-tab');
+        tab.addEventListener("click", function () {
+          filterTabs.forEach(item => item.classList.remove("news__filter-tab-active"));
+          this.classList.add("news__filter-tab-active");
+          const selectedTab = this.getAttribute("data-tab");
           console.log(selectedTab);
           card.forEach(card => {
-            const cardTab = card.getAttribute('data-tab');
-            selectedTab === 'all' || selectedTab === cardTab ? card.style.display = '' : card.style.display = 'none';
+            const cardTab = card.getAttribute("data-tab");
+            selectedTab === "all" || selectedTab === cardTab ? card.style.display = "" : card.style.display = "none";
           });
         });
       });
@@ -156,22 +156,23 @@ document.addEventListener("DOMContentLoaded", () => {
       newsTitle.innerText = "Our latest news";
     }
   }
-  const loremMailTextarea = document.querySelector('.lmail__textarea');
+  const loremMailTextarea = document.querySelector(".lmail__textarea");
   function changeLoremMailText() {
     if (window.innerWidth <= 1399) {
       loremMailTextarea.innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper eu mauris vitae posuere. Ut at luctus ligula. Nunc ante felis, aliquam eu enim sed, ornare pretium velit.";
     } else {
-      loremMailTextarea.innerText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper eu mauris vitae posuere. Ut at luctus ligula. Nunc ante felis, aliquam.';
+      loremMailTextarea.innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper eu mauris vitae posuere. Ut at luctus ligula. Nunc ante felis, aliquam.";
     }
   }
   changeNewsTitle();
   changeLoremMailText();
-  window.addEventListener('resize', () => {
+  window.addEventListener("resize", () => {
     changeNewsTitle();
     updateFilterDisplay();
     changeLoremMailText();
     deleteSpanFromRangeLabels();
     changeTitleModal();
+    changeDonecTextarea();
   });
   const requestBtn = document.querySelector(".menu__request");
   const body = document.querySelector("body");
@@ -217,7 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
     hamburger.classList.toggle("hamburger_active");
     requestBtn.classList.toggle("menu__request_active");
     menu.classList.toggle("menu_modifikator");
-    menu.style.background === 'transparent' ? menu.style.background = 'rgba(255, 255, 255, 0.8)' : menu.style.background = 'transparent';
+    menu.style.background === "transparent" ? menu.style.background = "rgba(255, 255, 255, 0.8)" : menu.style.background = "transparent";
     if (window.innerWidth <= 1399 && window.scrollY >= 400) {
       menu.classList.toggle("menu_active");
     }
@@ -232,9 +233,57 @@ document.addEventListener("DOMContentLoaded", () => {
   deleteSpanFromRangeLabels();
   const titleModal = document.querySelector(".modal__form-title");
   function changeTitleModal() {
-    window.innerWidth <= 1399 ? titleModal.innerHTML = 'Make request' : titleModal.innerHTML = 'Calculate the cost of work';
+    window.innerWidth <= 1399 ? titleModal.innerHTML = "Make request" : titleModal.innerHTML = "Calculate the cost of work";
   }
   changeTitleModal();
+  function changeDonecTextarea() {
+    if (window.location.pathname === "/new.html" && window.innerWidth <= 1399) {
+      const donecTextarea = document.querySelectorAll(".donec__textarea");
+      donecTextarea[1].innerHTML = "Ut arcu tortor, hendrerit eget sollicitudin sed, tincidunt a lectus. Cras gravida ultricies ante sit amet consectetur. Maecenas sed arcu tempor, posuere odio pharetra, faucibus risus. Etiam fermentum felis quis aliquet viverra. Mauris in odio nec mi pellentesque placerat. Praesent at metus in lacus posuere molestie. Aliquam consequat, neque eget congue feugiat, lectus leo condimentum lorem, scelerisque euismod nisi ipsum nec metus. Mauris semper felis venenatis eros interdum sollicitudin.";
+    }
+  }
+  changeDonecTextarea();
+
+  // preloader
+  const preloaderPercent = document.querySelector(".preloader__percent");
+  const progressBar = document.querySelector(".preloader__progress-fill");
+  let loadedResources = 0;
+  let totalResources = 0;
+  function updateProgress() {
+    const percent = Math.floor(loadedResources / totalResources * 100);
+    preloaderPercent.textContent = `HI ${percent}%`;
+    progressBar.style.width = `${percent}%`;
+    setTimeout(() => {
+      if (percent === 100) {
+        preloaderPercent.textContent = `HILIGHT`;
+      }
+    }, 500);
+  }
+  function countResources() {
+    totalResources = document.images.length + document.styleSheets.length + document.scripts.length;
+  }
+  function trackResourceLoading() {
+    const checkResourcesLoaded = () => {
+      loadedResources++;
+      updateProgress();
+    };
+    const trackResource = resource => {
+      resource.onload = checkResourcesLoaded;
+      resource.onerror = checkResourcesLoaded;
+    };
+    [...document.images, ...document.styleSheets, ...document.scripts].forEach(trackResource);
+  }
+  countResources();
+  trackResourceLoading();
+  window.addEventListener("load", () => {
+    loadedResources = totalResources;
+    updateProgress();
+    if (loadedResources === totalResources) {
+      setTimeout(() => {
+        document.querySelector(".preloader").style.display = "none";
+      }, 1000);
+    }
+  });
 });
 
 /***/ })
