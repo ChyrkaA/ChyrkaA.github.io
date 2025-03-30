@@ -101,7 +101,7 @@ __webpack_require__.r(__webpack_exports__);
 
 document.addEventListener("DOMContentLoaded", () => {
   function changeDonecTextarea() {
-    if (window.location.pathname === "/new.html" && window.innerWidth <= 1399) {
+    if (window.innerWidth <= 1399) {
       const donecTextarea = document.querySelectorAll(".donec__textarea");
       donecTextarea[1].innerHTML = "Ut arcu tortor, hendrerit eget sollicitudin sed, tincidunt a lectus. Cras gravida ultricies ante sit amet consectetur. Maecenas sed arcu tempor, posuere odio pharetra, faucibus risus. Etiam fermentum felis quis aliquet viverra. Mauris in odio nec mi pellentesque placerat. Praesent at metus in lacus posuere molestie. Aliquam consequat, neque eget congue feugiat, lectus leo condimentum lorem, scelerisque euismod nisi ipsum nec metus. Mauris semper felis venenatis eros interdum sollicitudin.";
     }
