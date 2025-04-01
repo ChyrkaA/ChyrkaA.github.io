@@ -246,6 +246,44 @@ document.addEventListener("DOMContentLoaded", () => {
   changeThumbInputModal();
 });
 
+// const arr = [5, 1, 3, 2, 4];
+
+// function findNum(arr) {
+
+// for (let i = 0; i < arr.length; i++) {
+//     for (let j = 0; j < arr.length; j++) {
+//         if (arr[i] == arr[j] && i !== j) {
+//             console.log('Знайдено співпадіння', arr[i]);
+//             return;
+//         }
+//     }
+//     return null;
+// }
+// }
+
+// function findFirstDuplicate(arr) {
+//     const duplicate = arr.find((num, index) => {
+//         return arr.indexOf(num) !== index;
+//     });
+//
+//     return duplicate !== undefined ? duplicate : null;
+// }
+//
+// console.log(findNum(arr));
+
+const persone = {
+  name: 'Alex',
+  tel: '+45364456546',
+  parents: {
+    mom: 'Olga',
+    father: 'Kiril'
+  }
+};
+const user = JSON.stringify(persone);
+const clone = JSON.parse(user);
+clone.parents.mom = 'Ann';
+console.log(clone, persone);
+
 /***/ }),
 
 /***/ "./src/js/services/+esm.js":
