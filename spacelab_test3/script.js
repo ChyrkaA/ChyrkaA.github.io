@@ -1730,7 +1730,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const tel = document.querySelectorAll(".space__tel");
   const mail = document.querySelectorAll(".space__mail");
   const tablet = document.querySelectorAll(".projects__tablet");
-  const tabletImg = tablet[2].querySelector(".projects__tablet-img");
   const loremTitle = document.querySelector(".lorem__title");
   const footerTitle = document.querySelector(".footer__title");
   const modal = document.querySelector(".modal");
@@ -1738,11 +1737,15 @@ document.addEventListener("DOMContentLoaded", () => {
   function changeFooterTitle() {
     if (innerWidth <= 1399) {
       footerTitle.innerHTML = "Get in touch";
+    } else {
+      footerTitle.innerHTML = "Drop us a line";
     }
   }
   function changeLoremTitle() {
     if (innerWidth <= 767) {
       loremTitle.innerHTML = "@hilight.design";
+    } else {
+      loremTitle.innerHTML = "@lorem.ipsum";
     }
   }
   function changeTelMail() {
@@ -1767,8 +1770,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   function changeImgTitle() {
-    if (innerWidth <= 1024 && tabletImg) {
+    if (innerWidth <= 1024) {
+      const tabletImg = tablet[2].querySelector(".projects__tablet-img");
+      const tabletImgSource = tablet[2].querySelector("source");
       tabletImg.src = "img/projects/7.webp";
+      tabletImgSource.setAttribute('srcset', `img/projects/7.webp`);
     }
   }
   function deleteSpanFromRangeLabels() {
@@ -1799,12 +1805,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger");
   const bigMenu = document.querySelector(".menu__big-menu");
   const body = document.querySelector("body");
-  const requestBtn = document.querySelector(".menu__request");
+  const requestBtnMenu = document.querySelector(".menu__request");
   const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
   hamburger.addEventListener("click", () => {
     bigMenu.classList.toggle("menu__big-menu_active");
     hamburger.classList.toggle("hamburger_active");
-    requestBtn.classList.toggle("menu__request_active");
+    requestBtnMenu.classList.toggle("menu__request_active");
     if (window.innerWidth <= 1399 && window.scrollY >= 400) {
       menu.classList.toggle("menu_active");
     }
@@ -1851,15 +1857,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
   const modalClose = document.querySelector(".modal__close");
-  requestBtn.addEventListener("click", () => {
-    modal.classList.add("modal_active");
-    if (body.style.overflow === "hidden") {
-      body.style.overflow = "";
-      body.style.paddingRight = "";
-    } else {
-      body.style.overflow = "hidden";
-      body.style.paddingRight = `${scrollbarWidth}px`;
-    }
+  const requestBtn = document.querySelectorAll(".menu__request, .projects__cards-request");
+  requestBtn.forEach(btn => {
+    btn.addEventListener("click", () => {
+      modal.classList.add("modal_active");
+      if (body.style.overflow === "hidden") {
+        body.style.overflow = "";
+        body.style.paddingRight = "";
+      } else {
+        body.style.overflow = "hidden";
+        body.style.paddingRight = `${scrollbarWidth}px`;
+      }
+    });
   });
   modalClose.addEventListener("click", () => {
     modal.classList.remove("modal_active");
@@ -1915,13 +1924,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // preloader
   const preloaderPercent = document.querySelector(".preloader__percent");
-  const progressBar = document.querySelector(".preloader__progress-fill");
   let loadedResources = 0;
   let totalResources = 0;
   function updateProgress() {
     const percent = Math.floor(loadedResources / totalResources * 100);
     preloaderPercent.textContent = `HI ${percent}%`;
-    progressBar.style.width = `${percent}%`;
     setTimeout(() => {
       if (percent === 100) {
         preloaderPercent.textContent = `HILIGHT`;

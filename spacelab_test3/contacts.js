@@ -81,103 +81,29 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/pages.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/contacts.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/pages.js":
-/*!*************************!*\
-  !*** ./src/js/pages.js ***!
-  \*************************/
+/***/ "./src/js/contacts.js":
+/*!****************************!*\
+  !*** ./src/js/contacts.js ***!
+  \****************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-"use script";
+"use strict";
 
-document.addEventListener("DOMContentLoaded", () => {
+
+window.addEventListener('DOMContentLoaded', function () {
   const menu = document.querySelector(".menu");
   window.addEventListener("scroll", () => {
     window.scrollY >= 400 ? menu.style.background = "rgba(255, 255, 255, 0.8)" : menu.style.background = "";
   });
-  const cards = document.querySelector(".news__cards");
-  cards.addEventListener("mouseover", e => {
-    const target = e.target.closest(".news__cards-card");
-    if (target) {
-      target.classList.add("news__cards-card_active");
-    }
-  });
-  cards.addEventListener("mouseout", e => {
-    const target = e.target.closest(".news__cards-card");
-    if (target) {
-      target.classList.remove("news__cards-card_active");
-    }
-  });
-  const filterTabsContainer = document.querySelector(".news__filter-tabs");
-  const filterSelect = document.querySelector(".news__filter-select");
-  const filterTabs = document.querySelectorAll(".news__filter-tab");
-  const card = document.querySelectorAll(".news__cards > div");
-  function updateFilterDisplay() {
-    if (window.innerWidth < 768) {
-      filterTabsContainer.style.display = "none";
-      filterSelect.style.display = "";
-      filterSelect[0].innerHTML = "Apartments";
-      filterSelect.addEventListener("change", function () {
-        const selectedTab = this.value;
-        console.log(selectedTab);
-        card.forEach(card => {
-          const cardTab = card.getAttribute("data-tab");
-          selectedTab === "all" || selectedTab === cardTab ? card.style.display = "" : card.style.display = "none";
-        });
-      });
-    } else {
-      filterTabsContainer.style.display = "";
-      filterSelect.style.display = "none";
-      filterTabs.forEach(tab => {
-        tab.addEventListener("click", function () {
-          filterTabs.forEach(item => item.classList.remove("news__filter-tab-active"));
-          this.classList.add("news__filter-tab-active");
-          const selectedTab = this.getAttribute("data-tab");
-          card.forEach(card => {
-            const cardTab = card.getAttribute("data-tab");
-            selectedTab === "all" || selectedTab === cardTab ? card.style.display = "" : card.style.display = "none";
-          });
-        });
-      });
-    }
-  }
-  updateFilterDisplay();
-  const newsTitle = document.querySelector(".news__title");
-  function changeNewsTitle() {
-    if (window.innerWidth < 768) {
-      newsTitle.innerText = "Our news";
-    } else {
-      newsTitle.innerText = "Our latest news";
-    }
-  }
-  const loremMailTextarea = document.querySelector(".lmail__textarea");
-  function changeLoremMailText() {
-    if (window.innerWidth <= 1399) {
-      loremMailTextarea.innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper eu mauris vitae posuere. Ut at luctus ligula. Nunc ante felis, aliquam eu enim sed, ornare pretium velit.";
-    } else {
-      loremMailTextarea.innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper eu mauris vitae posuere. Ut at luctus ligula. Nunc ante felis, aliquam.";
-    }
-  }
-  changeNewsTitle();
-  changeLoremMailText();
-  window.addEventListener("resize", () => {
-    changeNewsTitle();
-    updateFilterDisplay();
-    changeLoremMailText();
-    deleteSpanFromRangeLabels();
-    changeTitleModal();
-    changeDonecTextarea();
-  });
-  const requestBtnMenu = document.querySelector(".menu__request");
   const body = document.querySelector("body");
   const modalClose = document.querySelector(".modal__close");
   const modal = document.querySelector(".modal");
-  const spans = modal.querySelectorAll(".modal__form-range-labels span");
   const hamburger = document.querySelector(".hamburger");
   const bigMenu = document.querySelector(".menu__big-menu");
   const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
@@ -204,23 +130,11 @@ document.addEventListener("DOMContentLoaded", () => {
       body.style.paddingRight = `${scrollbarWidth}px`;
     }
   });
-  function deleteSpanFromRangeLabels() {
-    if (window.innerWidth <= 1023) {
-      [2, 3, 4, 6].forEach(index => {
-        spans[index].style.display = "none";
-      });
-    } else {
-      [2, 3, 4, 6].forEach(index => {
-        spans[index].style.display = "";
-      });
-    }
-  }
+  const requestBtnMenu = document.querySelector(".menu__request");
   hamburger.addEventListener("click", () => {
     bigMenu.classList.toggle("menu__big-menu_active");
     hamburger.classList.toggle("hamburger_active");
     requestBtnMenu.classList.toggle("menu__request_active");
-    menu.classList.toggle("menu_modifikator");
-    menu.style.background === "transparent" ? menu.style.background = "rgba(255, 255, 255, 0.8)" : menu.style.background = "transparent";
     if (window.innerWidth <= 1399 && window.scrollY >= 400) {
       menu.classList.toggle("menu_active");
     }
@@ -232,19 +146,6 @@ document.addEventListener("DOMContentLoaded", () => {
       body.style.paddingRight = `${scrollbarWidth}px`;
     }
   });
-  deleteSpanFromRangeLabels();
-  const titleModal = document.querySelector(".modal__form-title");
-  function changeTitleModal() {
-    window.innerWidth <= 1399 ? titleModal.innerHTML = "Make request" : titleModal.innerHTML = "Calculate the cost of work";
-  }
-  changeTitleModal();
-  function changeDonecTextarea() {
-    if (window.location.pathname === "/new.html" && window.innerWidth <= 1399) {
-      const donecTextarea = document.querySelectorAll(".donec__textarea");
-      donecTextarea[1].innerHTML = "Ut arcu tortor, hendrerit eget sollicitudin sed, tincidunt a lectus. Cras gravida ultricies ante sit amet consectetur. Maecenas sed arcu tempor, posuere odio pharetra, faucibus risus. Etiam fermentum felis quis aliquet viverra. Mauris in odio nec mi pellentesque placerat. Praesent at metus in lacus posuere molestie. Aliquam consequat, neque eget congue feugiat, lectus leo condimentum lorem, scelerisque euismod nisi ipsum nec metus. Mauris semper felis venenatis eros interdum sollicitudin.";
-    }
-  }
-  changeDonecTextarea();
 
   // preloader
   const preloaderPercent = document.querySelector(".preloader__percent");
@@ -284,9 +185,94 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 1000);
     }
   });
+  const footerTitle = document.querySelector(".footer__title");
+  function changeFooterTitle() {
+    if (innerWidth <= 1399) {
+      footerTitle.innerHTML = "Get in touch";
+    }
+  }
+  changeFooterTitle();
+  window.addEventListener("resize", () => {
+    changeFooterTitle();
+    changeTelMail();
+    changeTitleModal();
+    changeThumbInputModal();
+  });
+  document.addEventListener("click", e => {
+    const select = e.target.closest(".space__select");
+    if (select) {
+      const optionList = select.querySelector(".space__select-list");
+      const cross = select.querySelector(".space__select-option-spans");
+      if (optionList && !e.target.closest(".space__select-list")) {
+        optionList.classList.toggle("space__select-list_active");
+        cross.classList.toggle("space__select-option-spans_active");
+      }
+    }
+    if (e.target.closest(".space__select-list") && e.target.tagName === "LI") {
+      const listItem = e.target;
+      const select = listItem.closest(".space__select");
+      const option = select.querySelector(".space__select-option");
+      if (option) {
+        const optionText = option.childNodes[1];
+        optionText.textContent = listItem.textContent;
+        const optionList = select.querySelector(".space__select-list");
+        const cross = select.querySelector(".space__select-option-spans");
+        optionList.classList.toggle("space__select-list_active");
+        cross.classList.toggle("space__select-option-spans_active");
+      }
+    }
+  });
+  const tel = document.querySelectorAll(".space__tel");
+  const mail = document.querySelectorAll(".space__mail");
+  function changeTelMail() {
+    if (innerWidth <= 1399) {
+      tel.forEach(elem => {
+        elem.innerHTML = "+380935705222";
+        elem.href = "tel:+380935705222";
+      });
+      mail.forEach(elem => {
+        elem.innerHTML = "info@hi-light.pl";
+        elem.href = "mailto:info@hi-light.pl";
+      });
+    } else {
+      tel.forEach(elem => {
+        elem.innerHTML = "+380983527547";
+        elem.href = "tel:+380983527547";
+      });
+      mail.forEach(elem => {
+        elem.innerHTML = "E: info@gmail.com";
+        elem.href = "mailto:info@gmail.com";
+      });
+    }
+  }
+  changeTelMail();
+  const titleModal = document.querySelector(".modal__form-title");
+  function changeTitleModal() {
+    window.innerWidth <= 1399 ? titleModal.innerHTML = "Make request" : titleModal.innerHTML = "Calculate the cost of work";
+  }
+  changeTitleModal();
+  function changeThumbInputModal() {
+    if (window.innerWidth < 1024) {
+      const sliderOne = document.querySelector(".modal__form-slider-one .modal__form-slider");
+      const sliderTwo = document.querySelector(".modal__form-slider-two .modal__form-slider");
+      function toggleSliders(event) {
+        console.log(1);
+        if (event.target === sliderOne) {
+          sliderTwo.classList.add("hidden");
+          sliderOne.classList.remove("hidden");
+        } else if (event.target === sliderTwo) {
+          sliderOne.classList.add("hidden");
+          sliderTwo.classList.remove("hidden");
+        }
+      }
+      sliderOne.addEventListener("pointerdown", toggleSliders);
+      sliderTwo.addEventListener("pointerdown", toggleSliders);
+    }
+  }
+  changeThumbInputModal();
 });
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=pages.js.map
+//# sourceMappingURL=contacts.js.map
