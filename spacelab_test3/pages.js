@@ -172,6 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
     deleteSpanFromRangeLabels();
     changeTitleModal();
     changeDonecTextarea();
+    changeThumbInputModal();
   });
   const requestBtnMenu = document.querySelector(".menu__request");
   const body = document.querySelector("body");
@@ -284,6 +285,25 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 1000);
     }
   });
+  function changeThumbInputModal() {
+    if (window.innerWidth < 1024) {
+      const sliderOne = document.querySelector(".modal__form-slider-one .modal__form-slider");
+      const sliderTwo = document.querySelector(".modal__form-slider-two .modal__form-slider");
+      function toggleSliders(event) {
+        console.log(1);
+        if (event.target === sliderOne) {
+          sliderTwo.classList.add("hidden");
+          sliderOne.classList.remove("hidden");
+        } else if (event.target === sliderTwo) {
+          sliderOne.classList.add("hidden");
+          sliderTwo.classList.remove("hidden");
+        }
+      }
+      sliderOne.addEventListener("pointerdown", toggleSliders);
+      sliderTwo.addEventListener("pointerdown", toggleSliders);
+    }
+  }
+  changeThumbInputModal();
 });
 
 /***/ })
