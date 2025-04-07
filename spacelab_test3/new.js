@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
     changeDonecTextarea();
     changeThumbInputModal();
     changeTitleModal();
-    changeTitleModal();
+    changeThumbInputModal();
   });
   changeDonecTextarea();
   const swiper = new _services_esm__WEBPACK_IMPORTED_MODULE_0__["default"](".new-slider__swiper-container", {
@@ -245,36 +245,216 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   changeTitleModal();
   changeThumbInputModal();
-  function changeTitleModal() {
-    window.innerWidth <= 1399 ? titleModal.innerHTML = "Make request" : titleModal.innerHTML = "Calculate the cost of work";
+  function changeThumbInputModal() {
+    if (window.innerWidth < 1024) {
+      const sliderOne = document.querySelector(".modal__form-slider-one .modal__form-slider");
+      const sliderTwo = document.querySelector(".modal__form-slider-two .modal__form-slider");
+      function toggleSliders(event) {
+        console.log(1);
+        if (event.target === sliderOne) {
+          sliderTwo.classList.add("hidden");
+          sliderOne.classList.remove("hidden");
+        } else if (event.target === sliderTwo) {
+          sliderOne.classList.add("hidden");
+          sliderTwo.classList.remove("hidden");
+        }
+      }
+      sliderOne.addEventListener("pointerdown", toggleSliders);
+      sliderTwo.addEventListener("pointerdown", toggleSliders);
+    }
   }
-  changeTitleModal();
+  changeThumbInputModal();
 });
+const arr = [5, 1, 3, 2, 4, 5];
+function findFirstDuplicate(arr) {
+  const duplicate = arr.find((num, index) => {
+    return arr.indexOf(num) !== index;
+  });
+  return duplicate !== undefined ? duplicate : null;
+}
+console.log(findFirstDuplicate(arr));
 
-// const arr = [5, 1, 3, 2, 4];
-
-// function findNum(arr) {
-
-// for (let i = 0; i < arr.length; i++) {
-//     for (let j = 0; j < arr.length; j++) {
-//         if (arr[i] == arr[j] && i !== j) {
-//             console.log('Знайдено співпадіння', arr[i]);
-//             return;
-//         }
-//     }
-//     return null;
-// }
-// }
-
-// function findFirstDuplicate(arr) {
-//     const duplicate = arr.find((num, index) => {
-//         return arr.indexOf(num) !== index;
+// Есть массив объектов, представляющих сотрудников компании. Нужно найти первого
+// сотрудника, у которого есть опыт работы больше 5 лет.Используя метод .find(), найди
+// первого сотрудника, у которого опыт работы больше 5 лет, и выведи его имя в консоль.
+// let employees = [
+//     {name: 'Alice', position: 'Developer', experience: 3},
+//     {name: 'Bob', position: 'Manager', experience: 7},
+//     {name: 'Charlie', position: 'Designer', experience: 4},
+//     {name: 'David', position: 'Developer', experience: 6}
+// ];
+//
+// function findEmployee(arr) {
+//     const empl = arr.find(employee => {
+//         return employee.experience >= 5;
 //     });
 //
-//     return duplicate !== undefined ? duplicate : null;
+//     empl ? console.log(empl.name) : console.log(null);
 // }
 //
-// console.log(findNum(arr));
+// findEmployee(employees);
+
+// У нас есть массив объектов, представляющих книги в библиотеке. Нужно найти первую
+// книгу, которая была издана после 2000 года и принадлежит жанру "фантастика".Используя
+// метод .find(), найди первую книгу, которая была издана после 2000 года и относится к
+// жанру "Science Fiction" (научная фантастика).
+let books = [{
+  title: '1984',
+  author: 'George Orwell',
+  year: 1949,
+  genre: 'Dystopia'
+}, {
+  title: 'The Catcher in the Rye',
+  author: 'J.D. Salinger',
+  year: 1951,
+  genre: 'Literary Fiction'
+}, {
+  title: 'The Hobbit',
+  author: 'J.R.R. Tolkien',
+  year: 1937,
+  genre: 'Fantasy'
+}, {
+  title: 'The Road',
+  author: 'Cormac McCarthy',
+  year: 2006,
+  genre: 'Post-apocalyptic'
+}, {
+  title: 'The Hunger Games',
+  author: 'Suzanne Collins',
+  year: 2008,
+  genre: 'Dystopia'
+}, {
+  title: 'Dune',
+  author: 'Frank Herbert',
+  year: 1965,
+  genre: 'Science Fiction'
+}, {
+  title: 'Ready Player One',
+  author: 'Ernest Cline',
+  year: 2011,
+  genre: 'Science Fiction'
+}];
+const book = books.find(book => book.year > 2000 && book.genre == 'Science Fiction');
+book ? console.log(book) : null;
+
+// Найди первого активного пользователя из Берлина и выведи его имя.
+//     Если такого пользователя нет — выведи null.
+// const users = [
+//     {id: 1, name: 'Anna', city: 'Vienna', isActive: false},
+//     {id: 2, name: 'Max', city: 'Berlin', isActive: false},
+//     {id: 3, name: 'Lena', city: 'Munich', isActive: true},
+//     {id: 4, name: 'Tom', city: 'Berlin', isActive: true},
+//     {id: 5, name: 'Sara', city: 'Berlin', isActive: true}
+// ];
+//
+// const user = users.find(user => (user.city === "Berlin" && user.isActive));
+// user ? console.log(user.name) : console.log(null);
+
+// Задача:
+//     У нас есть массив заказов, и нужно найти первый заказ, который:
+// был сделан клиентом с VIP-статусом (isVIP: true)
+// и у которого статус заказа "Шиппинг" (status: "shipping")
+// и заказ был сделан в последнюю неделю месяца (поле date должно быть в формате
+// YYYY-MM-DD, и ты должен проверить, что день в нем больше или равен 25).  Задание:
+// Используя метод .find(), найди первый заказ, который соответствует всем этим условиям
+// и выведи его orderId. Если такого заказа нет — выведи null.
+
+// const orders = [
+//     {orderId: 1, customer: 'John', date: '2025-03-10', isVIP: false, status:
+// 'shipped'}, {orderId: 2, customer: 'Jane', date: '2025-03-28', isVIP: true, status:
+// 'shipping'}, {orderId: 3, customer: 'Alice', date: '2025-03-30', isVIP: true, status:
+// 'shipped'}, {orderId: 4, customer: 'Tom', date: '2025-03-29', isVIP: true, status:
+// 'shipping'}, {orderId: 5, customer: 'Sara', date: '2025-03-26', isVIP: false, status:
+// 'shipping'} ];   function lastWeek(date) { return (31 - new Date(date).getDate()); }
+// const order = orders.find(order => (order.isVIP && order.status === 'shipping' &&
+// lastWeek(order.date) <= 7));  order ? console.log(order.customer) : null;
+
+const users = [{
+  id: 1,
+  name: 'Anna',
+  city: 'Vienna',
+  isActive: true
+}, {
+  id: 2,
+  name: 'Max',
+  city: 'Berlin',
+  isActive: false
+}, {
+  id: 3,
+  name: 'Lena',
+  city: 'Munich',
+  isActive: true
+}, {
+  id: 4,
+  name: 'Tom',
+  city: 'Berlin',
+  isActive: true
+}, {
+  id: 5,
+  name: 'Sara',
+  city: 'Berlin',
+  isActive: true
+}];
+let usersIsTrue = [];
+function findName(arr, name) {
+  users.forEach(user => {
+    const temp = users.find(u => u.isActive && u.name === user.name);
+    if (temp) {
+      usersIsTrue.push(temp);
+    }
+  });
+  // return arr.find(
+  //     emploee => emploee.name.toLowerCase() === name.toLowerCase() &&
+  // emploee.isActive);
+}
+findName();
+console.log(usersIsTrue);
+// console.log(findName(users, 'anna'));
+
+const transactions = [{
+  userId: 1,
+  amount: 50,
+  date: '2025-04-01'
+}, {
+  userId: 2,
+  amount: 30,
+  date: '2025-04-02'
+}, {
+  userId: 1,
+  amount: 100,
+  date: '2025-04-15'
+}, {
+  userId: 3,
+  amount: 200,
+  date: '2025-03-25'
+}, {
+  userId: 2,
+  amount: 150,
+  date: '2025-03-29'
+}, {
+  userId: 1,
+  amount: 25,
+  date: '2025-03-10'
+}];
+let obj = {};
+function total(arr) {
+  arr.forEach(item => {
+    obj[item.userId] = {
+      totalSpent: 0,
+      purchaseCount: 0,
+      purchasesByMonth: {}
+    };
+    obj[item.userId].totalSpent = obj[item.userId].totalSpent + 1;
+    obj[item.userId].purchaseCount = obj[item.userId].purchaseCount + item.amount;
+    const itemDate = new Date(item.date);
+    if (itemDate > new Date(obj[item.userId].lastPurchaseDate)) {
+      obj[item.userId].lastPurchaseDate = item.date;
+    }
+    obj.push(obj[item.userId]);
+  });
+}
+total(transactions);
+console.log(obj[1], obj[2], obj[3]);
 
 /***/ }),
 
