@@ -81,22 +81,22 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/project.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/404.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/project.js":
-/*!***************************!*\
-  !*** ./src/js/project.js ***!
-  \***************************/
+/***/ "./src/js/404.js":
+/*!***********************!*\
+  !*** ./src/js/404.js ***!
+  \***********************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   const preloaderPercent = document.querySelector(".preloader__percent");
   let loadedResources = 0;
   let totalResources = 0;
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
   const menu = document.querySelector(".menu");
   window.addEventListener("scroll", () => {
-    window.scrollY >= 400 ? menu.classList.add("menu_active") : menu.classList.remove("menu_active");
+    window.scrollY >= 400 ? menu.style.background = "rgba(255, 255, 255, 0.8)" : menu.style.background = "";
   });
   const requestBtn = document.querySelectorAll(".menu__request, .projects__cards-request");
   requestBtn.forEach(btn => {
@@ -172,6 +172,8 @@ document.addEventListener("DOMContentLoaded", () => {
     bigMenu.classList.toggle("menu__big-menu_active");
     hamburger.classList.toggle("hamburger_active");
     requestBtnMenu.classList.toggle("menu__request_active");
+    menu.classList.toggle("menu_modifikator");
+    menu.style.background === "transparent" ? menu.style.background = "rgba(255, 255, 255, 0.8)" : menu.style.background = "transparent";
     if (window.innerWidth <= 1399 && window.scrollY >= 400) {
       menu.classList.toggle("menu_active");
     }
@@ -183,21 +185,21 @@ document.addEventListener("DOMContentLoaded", () => {
       body.style.paddingRight = `${scrollbarWidth}px`;
     }
   });
-  const residenceTitle = document.querySelector(".residence__title");
-  function changeResidenceTitle() {
-    if (window.innerWidth <= 1399) {
-      residenceTitle.innerHTML = 'Residence <br> by the lighthouse';
+  window.addEventListener("resize", () => {
+    changeLogo();
+  });
+  const logoMenu = document.querySelector(".menu__left-logo");
+  function changeLogo() {
+    if (window.innerWidth > 1399) {
+      logoMenu.innerHTML = "HILIGHT";
     } else {
-      residenceTitle.innerHTML = 'Residence by the lighthouse';
+      logoMenu.innerHTML = "LOGO";
     }
   }
-  window.addEventListener("resize", () => {
-    changeResidenceTitle();
-  });
-  changeResidenceTitle();
+  changeLogo();
 });
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=project.js.map
+//# sourceMappingURL=404.js.map
