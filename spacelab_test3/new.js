@@ -299,42 +299,42 @@ console.log(findFirstDuplicate(arr));
 // метод .find(), найди первую книгу, которая была издана после 2000 года и относится к
 // жанру "Science Fiction" (научная фантастика).
 let books = [{
-  title: '1984',
-  author: 'George Orwell',
+  title: "1984",
+  author: "George Orwell",
   year: 1949,
-  genre: 'Dystopia'
+  genre: "Dystopia"
 }, {
-  title: 'The Catcher in the Rye',
-  author: 'J.D. Salinger',
+  title: "The Catcher in the Rye",
+  author: "J.D. Salinger",
   year: 1951,
-  genre: 'Literary Fiction'
+  genre: "Literary Fiction"
 }, {
-  title: 'The Hobbit',
-  author: 'J.R.R. Tolkien',
+  title: "The Hobbit",
+  author: "J.R.R. Tolkien",
   year: 1937,
-  genre: 'Fantasy'
+  genre: "Fantasy"
 }, {
-  title: 'The Road',
-  author: 'Cormac McCarthy',
+  title: "The Road",
+  author: "Cormac McCarthy",
   year: 2006,
-  genre: 'Post-apocalyptic'
+  genre: "Post-apocalyptic"
 }, {
-  title: 'The Hunger Games',
-  author: 'Suzanne Collins',
+  title: "The Hunger Games",
+  author: "Suzanne Collins",
   year: 2008,
-  genre: 'Dystopia'
+  genre: "Dystopia"
 }, {
-  title: 'Dune',
-  author: 'Frank Herbert',
+  title: "Dune",
+  author: "Frank Herbert",
   year: 1965,
-  genre: 'Science Fiction'
+  genre: "Science Fiction"
 }, {
-  title: 'Ready Player One',
-  author: 'Ernest Cline',
+  title: "Ready Player One",
+  author: "Ernest Cline",
   year: 2011,
-  genre: 'Science Fiction'
+  genre: "Science Fiction"
 }];
-const book = books.find(book => book.year > 2000 && book.genre == 'Science Fiction');
+const book = books.find(book => book.year > 2000 && book.genre == "Science Fiction");
 book ? console.log(book) : null;
 
 // Найди первого активного пользователя из Берлина и выведи его имя.
@@ -371,28 +371,28 @@ book ? console.log(book) : null;
 
 const users = [{
   id: 1,
-  name: 'Anna',
-  city: 'Vienna',
+  name: "Anna",
+  city: "Vienna",
   isActive: true
 }, {
   id: 2,
-  name: 'Max',
-  city: 'Berlin',
+  name: "Max",
+  city: "Berlin",
   isActive: false
 }, {
   id: 3,
-  name: 'Lena',
-  city: 'Munich',
+  name: "Lena",
+  city: "Munich",
   isActive: true
 }, {
   id: 4,
-  name: 'Tom',
-  city: 'Berlin',
+  name: "Tom",
+  city: "Berlin",
   isActive: true
 }, {
   id: 5,
-  name: 'Sara',
-  city: 'Berlin',
+  name: "Sara",
+  city: "Berlin",
   isActive: true
 }];
 let usersIsTrue = [];
@@ -414,27 +414,27 @@ console.log(usersIsTrue);
 const transactions = [{
   userId: 1,
   amount: 50,
-  date: '2025-04-01'
+  date: "2025-04-01"
 }, {
   userId: 2,
   amount: 30,
-  date: '2025-04-02'
+  date: "2025-04-02"
 }, {
   userId: 1,
   amount: 100,
-  date: '2025-04-15'
+  date: "2025-04-15"
 }, {
   userId: 3,
   amount: 200,
-  date: '2025-03-25'
+  date: "2025-03-25"
 }, {
   userId: 2,
   amount: 150,
-  date: '2025-03-29'
+  date: "2025-03-29"
 }, {
   userId: 1,
   amount: 25,
-  date: '2025-03-10'
+  date: "2025-03-10"
 }];
 let obj = {};
 function total(arr) {
