@@ -12278,8 +12278,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_tablets__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/tablets */ "./src/js/modules/tablets.js");
 /* harmony import */ var _modules_menu__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/menu */ "./src/js/modules/menu.js");
 /* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/modal */ "./src/js/modules/modal.js");
-/* harmony import */ var _services_changeDomElements__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./services/changeDomElements */ "./src/js/services/changeDomElements.js");
-/* harmony import */ var _services_const__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./services/const */ "./src/js/services/const.js");
+/* harmony import */ var _services_clickFunctions_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./services/clickFunctions.js */ "./src/js/services/clickFunctions.js");
+/* harmony import */ var _services_click_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./services/click.js */ "./src/js/services/click.js");
+/* harmony import */ var _services_resize_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./services/resize.js */ "./src/js/services/resize.js");
+/* harmony import */ var _services_scroll_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./services/scroll.js */ "./src/js/services/scroll.js");
+/* harmony import */ var _services_changeDomElements__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./services/changeDomElements */ "./src/js/services/changeDomElements.js");
+
+
+
 
 
 
@@ -12295,98 +12301,21 @@ document.addEventListener("DOMContentLoaded", () => {
   Object(_modules_tablets__WEBPACK_IMPORTED_MODULE_2__["default"])("mouseover");
   Object(_modules_tablets__WEBPACK_IMPORTED_MODULE_2__["default"])("mouseout");
   Object(_modules_modal__WEBPACK_IMPORTED_MODULE_4__["default"])();
-  Object(_services_changeDomElements__WEBPACK_IMPORTED_MODULE_5__["changeTelMail"])();
-  Object(_services_changeDomElements__WEBPACK_IMPORTED_MODULE_5__["changeFooterTitle"])();
-  Object(_services_changeDomElements__WEBPACK_IMPORTED_MODULE_5__["deleteSpanFromRangeLabels"])();
-  Object(_services_changeDomElements__WEBPACK_IMPORTED_MODULE_5__["changeImgTitle"])();
-  Object(_services_changeDomElements__WEBPACK_IMPORTED_MODULE_5__["changeLoremTitle"])();
-  Object(_services_changeDomElements__WEBPACK_IMPORTED_MODULE_5__["changeTitleModal"])();
-  Object(_services_changeDomElements__WEBPACK_IMPORTED_MODULE_5__["changeThumbInputModal"])();
+  Object(_services_changeDomElements__WEBPACK_IMPORTED_MODULE_9__["changeTelMail"])();
+  Object(_services_changeDomElements__WEBPACK_IMPORTED_MODULE_9__["changeFooterTitle"])();
+  Object(_services_changeDomElements__WEBPACK_IMPORTED_MODULE_9__["changeImgTitle"])();
+  Object(_services_changeDomElements__WEBPACK_IMPORTED_MODULE_9__["changeLoremTitle"])();
+  Object(_services_changeDomElements__WEBPACK_IMPORTED_MODULE_9__["changeTitleModal"])();
   Object(_modules_slider__WEBPACK_IMPORTED_MODULE_1__["default"])(".swiper-container");
 
   //click
-  document.addEventListener("click", e => {
-    if (e.target.closest(".space__select")) {
-      const select = e.target.closest(".space__select");
-      const optionList = select.querySelector(".space__select-list");
-      const cross = select.querySelector(".space__select-option-spans");
-      if (optionList && !e.target.closest(".space__select-list")) {
-        optionList.classList.toggle("space__select-list_active");
-        cross.classList.toggle("space__select-option-spans_active");
-      }
-    }
-    if (e.target.closest(".space__select-list") && e.target.tagName === "LI") {
-      const listItem = e.target;
-      const select = listItem.closest(".space__select");
-      const option = select.querySelector(".space__select-option");
-      if (option) {
-        const optionText = option.childNodes[1];
-        optionText.textContent = listItem.textContent;
-        const optionList = select.querySelector(".space__select-list");
-        const cross = select.querySelector(".space__select-option-spans");
-        optionList.classList.toggle("space__select-list_active");
-        cross.classList.toggle("space__select-option-spans_active");
-      }
-    }
-    if (e.target.closest(".hamburger")) {
-      _services_const__WEBPACK_IMPORTED_MODULE_6__["bigMenu"].classList.toggle("menu__big-menu_active");
-      _services_const__WEBPACK_IMPORTED_MODULE_6__["hamburger"].classList.toggle("hamburger_active");
-      _services_const__WEBPACK_IMPORTED_MODULE_6__["requestBtnMenu"].classList.toggle("menu__request_active");
-      if (window.innerWidth <= 1399 && window.scrollY >= 400) {
-        _services_const__WEBPACK_IMPORTED_MODULE_6__["menu"].classList.toggle("menu_active");
-      }
-      Object(_services_changeDomElements__WEBPACK_IMPORTED_MODULE_5__["changeStyleBody"])();
-    }
-    if (e.target.closest(".menu__request") || e.target.closest(".projects__cards-request") || e.target.closest(".modal__close")) {
-      _services_const__WEBPACK_IMPORTED_MODULE_6__["modal"].classList.toggle("modal_active");
-      if (!_services_const__WEBPACK_IMPORTED_MODULE_6__["hamburger"].classList.contains("hamburger_active")) {
-        Object(_services_changeDomElements__WEBPACK_IMPORTED_MODULE_5__["changeStyleBody"])();
-      }
-      _services_const__WEBPACK_IMPORTED_MODULE_6__["form"].classList.remove("hide");
-      _services_const__WEBPACK_IMPORTED_MODULE_6__["modalThanks"].classList.remove("show");
-      _services_const__WEBPACK_IMPORTED_MODULE_6__["form"].reset();
-    }
-    if (e.target.closest(".modal__form-submit")) {
-      if (_services_const__WEBPACK_IMPORTED_MODULE_6__["form"].checkValidity()) {
-        e.preventDefault();
-        _services_const__WEBPACK_IMPORTED_MODULE_6__["form"].classList.toggle("hide");
-        _services_const__WEBPACK_IMPORTED_MODULE_6__["modalThanks"].classList.toggle("show");
-        changeModalWrapper();
-      }
-    }
-    if (e.target.closest(".modal__thanks-btn")) {
-      _services_const__WEBPACK_IMPORTED_MODULE_6__["form"].classList.toggle("hide");
-      _services_const__WEBPACK_IMPORTED_MODULE_6__["modalThanks"].classList.toggle("show");
-      unChangeModalWrapper();
-      _services_const__WEBPACK_IMPORTED_MODULE_6__["form"].reset();
-    }
-  });
-  const modalWrapper = document.querySelector(".modal__wrapper");
-  function changeModalWrapper() {
-    if (window.innerWidth <= 1399 && window.innerWidth >= 1024) {
-      modalWrapper.style.cssText = "width: 708px; height: 405px; margin-top: 124px";
-    } else if (window.innerWidth <= 1023 && window.innerWidth >= 768) {
-      modalWrapper.style.cssText = "width: 520px; height: 293px; margin-top: 320px";
-    } else if (window.innerWidth <= 767 && window.innerWidth >= 375) {
-      modalWrapper.style.cssText = "width: 327px; height: 339px; margin-top: 101px; background-color: #f2f2f2; padding: 0px 23px;";
-    }
-  }
-  function unChangeModalWrapper() {
-    modalWrapper.style.cssText = "";
-  }
-  window.addEventListener("resize", () => {
-    Object(_services_changeDomElements__WEBPACK_IMPORTED_MODULE_5__["changeTelMail"])();
-    Object(_services_changeDomElements__WEBPACK_IMPORTED_MODULE_5__["changeFooterTitle"])();
-    Object(_services_changeDomElements__WEBPACK_IMPORTED_MODULE_5__["changeImgTitle"])();
-    Object(_services_changeDomElements__WEBPACK_IMPORTED_MODULE_5__["changeLoremTitle"])();
-    Object(_services_changeDomElements__WEBPACK_IMPORTED_MODULE_5__["deleteSpanFromRangeLabels"])();
-    Object(_services_changeDomElements__WEBPACK_IMPORTED_MODULE_5__["changeTitleModal"])();
-    Object(_services_changeDomElements__WEBPACK_IMPORTED_MODULE_5__["changeThumbInputModal"])();
-    changeModalWrapper();
-  });
-  window.addEventListener("scroll", () => {
-    Object(_modules_menu__WEBPACK_IMPORTED_MODULE_3__["default"])();
-  });
+  Object(_services_click_js__WEBPACK_IMPORTED_MODULE_6__["default"])(_services_clickFunctions_js__WEBPACK_IMPORTED_MODULE_5__["spaceSelectClick"], _services_clickFunctions_js__WEBPACK_IMPORTED_MODULE_5__["spaceSelectListClick"], _services_clickFunctions_js__WEBPACK_IMPORTED_MODULE_5__["hamburgerClick"], _services_clickFunctions_js__WEBPACK_IMPORTED_MODULE_5__["requestClick"], _services_clickFunctions_js__WEBPACK_IMPORTED_MODULE_5__["modalFormSubmitClick"], _services_clickFunctions_js__WEBPACK_IMPORTED_MODULE_5__["modalFormThanksClick"]);
+
+  //resize
+  Object(_services_resize_js__WEBPACK_IMPORTED_MODULE_7__["default"])(_services_changeDomElements__WEBPACK_IMPORTED_MODULE_9__["changeTelMail"], _services_changeDomElements__WEBPACK_IMPORTED_MODULE_9__["changeFooterTitle"], _services_changeDomElements__WEBPACK_IMPORTED_MODULE_9__["changeImgTitle"], _services_changeDomElements__WEBPACK_IMPORTED_MODULE_9__["changeLoremTitle"], _services_changeDomElements__WEBPACK_IMPORTED_MODULE_9__["changeTitleModal"]);
+
+  //scroll
+  Object(_services_scroll_js__WEBPACK_IMPORTED_MODULE_8__["default"])(_modules_menu__WEBPACK_IMPORTED_MODULE_3__["default"]);
 });
 
 /***/ }),
@@ -12402,8 +12331,12 @@ document.addEventListener("DOMContentLoaded", () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_const__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/const */ "./src/js/services/const.js");
 
-function menuScroll() {
-  window.scrollY >= 400 ? _services_const__WEBPACK_IMPORTED_MODULE_0__["menu"].classList.add("menu_active") : _services_const__WEBPACK_IMPORTED_MODULE_0__["menu"].classList.remove("menu_active");
+function menuScroll(modifikator) {
+  if (modifikator) {
+    window.scrollY >= 400 ? _services_const__WEBPACK_IMPORTED_MODULE_0__["menu"].style.background = "rgba(255, 255, 255, 0.8)" : _services_const__WEBPACK_IMPORTED_MODULE_0__["menu"].style.background = "";
+  } else {
+    window.scrollY >= 400 ? _services_const__WEBPACK_IMPORTED_MODULE_0__["menu"].classList.add("menu_active") : _services_const__WEBPACK_IMPORTED_MODULE_0__["menu"].classList.remove("menu_active");
+  }
 }
 /* harmony default export */ __webpack_exports__["default"] = (menuScroll);
 
@@ -12535,7 +12468,6 @@ function slider(className) {
       _services_const__WEBPACK_IMPORTED_MODULE_2__["num"][0].innerHTML = `0${+currentSlideNumber + 1}`;
     });
   } else if (className == ".philosophy__right-container") {
-    console.log(1);
     _services_const__WEBPACK_IMPORTED_MODULE_2__["num"][1].innerHTML = `0${_services_const__WEBPACK_IMPORTED_MODULE_2__["slides"].length}`;
     const swiper = new swiper_swiper__WEBPACK_IMPORTED_MODULE_0__["default"](className, {
       modules: [swiper_modules__WEBPACK_IMPORTED_MODULE_1__["Navigation"], swiper_modules__WEBPACK_IMPORTED_MODULE_1__["Pagination"]],
@@ -12555,6 +12487,25 @@ function slider(className) {
       const activeSlide = document.querySelector(".swiper-slide-active");
       const currentSlideNumber = activeSlide.getAttribute("data-swiper-slide-index");
       _services_const__WEBPACK_IMPORTED_MODULE_2__["num"][0].innerHTML = `0${+currentSlideNumber + 1}`;
+    });
+  } else if (className == ".new-slider__swiper-container") {
+    const swiper = new swiper_swiper__WEBPACK_IMPORTED_MODULE_0__["default"](className, {
+      slidesPerView: "auto",
+      loop: false,
+      breakpoints: {
+        1440: {
+          spaceBetween: 48
+        },
+        1024: {
+          spaceBetween: 40
+        },
+        768: {
+          spaceBetween: 20
+        },
+        375: {
+          spaceBetween: 26
+        }
+      }
     });
   }
 }
@@ -12589,19 +12540,24 @@ function changeTablets(action) {
 /*!**********************************************!*\
   !*** ./src/js/services/changeDomElements.js ***!
   \**********************************************/
-/*! exports provided: changeTelMail, changeFooterTitle, deleteSpanFromRangeLabels, changeImgTitle, changeLoremTitle, changeTitleModal, changeThumbInputModal, changeStyleBody */
+/*! exports provided: changeTelMail, changeFooterTitle, changeImgTitle, changeLoremTitle, changeTitleModal, changeStyleBody, changeDonecTextarea, changeNewsTitle, updateFilterDisplay, changeLoremMailText, changeOurProjectsTextArea, changeOurProjectsImg, changeResidenceTitle */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeTelMail", function() { return changeTelMail; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeFooterTitle", function() { return changeFooterTitle; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteSpanFromRangeLabels", function() { return deleteSpanFromRangeLabels; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeImgTitle", function() { return changeImgTitle; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeLoremTitle", function() { return changeLoremTitle; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeTitleModal", function() { return changeTitleModal; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeThumbInputModal", function() { return changeThumbInputModal; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeStyleBody", function() { return changeStyleBody; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeDonecTextarea", function() { return changeDonecTextarea; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeNewsTitle", function() { return changeNewsTitle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateFilterDisplay", function() { return updateFilterDisplay; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeLoremMailText", function() { return changeLoremMailText; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeOurProjectsTextArea", function() { return changeOurProjectsTextArea; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeOurProjectsImg", function() { return changeOurProjectsImg; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "changeResidenceTitle", function() { return changeResidenceTitle; });
 /* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./const */ "./src/js/services/const.js");
 
 function changeTelMail() {
@@ -12632,17 +12588,6 @@ function changeFooterTitle() {
     _const__WEBPACK_IMPORTED_MODULE_0__["footerTitle"].innerHTML = "Drop us a line";
   }
 }
-function deleteSpanFromRangeLabels() {
-  if (innerWidth <= 1023) {
-    [2, 3, 4, 6].forEach(index => {
-      _const__WEBPACK_IMPORTED_MODULE_0__["spans"][index].style.display = "none";
-    });
-  } else {
-    [2, 3, 4, 6].forEach(index => {
-      _const__WEBPACK_IMPORTED_MODULE_0__["spans"][index].style.display = "";
-    });
-  }
-}
 function changeImgTitle() {
   if (innerWidth <= 767) {
     const tabletImg = _const__WEBPACK_IMPORTED_MODULE_0__["tablet"][2].querySelector(".projects__tablet-img");
@@ -12661,23 +12606,6 @@ function changeLoremTitle() {
 function changeTitleModal() {
   window.innerWidth <= 1399 ? _const__WEBPACK_IMPORTED_MODULE_0__["titleModal"].innerHTML = "Make request" : _const__WEBPACK_IMPORTED_MODULE_0__["titleModal"].innerHTML = "Calculate the cost of work";
 }
-function changeThumbInputModal() {
-  if (window.innerWidth < 1024) {
-    const sliderOne = document.querySelector(".modal__form-slider-one .modal__form-slider");
-    const sliderTwo = document.querySelector(".modal__form-slider-two .modal__form-slider");
-    function toggleSliders(event) {
-      if (event.target === sliderOne) {
-        sliderTwo.classList.add("hidden");
-        sliderOne.classList.remove("hidden");
-      } else if (event.target === sliderTwo) {
-        sliderOne.classList.add("hidden");
-        sliderTwo.classList.remove("hidden");
-      }
-    }
-    sliderOne.addEventListener("pointerdown", toggleSliders);
-    sliderTwo.addEventListener("pointerdown", toggleSliders);
-  }
-}
 function changeStyleBody() {
   if (_const__WEBPACK_IMPORTED_MODULE_0__["body"].style.overflow === "hidden") {
     setTimeout(() => {
@@ -12689,6 +12617,210 @@ function changeStyleBody() {
     _const__WEBPACK_IMPORTED_MODULE_0__["body"].style.paddingRight = `${_const__WEBPACK_IMPORTED_MODULE_0__["scrollbarWidth"]}px`;
   }
 }
+function changeDonecTextarea() {
+  if (window.innerWidth <= 1399) {
+    _const__WEBPACK_IMPORTED_MODULE_0__["donecTextarea"][1].innerHTML = "Ut arcu tortor, hendrerit eget sollicitudin sed, tincidunt a lectus. Cras gravida ultricies ante sit amet consectetur. Maecenas sed arcu tempor, posuere odio pharetra, faucibus risus. Etiam fermentum felis quis aliquet viverra. Mauris in odio nec mi pellentesque placerat. Praesent at metus in lacus posuere molestie. Aliquam consequat, neque eget congue feugiat, lectus leo condimentum lorem, scelerisque euismod nisi ipsum nec metus. Mauris semper felis venenatis eros interdum sollicitudin.";
+  } else {
+    _const__WEBPACK_IMPORTED_MODULE_0__["donecTextarea"][1].innerHTML = "Aliquam iaculis ac urna at consequat. Pellentesque fermentum tellus eu nisi viverra gravida. Sed suscipit vestibulum accumsan. Sed ac magna id sem hendrerit convallis quis a magna. Mauris eget ornare est. Morbi metus justo, posuere vel semper semper, eleifend ut purus. Morbi cursus consequat nibh, a feugiat felis tempor vitae. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam sodales orci nisl, in lacinia risus rhoncus a. Praesent consectetur egestas risus, id consectetur felis.";
+  }
+}
+function changeNewsTitle() {
+  if (window.innerWidth < 768) {
+    _const__WEBPACK_IMPORTED_MODULE_0__["newsTitle"].innerText = "Our news";
+  } else {
+    _const__WEBPACK_IMPORTED_MODULE_0__["newsTitle"].innerText = "Our latest news";
+  }
+}
+function updateFilterDisplay(modifikator, blockClassName) {
+  if (window.innerWidth < 768) {
+    _const__WEBPACK_IMPORTED_MODULE_0__["filterTabsContainer"].style.display = "none";
+    _const__WEBPACK_IMPORTED_MODULE_0__["filterSelect"].style.display = "";
+    if (modifikator) {
+      _const__WEBPACK_IMPORTED_MODULE_0__["filterSelect"][0].innerHTML = "Apartments";
+    }
+    _const__WEBPACK_IMPORTED_MODULE_0__["filterSelect"].addEventListener("change", function () {
+      const selectedTab = this.value;
+      blockClassName.forEach(card => {
+        const cardTab = card.getAttribute("data-tab");
+        selectedTab === "all" || selectedTab === cardTab ? card.style.display = "" : card.style.display = "none";
+      });
+    });
+  } else {
+    _const__WEBPACK_IMPORTED_MODULE_0__["filterTabsContainer"].style.display = "";
+    _const__WEBPACK_IMPORTED_MODULE_0__["filterSelect"].style.display = "none";
+    _const__WEBPACK_IMPORTED_MODULE_0__["filterTabs"].forEach(tab => {
+      tab.addEventListener("click", function () {
+        _const__WEBPACK_IMPORTED_MODULE_0__["filterTabs"].forEach(item => item.classList.remove("news__filter-tab-active"));
+        this.classList.add("news__filter-tab-active");
+        const selectedTab = this.getAttribute("data-tab");
+        blockClassName.forEach(card => {
+          const cardTab = card.getAttribute("data-tab");
+          selectedTab === "all" || selectedTab === cardTab ? card.style.display = "" : card.style.display = "none";
+        });
+      });
+    });
+  }
+}
+function changeLoremMailText() {
+  if (window.innerWidth <= 1399) {
+    _const__WEBPACK_IMPORTED_MODULE_0__["loremMailTextarea"].innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper eu mauris vitae posuere. Ut at luctus ligula. Nunc ante felis, aliquam eu enim sed, ornare pretium velit.";
+  } else {
+    _const__WEBPACK_IMPORTED_MODULE_0__["loremMailTextarea"].innerText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper eu mauris vitae posuere. Ut at luctus ligula. Nunc ante felis, aliquam.";
+  }
+}
+function changeOurProjectsTextArea() {
+  if (window.innerWidth <= 1399 && window.innerWidth >= 1024) {
+    _const__WEBPACK_IMPORTED_MODULE_0__["ourProjectsTextArea"].innerHTML = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>' + 'Aliquam ullamcorper eu mauris vitae posuere. Ut at luctus ligula. Nunc ante felis, aliquam eu enim sed, ornare pretium velit.';
+  } else {
+    _const__WEBPACK_IMPORTED_MODULE_0__["ourProjectsTextArea"].innerHTML = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ullamcorper eu mauris vitae posuere. Ut at luctus ligula. Nunc ante felis, aliquam eu enim sed, ornare pretium velit.';
+  }
+}
+function changeOurProjectsImg() {
+  if (window.innerWidth <= 1024 && window.innerWidth >= 768) {
+    _const__WEBPACK_IMPORTED_MODULE_0__["projectsTablet"].forEach((project, i) => {
+      if (i == 2) {
+        const source = project.querySelector('source');
+        const img = project.querySelector('img');
+        source.setAttribute('srcset', `img/projects/7.webp`);
+        img.setAttribute('src', `img/projects/7.jpg`);
+      }
+      if (i == 4) {
+        const source = project.querySelector('source');
+        const img = project.querySelector('img');
+        source.setAttribute('srcset', `img/projects/2.webp`);
+        img.setAttribute('src', `img/projects/2.png`);
+      }
+    });
+  }
+  if (window.innerWidth <= 767) {
+    _const__WEBPACK_IMPORTED_MODULE_0__["projectsTablet"].forEach((project, i) => {
+      if (i == 2) {
+        const source = project.querySelector('source');
+        const img = project.querySelector('img');
+        source.setAttribute('srcset', `img/projects/7.webp`);
+        img.setAttribute('src', `img/projects/7.jpg`);
+      }
+    });
+  }
+}
+function changeResidenceTitle() {
+  if (window.innerWidth <= 1399) {
+    _const__WEBPACK_IMPORTED_MODULE_0__["residenceTitle"].innerHTML = 'Residence <br> by the lighthouse';
+  } else {
+    _const__WEBPACK_IMPORTED_MODULE_0__["residenceTitle"].innerHTML = 'Residence by the lighthouse';
+  }
+}
+
+
+/***/ }),
+
+/***/ "./src/js/services/click.js":
+/*!**********************************!*\
+  !*** ./src/js/services/click.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function click(...funcs) {
+  document.addEventListener("click", e => {
+    funcs.forEach(func => {
+      func(e);
+    });
+  });
+}
+/* harmony default export */ __webpack_exports__["default"] = (click);
+
+/***/ }),
+
+/***/ "./src/js/services/clickFunctions.js":
+/*!*******************************************!*\
+  !*** ./src/js/services/clickFunctions.js ***!
+  \*******************************************/
+/*! exports provided: spaceSelectClick, spaceSelectListClick, hamburgerClick, requestClick, modalFormSubmitClick, modalFormThanksClick */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "spaceSelectClick", function() { return spaceSelectClick; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "spaceSelectListClick", function() { return spaceSelectListClick; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hamburgerClick", function() { return hamburgerClick; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "requestClick", function() { return requestClick; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalFormSubmitClick", function() { return modalFormSubmitClick; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalFormThanksClick", function() { return modalFormThanksClick; });
+/* harmony import */ var _const_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./const.js */ "./src/js/services/const.js");
+/* harmony import */ var _changeDomElements_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./changeDomElements.js */ "./src/js/services/changeDomElements.js");
+
+
+function spaceSelectClick(e) {
+  if (e.target.closest(".space__select")) {
+    const select = e.target.closest(".space__select");
+    const optionList = select.querySelector(".space__select-list");
+    const cross = select.querySelector(".space__select-option-spans");
+    if (optionList && !e.target.closest(".space__select-list")) {
+      optionList.classList.toggle("space__select-list_active");
+      cross.classList.toggle("space__select-option-spans_active");
+    }
+  }
+}
+function spaceSelectListClick(e) {
+  if (e.target.closest(".space__select-list") && e.target.tagName === "LI") {
+    const listItem = e.target;
+    const select = listItem.closest(".space__select");
+    const option = select.querySelector(".space__select-option");
+    if (option) {
+      const optionText = option.childNodes[1];
+      optionText.textContent = listItem.textContent;
+      const optionList = select.querySelector(".space__select-list");
+      const cross = select.querySelector(".space__select-option-spans");
+      optionList.classList.toggle("space__select-list_active");
+      cross.classList.toggle("space__select-option-spans_active");
+    }
+  }
+}
+function hamburgerClick(e, isModifikator) {
+  if (e.target.closest(".hamburger")) {
+    _const_js__WEBPACK_IMPORTED_MODULE_0__["bigMenu"].classList.toggle("menu__big-menu_active");
+    _const_js__WEBPACK_IMPORTED_MODULE_0__["hamburger"].classList.toggle("hamburger_active");
+    _const_js__WEBPACK_IMPORTED_MODULE_0__["requestBtnMenu"].classList.toggle("menu__request_active");
+    if (isModifikator) {
+      _const_js__WEBPACK_IMPORTED_MODULE_0__["menu"].classList.toggle("menu_modifikator");
+      _const_js__WEBPACK_IMPORTED_MODULE_0__["menu"].style.background === "transparent" ? _const_js__WEBPACK_IMPORTED_MODULE_0__["menu"].style.background = "rgba(255, 255, 255, 0.8)" : _const_js__WEBPACK_IMPORTED_MODULE_0__["menu"].style.background = "transparent";
+    }
+    if (window.innerWidth <= 1399 && window.scrollY >= 400) {
+      _const_js__WEBPACK_IMPORTED_MODULE_0__["menu"].classList.toggle("menu_active");
+    }
+    Object(_changeDomElements_js__WEBPACK_IMPORTED_MODULE_1__["changeStyleBody"])();
+  }
+}
+function requestClick(e) {
+  if (e.target.closest(".menu__request") || e.target.closest(".projects__cards-request") || e.target.closest(".modal__close")) {
+    _const_js__WEBPACK_IMPORTED_MODULE_0__["modal"].classList.toggle("modal_active");
+    if (!_const_js__WEBPACK_IMPORTED_MODULE_0__["hamburger"].classList.contains("hamburger_active")) {
+      Object(_changeDomElements_js__WEBPACK_IMPORTED_MODULE_1__["changeStyleBody"])();
+    }
+    _const_js__WEBPACK_IMPORTED_MODULE_0__["modalBorder"].classList.remove("hide");
+    _const_js__WEBPACK_IMPORTED_MODULE_0__["modalWrapperMini"].classList.remove("show");
+    _const_js__WEBPACK_IMPORTED_MODULE_0__["modalForm"].reset();
+  }
+}
+function modalFormSubmitClick(e) {
+  if (e.target.closest(".modal__form-submit")) {
+    if (_const_js__WEBPACK_IMPORTED_MODULE_0__["modalForm"].checkValidity()) {
+      e.preventDefault();
+      _const_js__WEBPACK_IMPORTED_MODULE_0__["modalBorder"].classList.toggle("hide");
+      _const_js__WEBPACK_IMPORTED_MODULE_0__["modalWrapperMini"].classList.toggle("show");
+    }
+  }
+}
+function modalFormThanksClick(e) {
+  if (e.target.closest(".modal__thanks-btn")) {
+    _const_js__WEBPACK_IMPORTED_MODULE_0__["modalBorder"].classList.toggle("hide");
+    _const_js__WEBPACK_IMPORTED_MODULE_0__["modalWrapperMini"].classList.toggle("show");
+    _const_js__WEBPACK_IMPORTED_MODULE_0__["modalForm"].reset();
+  }
+}
 
 
 /***/ }),
@@ -12697,7 +12829,7 @@ function changeStyleBody() {
 /*!**********************************!*\
   !*** ./src/js/services/const.js ***!
   \**********************************/
-/*! exports provided: preloaderPercent, tel, mail, footerTitle, spans, tablet, loremTitle, num, slides, titleModal, inputPhone, inputEmail, modal, hamburger, bigMenu, body, requestBtnMenu, scrollbarWidth, menu, tablets, form, modalThanks, fileUpload */
+/*! exports provided: preloaderPercent, tel, mail, footerTitle, spans, tablet, loremTitle, num, slides, titleModal, inputPhone, inputEmail, modal, hamburger, bigMenu, body, requestBtnMenu, scrollbarWidth, menu, tablets, fileUpload, modalBorder, modalWrapperMini, modalForm, newsTitle, filterTabsContainer, filterSelect, filterTabs, cardNew, loremMailTextarea, cards, donecTextarea, ourProjectsTextArea, projectsTablet, residenceTitle, cardProject */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12722,9 +12854,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrollbarWidth", function() { return scrollbarWidth; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "menu", function() { return menu; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tablets", function() { return tablets; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "form", function() { return form; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalThanks", function() { return modalThanks; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fileUpload", function() { return fileUpload; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalBorder", function() { return modalBorder; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalWrapperMini", function() { return modalWrapperMini; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalForm", function() { return modalForm; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "newsTitle", function() { return newsTitle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "filterTabsContainer", function() { return filterTabsContainer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "filterSelect", function() { return filterSelect; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "filterTabs", function() { return filterTabs; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cardNew", function() { return cardNew; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loremMailTextarea", function() { return loremMailTextarea; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cards", function() { return cards; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "donecTextarea", function() { return donecTextarea; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ourProjectsTextArea", function() { return ourProjectsTextArea; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "projectsTablet", function() { return projectsTablet; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "residenceTitle", function() { return residenceTitle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cardProject", function() { return cardProject; });
 const preloaderPercent = document.querySelector(".preloader__percent");
 const tel = document.querySelectorAll(".space__tel");
 const mail = document.querySelectorAll(".space__mail");
@@ -12745,10 +12890,63 @@ const requestBtnMenu = document.querySelector(".menu__request");
 const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
 const menu = document.querySelector(".menu");
 const tablets = document.querySelector(".projects__tablets");
-const form = document.querySelector(".modal__form");
-const modalThanks = document.querySelector(".modal__thanks");
+const modalForm = document.querySelector(".modal__form");
+const modalBorder = document.querySelector(".modal__border");
+const modalWrapperMini = document.querySelector(".modal__wrapper-mini");
 const fileUpload = document.getElementById("fileUpload");
+const newsTitle = document.querySelector(".news__title");
+const filterTabsContainer = document.querySelector(".news__filter-tabs");
+const filterSelect = document.querySelector(".news__filter-select");
+const filterTabs = document.querySelectorAll(".news__filter-tab");
+const cardNew = document.querySelectorAll(".news__cards > div");
+const loremMailTextarea = document.querySelector(".lmail__textarea");
+const cards = document.querySelector(".news__cards");
+const donecTextarea = document.querySelectorAll(".donec__textarea");
+const ourProjectsTextArea = document.querySelector(".our-projects__textarea");
+const projectsTablet = document.querySelectorAll(".projects__tablet");
+const residenceTitle = document.querySelector(".residence__title");
+const cardProject = document.querySelectorAll(".projects__tablets > div");
 
+
+/***/ }),
+
+/***/ "./src/js/services/resize.js":
+/*!***********************************!*\
+  !*** ./src/js/services/resize.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function resize(...funcs) {
+  window.addEventListener("resize", () => {
+    funcs.forEach(func => {
+      func();
+    });
+  });
+}
+/* harmony default export */ __webpack_exports__["default"] = (resize);
+
+/***/ }),
+
+/***/ "./src/js/services/scroll.js":
+/*!***********************************!*\
+  !*** ./src/js/services/scroll.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function scroll(...funcs) {
+  window.addEventListener("scroll", () => {
+    funcs.forEach(func => {
+      func();
+    });
+  });
+}
+/* harmony default export */ __webpack_exports__["default"] = (scroll);
 
 /***/ }),
 
