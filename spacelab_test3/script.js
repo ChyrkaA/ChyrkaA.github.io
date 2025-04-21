@@ -12309,7 +12309,8 @@ document.addEventListener("DOMContentLoaded", () => {
   Object(_services_changeDomElements__WEBPACK_IMPORTED_MODULE_9__["changeLoremTitle"])();
   Object(_services_changeDomElements__WEBPACK_IMPORTED_MODULE_9__["changeTitleModal"])();
   Object(_modules_slider__WEBPACK_IMPORTED_MODULE_1__["default"])(".swiper-container");
-  Object(_services_observer_js__WEBPACK_IMPORTED_MODULE_10__["default"])();
+  Object(_services_observer_js__WEBPACK_IMPORTED_MODULE_10__["default"])(0.1, 'img');
+  Object(_services_observer_js__WEBPACK_IMPORTED_MODULE_10__["default"])(0, 'source');
 
   //click
   Object(_services_click_js__WEBPACK_IMPORTED_MODULE_6__["default"])(_services_clickFunctions_js__WEBPACK_IMPORTED_MODULE_5__["spaceSelectClick"], _services_clickFunctions_js__WEBPACK_IMPORTED_MODULE_5__["spaceSelectListClick"], _services_clickFunctions_js__WEBPACK_IMPORTED_MODULE_5__["hamburgerClick"], _services_clickFunctions_js__WEBPACK_IMPORTED_MODULE_5__["requestClick"], _services_clickFunctions_js__WEBPACK_IMPORTED_MODULE_5__["modalFormSubmitClick"], _services_clickFunctions_js__WEBPACK_IMPORTED_MODULE_5__["modalFormThanksClick"]);
@@ -12922,34 +12923,42 @@ const cardProject = document.querySelectorAll(".projects__tablets > div");
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-function observer() {
+function observer(treshhold, attribute) {
   function onDisplay(entry) {
     entry.forEach(change => {
       if (change.isIntersecting) {
-        // Загрузка для изображения <img>
-        if (change.target.tagName === "IMG" && change.target.dataset.src) {
+        if (change.target.tagName.toLowerCase() === attribute && change.target.dataset.src) {
           change.target.src = change.target.dataset.src;
           change.target.removeAttribute("data-src");
         }
-
-        // Загрузка для элемента <source>
-        if (change.target.tagName === "SOURCE" && change.target.dataset.srcset) {
+        if (change.target.tagName.toLowerCase() === attribute && change.target.dataset.srcset) {
           change.target.srcset = change.target.dataset.srcset;
           change.target.removeAttribute("data-srcset");
         }
       }
     });
   }
-  const elements = document.querySelectorAll("img, source"); // Теперь выбираем оба
-  // элемента
+  const elements = document.querySelectorAll(`${attribute}`);
   const options = {
-    threshold: [0]
+    threshold: [treshhold]
   };
   const observer = new IntersectionObserver(onDisplay, options);
   for (let elm of elements) {
     observer.observe(elm);
   }
 }
+
+// function observer2() {
+//     function onDisplay(entry) {
+//         entry.forEach((change) => {
+//             if (change.isIntersecting) {
+//                 if (change.target.tagName === "SOURCE" &&
+// change.target.dataset.srcset) { change.target.srcset = change.target.dataset.srcset;
+// change.target.removeAttribute("data-srcset"); } } }); }  const elements =
+// document.querySelectorAll("source"); const options = { threshold: [0] };  const
+// observer = new IntersectionObserver(onDisplay, options); for (let elm of elements) {
+// observer.observe(elm); } }
+
 /* harmony default export */ __webpack_exports__["default"] = (observer);
 
 /***/ }),
