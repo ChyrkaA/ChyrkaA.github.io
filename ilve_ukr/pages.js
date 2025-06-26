@@ -18,6 +18,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function hamburger(menuFullWhite, menuForBigProduct, showBigMenu, hideMenuList, menuDisplayNone, overflowScroll, overflowHidden, show, menuHeight) {
   if (_services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.contains(menuFullWhite) && !_services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.contains(menuForBigProduct)) {
+    _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menuSecondHalf.removeAttribute("style");
     window.addEventListener("scroll", _showTopMenu_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menuBig.classList.toggle(showBigMenu);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.toggle(menuFullWhite);
@@ -41,6 +42,13 @@ function hamburger(menuFullWhite, menuForBigProduct, showBigMenu, hideMenuList, 
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.toggle(menuFullWhite);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menuList.classList.toggle(hideMenuList);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menuProducts.classList.toggle(menuDisplayNone);
+    _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menuSecondHalf.style.pointerEvents = "all";
+    if (window.innerWidth <= 575) {
+      _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menuSubtitleBlock.forEach(block => {
+        block.classList.remove(show);
+        block.classList.remove(menuHeight);
+      });
+    }
   }
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (hamburger);
@@ -611,6 +619,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   menuBig: () => (/* binding */ menuBig),
 /* harmony export */   menuList: () => (/* binding */ menuList),
 /* harmony export */   menuProducts: () => (/* binding */ menuProducts),
+/* harmony export */   menuSecondHalf: () => (/* binding */ menuSecondHalf),
 /* harmony export */   menuSubtitleBlock: () => (/* binding */ menuSubtitleBlock),
 /* harmony export */   modal: () => (/* binding */ modal),
 /* harmony export */   modalWrapper: () => (/* binding */ modalWrapper),
@@ -624,6 +633,7 @@ const menuBig = document.querySelector(".menu__big");
 const menuList = document.querySelector(".menu__list");
 const menuProducts = document.querySelector(".menu__bigproducts");
 const body = document.querySelector("body");
+const menuSecondHalf = document.querySelector(".menu__secondHalf");
 const menuSubtitleBlock = document.querySelectorAll(".menu__subtitle_block");
 const stylesLink = document.querySelectorAll(".styles__link");
 const stylesImg = document.querySelectorAll(".styles__img");
@@ -720,8 +730,11 @@ __webpack_require__.r(__webpack_exports__);
 window.addEventListener("DOMContentLoaded", () => {
   (0,_modules_preload_js__WEBPACK_IMPORTED_MODULE_0__["default"])(".overlay", "body", "style");
   window.addEventListener("scroll", _modules_showTopMenu_js__WEBPACK_IMPORTED_MODULE_5__["default"]);
-  listener("click");
-  listener("touchend");
+  if (window.innerWidth >= 768) {
+    listener("click");
+  } else {
+    listener("touchend");
+  }
   function listener(action) {
     window.addEventListener(action, e => {
       if (e.target.classList.contains("style__show") || e.target.closest(".btn__styles")) {
