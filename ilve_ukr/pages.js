@@ -768,6 +768,24 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+  const coockersList = document.getElementById("cookers-top__list");
+  if (coockersList) {
+    coockersList.addEventListener("change", e => {
+      let selectedValue = e.target.value;
+      let sections = document.querySelectorAll(".cookers-bottom__type");
+      sections.forEach(section => {
+        if (selectedValue === "All") {
+          section.style.display = "block";
+        } else {
+          if (section.id === selectedValue) {
+            section.style.display = "block";
+          } else {
+            section.style.display = "none";
+          }
+        }
+      });
+    });
+  }
 });
 })();
 
