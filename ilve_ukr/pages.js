@@ -756,6 +756,43 @@ window.addEventListener("DOMContentLoaded", () => {
       _services_variables_js__WEBPACK_IMPORTED_MODULE_6__.stylesImg[i].classList.remove("show");
     });
   });
+  const featuresTitle = document.querySelectorAll(".features__item-title");
+  const featuresSpans = document.querySelectorAll(".spans");
+  featuresTitle.forEach(title => {
+    title.addEventListener("click", () => {
+      const content = title.nextElementSibling;
+      const featuresSpans = title.querySelector(".spans");
+      if (content && content.classList.contains("features__item-content")) {
+        content.classList.toggle("show-content");
+        featuresSpans.classList.toggle("create-cross");
+      } else if (content && content.classList.contains("features__item-wrapper")) {
+        // Если content имеет класс features__item-wrapper
+        const itemContents = content.querySelectorAll(".features__item-content");
+        featuresSpans.classList.toggle("create-cross");
+        itemContents.forEach(item => {
+          item.classList.toggle("show-content");
+        });
+      }
+    });
+  });
+  const coockersList = document.getElementById("cookers-top__list");
+  if (coockersList) {
+    coockersList.addEventListener("change", e => {
+      let selectedValue = e.target.value;
+      let sections = document.querySelectorAll(".cookers-bottom__type");
+      sections.forEach(section => {
+        if (selectedValue === "All") {
+          section.style.display = "block";
+        } else {
+          if (section.id === selectedValue) {
+            section.style.display = "block";
+          } else {
+            section.style.display = "none";
+          }
+        }
+      });
+    });
+  }
 });
 })();
 
