@@ -18,6 +18,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function hamburger(menuFullWhite, menuForBigProduct, showBigMenu, hideMenuList, menuDisplayNone, overflowScroll, overflowHidden, show, menuHeight) {
   if (_services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.contains(menuFullWhite) && !_services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.contains(menuForBigProduct)) {
+    console.log(1);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menuSecondHalf.removeAttribute("style");
     window.addEventListener("scroll", _showTopMenu_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menuBig.classList.toggle(showBigMenu);
@@ -32,11 +33,13 @@ function hamburger(menuFullWhite, menuForBigProduct, showBigMenu, hideMenuList, 
       });
     }
   } else if (_services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.contains(menuFullWhite) && _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.contains(menuForBigProduct)) {
+    console.log(5);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.toggle(menuFullWhite);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.toggle(menuForBigProduct);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menuProducts.classList.toggle(show);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.body.classList.toggle(overflowHidden);
   } else {
+    console.log(3);
     removeEventListener("scroll", _showTopMenu_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menuBig.classList.toggle(showBigMenu);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.toggle(menuFullWhite);
