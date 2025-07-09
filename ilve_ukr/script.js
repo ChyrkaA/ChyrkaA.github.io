@@ -31194,6 +31194,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function hamburger(menuFullWhite, menuForBigProduct, showBigMenu, hideMenuList, menuDisplayNone, overflowScroll, overflowHidden, show, menuHeight) {
   if (_services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.contains(menuFullWhite) && !_services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.contains(menuForBigProduct)) {
+    console.log(1);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menuSecondHalf.removeAttribute("style");
     window.addEventListener("scroll", _showTopMenu_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menuBig.classList.toggle(showBigMenu);
@@ -31208,11 +31209,13 @@ function hamburger(menuFullWhite, menuForBigProduct, showBigMenu, hideMenuList, 
       });
     }
   } else if (_services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.contains(menuFullWhite) && _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.contains(menuForBigProduct)) {
+    console.log(5);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.toggle(menuFullWhite);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.toggle(menuForBigProduct);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menuProducts.classList.toggle(show);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.body.classList.toggle(overflowHidden);
   } else {
+    console.log(3);
     removeEventListener("scroll", _showTopMenu_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menuBig.classList.toggle(showBigMenu);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.toggle(menuFullWhite);
@@ -31591,7 +31594,7 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (e.target.closest(".menu__subtitle")) {
         (0,_modules_smallMenu_js__WEBPACK_IMPORTED_MODULE_4__["default"])(e.target, "show", "height", "overflow_scroll");
       } else if (e.target.closest(".hamburger") || e.target.classList.contains(".hamburger")) {
-        (0,_modules_hamburger_js__WEBPACK_IMPORTED_MODULE_6__["default"])("menu__full_white", "menu__forbigproduct", "menu__big_show", "menu__list_hide", "menu__display_none", "overflow_scroll", "show", "height");
+        (0,_modules_hamburger_js__WEBPACK_IMPORTED_MODULE_6__["default"])("menu__full_white", "menu__forbigproduct", "menu__big_show", "menu__list_hide", "menu__display_none", "overflow_scroll", "overflow_hidden", "show", "height");
       } else if (e.target.closest(".modal__close")) {
         _services_variables_js__WEBPACK_IMPORTED_MODULE_7__.modal.classList.remove("show__modal");
       }

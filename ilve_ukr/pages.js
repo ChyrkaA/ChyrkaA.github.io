@@ -18,6 +18,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function hamburger(menuFullWhite, menuForBigProduct, showBigMenu, hideMenuList, menuDisplayNone, overflowScroll, overflowHidden, show, menuHeight) {
   if (_services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.contains(menuFullWhite) && !_services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.contains(menuForBigProduct)) {
+    console.log(1);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menuSecondHalf.removeAttribute("style");
     window.addEventListener("scroll", _showTopMenu_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menuBig.classList.toggle(showBigMenu);
@@ -32,11 +33,13 @@ function hamburger(menuFullWhite, menuForBigProduct, showBigMenu, hideMenuList, 
       });
     }
   } else if (_services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.contains(menuFullWhite) && _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.contains(menuForBigProduct)) {
+    console.log(5);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.toggle(menuFullWhite);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.toggle(menuForBigProduct);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menuProducts.classList.toggle(show);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.body.classList.toggle(overflowHidden);
   } else {
+    console.log(3);
     removeEventListener("scroll", _showTopMenu_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menuBig.classList.toggle(showBigMenu);
     _services_variables_js__WEBPACK_IMPORTED_MODULE_1__.menu.classList.toggle(menuFullWhite);
@@ -765,6 +768,13 @@ window.addEventListener("DOMContentLoaded", () => {
       if (content && content.classList.contains("features__item-content")) {
         content.classList.toggle("show-content");
         featuresSpans.classList.toggle("create-cross");
+      } else if (content && content.classList.contains("features__item-wrapper")) {
+        // Если content имеет класс features__item-wrapper
+        const itemContents = content.querySelectorAll(".features__item-content");
+        featuresSpans.classList.toggle("create-cross");
+        itemContents.forEach(item => {
+          item.classList.toggle("show-content");
+        });
       }
     });
   });
@@ -786,6 +796,32 @@ window.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+  const galleryPhotos = document.querySelectorAll(".gallery__photo-img");
+  const bigPhoto = document.querySelector(".gallery__big-photo");
+  const bigPhotoImg = document.querySelector(".gallery__big-photo-img");
+  const bigPhotoOverlay = document.querySelector(".gallery__overlay");
+  galleryPhotos.forEach(photo => {
+    photo.addEventListener("click", () => {
+      bigPhotoImg.src = photo.src;
+      bigPhoto.classList.add("show");
+    });
+  });
+  bigPhotoOverlay.addEventListener("click", () => {
+    bigPhoto.classList.remove("show");
+  });
+  let currentImageIndex = parseInt(bigPhotoImg.src.match(/(\d+)\.webp/)[1]);
+  const leftArrow = document.querySelector(".gallery__big-photo-left");
+  leftArrow.addEventListener("click", () => {
+    currentImageIndex = currentImageIndex > 1 ? currentImageIndex - 1 : 56;
+    bigPhotoImg.src = `img/gallery/${currentImageIndex}.webp`;
+  });
+
+  // Стрілка вправо
+  const rightArrow = document.querySelector(".gallery__big-photo-right");
+  rightArrow.addEventListener("click", () => {
+    currentImageIndex = currentImageIndex < 56 ? currentImageIndex + 1 : 1;
+    bigPhotoImg.src = `img/gallery/${currentImageIndex}.webp`;
+  });
 });
 })();
 
