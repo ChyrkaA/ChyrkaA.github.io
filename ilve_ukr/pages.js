@@ -733,7 +733,7 @@ __webpack_require__.r(__webpack_exports__);
 window.addEventListener("DOMContentLoaded", () => {
   (0,_modules_preload_js__WEBPACK_IMPORTED_MODULE_0__["default"])(".overlay", "body", "style");
   window.addEventListener("scroll", _modules_showTopMenu_js__WEBPACK_IMPORTED_MODULE_5__["default"]);
-  if (window.innerWidth >= 768) {
+  if (window.innerWidth >= 992) {
     listener("click");
   } else {
     listener("touchend");
@@ -795,6 +795,60 @@ window.addEventListener("DOMContentLoaded", () => {
         }
       });
     });
+  }
+  const galleryPhotosWrapper = document.querySelector(".gallery__photos");
+  let usedNumbers = [];
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  function createImageElement(imageNumber) {
+    const photoDiv = document.createElement("div");
+    photoDiv.classList.add("gallery__photo");
+    const img = document.createElement("img");
+    img.src = `img/gallery/${imageNumber}.webp`;
+    img.alt = "photo";
+    img.classList.add("gallery__photo-img");
+    photoDiv.appendChild(img);
+    galleryPhotosWrapper.appendChild(photoDiv);
+  }
+  function generateGalleryImages() {
+    while (usedNumbers.length < 56) {
+      const randomImageNumber = getRandomInt(1, 56);
+      if (!usedNumbers.includes(randomImageNumber)) {
+        usedNumbers.push(randomImageNumber);
+        createImageElement(randomImageNumber);
+      }
+    }
+    initializeGallery();
+  }
+  function initializeGallery() {
+    const galleryPhotos = document.querySelectorAll(".gallery__photo-img");
+    const bigPhoto = document.querySelector(".gallery__big-photo");
+    const bigPhotoImg = document.querySelector(".gallery__big-photo-img");
+    const bigPhotoOverlay = document.querySelector(".gallery__overlay");
+    galleryPhotos.forEach(photo => {
+      photo.addEventListener("click", () => {
+        bigPhotoImg.src = photo.src;
+        bigPhoto.classList.add("show");
+      });
+    });
+    bigPhotoOverlay.addEventListener("click", () => {
+      bigPhoto.classList.remove("show");
+    });
+    let currentImageIndex = parseInt(bigPhotoImg.src.match(/(\d+)\.webp/)[1]);
+    const leftArrow = document.querySelector(".gallery__big-photo-left");
+    leftArrow.addEventListener("click", () => {
+      currentImageIndex = currentImageIndex > 1 ? currentImageIndex - 1 : 56;
+      bigPhotoImg.src = `img/gallery/${currentImageIndex}.webp`;
+    });
+    const rightArrow = document.querySelector(".gallery__big-photo-right");
+    rightArrow.addEventListener("click", () => {
+      currentImageIndex = currentImageIndex < 56 ? currentImageIndex + 1 : 1;
+      bigPhotoImg.src = `img/gallery/${currentImageIndex}.webp`;
+    });
+  }
+  if (window.location.pathname.includes("gallery.html")) {
+    generateGalleryImages();
   }
 });
 })();

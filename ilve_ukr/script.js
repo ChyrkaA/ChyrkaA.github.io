@@ -31579,7 +31579,7 @@ __webpack_require__.r(__webpack_exports__);
 window.addEventListener("DOMContentLoaded", () => {
   (0,_modules_preload_js__WEBPACK_IMPORTED_MODULE_0__["default"])(".overlay", "body", "style");
   (0,_services_observer_js__WEBPACK_IMPORTED_MODULE_1__["default"])("Delay", ".animate");
-  if (window.innerWidth >= 768) {
+  if (window.innerWidth >= 992) {
     listener("click");
   } else {
     listener("touchend");
