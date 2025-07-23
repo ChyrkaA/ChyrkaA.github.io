@@ -826,14 +826,17 @@ window.addEventListener("DOMContentLoaded", () => {
     const bigPhoto = document.querySelector(".gallery__big-photo");
     const bigPhotoImg = document.querySelector(".gallery__big-photo-img");
     const bigPhotoOverlay = document.querySelector(".gallery__overlay");
+    const bigPhotoCross = document.querySelector(".gallery__cross");
     galleryPhotos.forEach(photo => {
       photo.addEventListener("click", () => {
         bigPhotoImg.src = photo.src;
         bigPhoto.classList.add("show");
       });
     });
-    bigPhotoOverlay.addEventListener("click", () => {
-      bigPhoto.classList.remove("show");
+    bigPhoto.addEventListener("click", e => {
+      if (e.target.classList.contains("gallery__cross") || e.target.classList.contains("gallery__overlay")) {
+        bigPhoto.classList.remove("show");
+      }
     });
     let currentImageIndex = parseInt(bigPhotoImg.src.match(/(\d+)\.webp/)[1]);
     const leftArrow = document.querySelector(".gallery__big-photo-left");
