@@ -31641,6 +31641,50 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+// const students = [
+//     {name: 'Alice', grades: {math: 4, english: 5, history: 3}},
+//     {name: 'Bob', grades: {math: 2, english: 3, history: 4}},
+//     {name: 'Charlie', grades: {math: 5, english: 5, history: 5}},
+//     {name: 'David', grades: {math: 3, english: 2, history: 4}},
+//     {name: 'Eva', grades: {math: 4, english: 5, history: 4}},
+// ];
+
+// let result3 = {};
+
+// students.map(student => {
+//     let counter = 0;
+//     let sum = 0;
+
+//     if (!result3[student.name]) {
+//         result3[student.name] = {average: 0};
+//     }
+//     for (let key in student.grades) {
+//         sum = sum + student.grades[key];
+//         counter = counter + 1;
+//     }
+//     result3[student.name] = {average: sum / counter};
+// });
+
+// for (let key in result3) {
+//     if (result3[key].average >= 4) {
+//         console.log(key, result3[key]);
+//     }
+// }
+
+// console.log(result3);
+// const products = [
+//     { name: "Laptop", price: 1000 },
+//     { name: "Phone", price: 500 },
+//     { name: "Tablet", price: 750 },
+// ];
+//
+// const upperPrice = products.map(product => {
+//     return product.price + product.price * 0.2;
+// });
+//
+// products.forEach((product, i) => {
+//     console.log(`Продукт ${product.name}, Цена с НДС: ${upperPrice[i]}`);
+// });
 
 /***/ }),
 

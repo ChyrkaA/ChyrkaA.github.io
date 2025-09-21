@@ -295,6 +295,46 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// const orders = [
+//     {id: 1, client: 'Anna', total: 120},
+//     {id: 2, client: 'Boris', total: 90},
+//     {id: 3, client: 'Anna', total: 30},
+//     {id: 4, client: 'Clara', total: 45},
+//     {id: 5, client: 'Boris', total: 60},
+// ];
+
+// let result = {};
+
+// orders.map(order => {
+//     if (!result[order.client]) {
+//         result[order.client] = {count: 0, total: 0};
+//     }
+//     result[order.client].count = result[order.client].count + 1;
+//     result[order.client].total = result[order.client].total + order.total;
+// });
+
+// console.log(result);
+
+// const products = [
+//     {id: 1, name: 'apple', price: 2},
+//     {id: 2, name: 'banana', price: 1},
+//     {id: 3, name: 'apple', price: 2},
+//     {id: 4, name: 'orange', price: 3},
+//     {id: 5, name: 'banana', price: 1},
+// ];
+
+// let result2 = {};
+
+// products.map(product => {
+//     if (!result2[product.name]) {
+//         result2[product.name] = {count: 0, totalPrice: 0};
+//     }
+//     result2[product.name].totalPrice = result2[product.name].totalPrice + product.price;
+//     result2[product.name].count = result2[product.name].count + 1;
+// });
+
+// console.log(result2);
+
 /***/ }),
 
 /***/ "./src/js/services/fadeInOut.js":
