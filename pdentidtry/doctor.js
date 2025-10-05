@@ -114,6 +114,10 @@ document.addEventListener('DOMContentLoaded', () => {
     modalDirector.classList.remove(modalActive);
     modalMini.classList.remove(modalActive);
   }
+  const rightSide = document.querySelector('.doctor__right-side');
+  const leftSide = document.querySelector('.doctor__left-side');
+  const rightSideHeight = rightSide.offsetHeight;
+  leftSide.style.height = `${rightSideHeight}px`;
 });
 /******/ })()
 ;
