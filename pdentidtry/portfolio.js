@@ -10708,26 +10708,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   const checkboxes = document.querySelectorAll('.portfolio__filter-group input[type="checkbox"]');
+  const filterItems = idArray => {
+    return Array.from(checkboxes).filter(checkbox => idArray.some(id => checkbox.id.includes(id))).filter(checkbox => checkbox.checked).map(checkbox => checkbox.id);
+  };
   function filterPortfolioItems() {
-    const selectedDoctors = Array.from(checkboxes).filter(checkbox => checkbox.id.includes('kozoriz') || checkbox.id.includes('bilenko') || checkbox.id.includes('gartyk') || checkbox.id.includes('kovnatskiy') || checkbox.id.includes('troyanska') || checkbox.id.includes('korvach') || checkbox.id.includes('boyko') || checkbox.id.includes('faryna') || checkbox.id.includes('kushnir') || checkbox.id.includes('brodyk') || checkbox.id.includes('solodovyk') || checkbox.id.includes('goncharenko') || checkbox.id.includes('alexeeva')).filter(checkbox => checkbox.checked).map(checkbox => checkbox.id);
-    const selectedMethods = Array.from(checkboxes).filter(checkbox => checkbox.id.includes('anesteziologichne') || checkbox.id.includes('likuvannya-kanaliv') || checkbox.id.includes('metalevi-koronky') || checkbox.id.includes('karies-tymchasovih') || checkbox.id.includes('karies-postiynyh') || checkbox.id.includes('no2') || checkbox.id.includes('estetychny-koronky') || checkbox.id.includes('travma-zubiv')).filter(checkbox => checkbox.checked).map(checkbox => checkbox.id);
+    const selectedDoctors = filterItems(['kozoriz', 'bilenko', 'gartyk', 'kovnatskiy', 'troyanska', 'korvach', 'boyko', 'faryna', 'kushnir', 'brodyk', 'solodovyk', 'goncharenko', 'alexeeva']);
+    const selectedMethods = filterItems(['anesteziologichne', 'likuvannya-kanaliv', 'metalevi-koronky', 'karies-tymchasovih', 'karies-postiynyh', 'no2', 'estetychny-koronky', 'travma-zubiv']);
 
     // Якщо не вибрано жодного чекбокса, показуємо всі елементи
+    const portfolioItems = document.querySelectorAll('.portfolio__accordion-item');
     if (selectedDoctors.length === 0 && selectedMethods.length === 0) {
-      document.querySelectorAll('.portfolio__accordion-item').forEach(item => {
-        item.style.display = 'block';
-      });
+      portfolioItems.forEach(item => item.style.display = 'block');
     } else {
-      document.querySelectorAll('.portfolio__accordion-item').forEach(item => {
+      portfolioItems.forEach(item => {
         const doctorId = item.getAttribute('data-doctor');
-        const metodId = item.getAttribute('data-metod');
+        const methodId = item.getAttribute('data-metod');
         const doctorMatches = selectedDoctors.length === 0 || selectedDoctors.includes(doctorId);
-        const methodMatches = selectedMethods.length === 0 || selectedMethods.includes(metodId);
-        if (doctorMatches && methodMatches) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
+        const methodMatches = selectedMethods.length === 0 || selectedMethods.includes(methodId);
+        item.style.display = doctorMatches && methodMatches ? 'block' : 'none';
       });
     }
   }
