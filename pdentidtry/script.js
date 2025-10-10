@@ -10604,20 +10604,26 @@ document.addEventListener('DOMContentLoaded', () => {
         spaceBetween: 40
       },
       768: {
+        slidesPerView: '3',
         spaceBetween: 20
       },
-      375: {
-        spaceBetween: 26
+      576: {
+        slidesPerView: '2',
+        spaceBetween: 20
+      },
+      320: {
+        slidesPerView: '1',
+        spaceBetween: 10
       }
     }
   });
   const swiper2 = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.news__swiper-container', {
     slidesPerView: '1',
     loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
+    // autoplay: {
+    //     delay: 5000,
+    //     disableOnInteraction: false,
+    // },
     breakpoints: {
       1440: {
         spaceBetween: 48
@@ -10665,7 +10671,6 @@ document.addEventListener('DOMContentLoaded', () => {
   for (let elm of elements) {
     observer.observe(elm);
   }
-  const write = document.querySelector('.write');
   const messenger = document.querySelector('.write__btn-messenger');
   const whatsapp = document.querySelector('.write__btn-whatsapp');
   const viber = document.querySelector('.write__btn-viber');
@@ -10726,6 +10731,17 @@ document.addEventListener('DOMContentLoaded', () => {
     modalDirector.classList.remove(modalActive);
     modalMini.classList.remove(modalActive);
   }
+  const showMenu = document.querySelector('.menu__line');
+  const hamburger = document.querySelector('.hamburger');
+  const menuList = document.querySelector('.menu__list');
+  hamburger.addEventListener('click', () => {
+    showMenu.classList.toggle('show-menu');
+    hamburger.classList.toggle('cross');
+  });
+  menuList.addEventListener('click', () => {
+    showMenu.classList.toggle('show-menu');
+    hamburger.classList.toggle('cross');
+  });
 });
 })();
 
