@@ -10737,6 +10737,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Початкове застосування фільтрації
   filterPortfolioItems();
+  const showMenu = document.querySelector('.menu__line');
+  const hamburger = document.querySelector('.hamburger');
+  const menuList = document.querySelector('.menu__list');
+  hamburger.addEventListener('click', () => {
+    showMenu.classList.toggle('show-menu');
+    hamburger.classList.toggle('cross');
+    if (filter.classList.contains('show-menu')) {
+      filter.classList.toggle('show-menu');
+      showFilter.classList.toggle('hide');
+    }
+  });
+  menuList.addEventListener('click', () => {
+    showMenu.classList.toggle('show-menu');
+    hamburger.classList.toggle('cross');
+  });
+  const closeFilter = document.querySelector('.portfolio__filter-close');
+  const showFilter = document.querySelector('.portfolio__center');
+  const filter = document.querySelector('.portfolio__left-side');
+  showFilter.addEventListener('click', () => {
+    filter.classList.toggle('show-menu');
+    showFilter.classList.toggle('hide');
+  });
+  closeFilter.addEventListener('click', () => {
+    filter.classList.toggle('show-menu');
+    showFilter.classList.toggle('hide');
+  });
 });
 })();
 

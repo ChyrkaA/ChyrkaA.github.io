@@ -115,6 +115,17 @@ document.addEventListener('DOMContentLoaded', () => {
     modalDirector.classList.remove(modalActive);
     modalMini.classList.remove(modalActive);
   }
+  const showMenu = document.querySelector('.menu__line');
+  const hamburger = document.querySelector('.hamburger');
+  const menuList = document.querySelector('.menu__list');
+  hamburger.addEventListener('click', () => {
+    showMenu.classList.toggle('show-menu');
+    hamburger.classList.toggle('cross');
+  });
+  menuList.addEventListener('click', () => {
+    showMenu.classList.toggle('show-menu');
+    hamburger.classList.toggle('cross');
+  });
 });
 /******/ })()
 ;

@@ -114,10 +114,30 @@ document.addEventListener('DOMContentLoaded', () => {
     modalDirector.classList.remove(modalActive);
     modalMini.classList.remove(modalActive);
   }
-  const rightSide = document.querySelector('.doctor__right-side');
-  const leftSide = document.querySelector('.doctor__left-side');
-  const rightSideHeight = rightSide.offsetHeight;
-  leftSide.style.height = `${rightSideHeight}px`;
+  window.addEventListener('resize', rightSideHeight);
+  function rightSideHeight() {
+    const rightSide = document.querySelector('.doctor__right-side');
+    const leftSide = document.querySelector('.doctor__left-side');
+    if (!rightSide || !leftSide) return; // захист від помилок
+
+    if (window.innerWidth >= 576) {
+      leftSide.style.height = `${rightSide.offsetHeight}px`;
+    } else {
+      leftSide.style.height = ''; // прибираємо inline-стиль при вузькому екрані
+    }
+  }
+  rightSideHeight();
+  const showMenu = document.querySelector('.menu__line');
+  const hamburger = document.querySelector('.hamburger');
+  const menuList = document.querySelector('.menu__list');
+  hamburger.addEventListener('click', () => {
+    showMenu.classList.toggle('show-menu');
+    hamburger.classList.toggle('cross');
+  });
+  menuList.addEventListener('click', () => {
+    showMenu.classList.toggle('show-menu');
+    hamburger.classList.toggle('cross');
+  });
 });
 /******/ })()
 ;

@@ -10620,10 +10620,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const swiper2 = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.news__swiper-container', {
     slidesPerView: '1',
     loop: true,
-    // autoplay: {
-    //     delay: 5000,
-    //     disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
     breakpoints: {
       1440: {
         spaceBetween: 48
@@ -10677,34 +10677,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const telegram = document.querySelector('.write__btn-telegram');
   const phone = document.querySelector('.write__btn-phone');
   window.addEventListener('click', e => {
-    if (!e.target.closest('.write')) {
+    const isWrite = e.target.closest('.write');
+    if (!isWrite) {
+      // Клік поза кнопкою — прибираємо всі id
       messenger.removeAttribute('id');
-      setTimeout(() => {
-        whatsapp.removeAttribute('id');
-      }, 100);
-      setTimeout(() => {
-        viber.removeAttribute('id');
-      }, 200);
-      setTimeout(() => {
-        telegram.removeAttribute('id');
-      }, 300);
-      setTimeout(() => {
-        phone.removeAttribute('id');
-      }, 400);
+      setTimeout(() => whatsapp.removeAttribute('id'), 100);
+      setTimeout(() => viber.removeAttribute('id'), 200);
+      setTimeout(() => telegram.removeAttribute('id'), 300);
+      setTimeout(() => phone.removeAttribute('id'), 400);
     } else {
-      setTimeout(() => {
-        messenger.setAttribute('id', 'messenger');
-      }, 400);
-      setTimeout(() => {
-        whatsapp.setAttribute('id', 'whatsapp');
-      }, 300);
-      setTimeout(() => {
-        viber.setAttribute('id', 'viber');
-      }, 200);
-      setTimeout(() => {
-        telegram.setAttribute('id', 'telegram');
-      }, 100);
-      phone.setAttribute('id', 'phone');
+      // Клік по кнопці — якщо вже відкрито, закриваємо; якщо ні — відкриваємо
+      const isOpen = messenger.hasAttribute('id');
+      if (isOpen) {
+        messenger.removeAttribute('id');
+        setTimeout(() => whatsapp.removeAttribute('id'), 100);
+        setTimeout(() => viber.removeAttribute('id'), 200);
+        setTimeout(() => telegram.removeAttribute('id'), 300);
+        setTimeout(() => phone.removeAttribute('id'), 400);
+      } else {
+        setTimeout(() => messenger.setAttribute('id', 'messenger'), 400);
+        setTimeout(() => whatsapp.setAttribute('id', 'whatsapp'), 300);
+        setTimeout(() => viber.setAttribute('id', 'viber'), 200);
+        setTimeout(() => telegram.setAttribute('id', 'telegram'), 100);
+        phone.setAttribute('id', 'phone');
+      }
     }
   });
   const overlayModal = document.querySelector('.overlay-modal');
