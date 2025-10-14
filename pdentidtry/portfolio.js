@@ -10743,8 +10743,8 @@ document.addEventListener('DOMContentLoaded', () => {
   hamburger.addEventListener('click', () => {
     showMenu.classList.toggle('show-menu');
     hamburger.classList.toggle('cross');
-    if (filter.classList.contains('show-menu')) {
-      filter.classList.toggle('show-menu');
+    if (filter.classList.contains('show-filter')) {
+      filter.classList.toggle('show-filter');
       showFilter.classList.toggle('hide');
     }
   });
@@ -10756,11 +10756,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const showFilter = document.querySelector('.portfolio__center');
   const filter = document.querySelector('.portfolio__left-side');
   showFilter.addEventListener('click', () => {
-    filter.classList.toggle('show-menu');
+    filter.classList.toggle('show-filter');
     showFilter.classList.toggle('hide');
   });
   closeFilter.addEventListener('click', () => {
-    filter.classList.toggle('show-menu');
+    filter.classList.toggle('show-filter');
     showFilter.classList.toggle('hide');
   });
 });
