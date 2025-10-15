@@ -10521,6 +10521,308 @@ _shared_swiper_core_mjs__WEBPACK_IMPORTED_MODULE_0__.S.use(modules);
 
 
 
+/***/ }),
+
+/***/ "./src/js/modules/filter.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/filter.js ***!
+  \**********************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   itemsFilter: () => (/* binding */ itemsFilter),
+/* harmony export */   showCloseFilter: () => (/* binding */ showCloseFilter)
+/* harmony export */ });
+/* harmony import */ var _services_constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/constants.js */ "./src/js/services/constants.js");
+
+function showCloseFilter() {
+  _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.filter.classList.toggle('show-filter');
+  _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.showFilter.classList.toggle('hide');
+}
+function itemsFilter() {
+  const filterItems = idArray => {
+    return Array.from(_services_constants_js__WEBPACK_IMPORTED_MODULE_0__.checkboxes).filter(checkbox => idArray.some(id => checkbox.id.includes(id))).filter(checkbox => checkbox.checked).map(checkbox => checkbox.id);
+  };
+  function filterPortfolioItems() {
+    const selectedDoctors = filterItems(['kozoriz', 'bilenko', 'gartyk', 'kovnatskiy', 'troyanska', 'korvach', 'boyko', 'faryna', 'kushnir', 'brodyk', 'solodovyk', 'goncharenko', 'alexeeva']);
+    const selectedMethods = filterItems(['anesteziologichne', 'likuvannya-kanaliv', 'metalevi-koronky', 'karies-tymchasovih', 'karies-postiynyh', 'no2', 'estetychny-koronky', 'travma-zubiv']);
+
+    // Якщо не вибрано жодного чекбокса, показуємо всі елементи
+    const portfolioItems = document.querySelectorAll('.portfolio__accordion-item');
+    if (selectedDoctors.length === 0 && selectedMethods.length === 0) {
+      portfolioItems.forEach(item => item.style.display = 'block');
+    } else {
+      portfolioItems.forEach(item => {
+        const doctorId = item.getAttribute('data-doctor');
+        const methodId = item.getAttribute('data-metod');
+        const doctorMatches = selectedDoctors.length === 0 || selectedDoctors.includes(doctorId);
+        const methodMatches = selectedMethods.length === 0 || selectedMethods.includes(methodId);
+        item.style.display = doctorMatches && methodMatches ? 'block' : 'none';
+      });
+    }
+  }
+
+  // Додаємо обробник події для кожного чекбокса
+  _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', filterPortfolioItems);
+  });
+
+  // Початкове застосування фільтрації
+  filterPortfolioItems();
+}
+
+
+/***/ }),
+
+/***/ "./src/js/modules/menu.js":
+/*!********************************!*\
+  !*** ./src/js/modules/menu.js ***!
+  \********************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   hamburgerMenuClick: () => (/* binding */ hamburgerMenuClick),
+/* harmony export */   handleScroll: () => (/* binding */ handleScroll)
+/* harmony export */ });
+/* harmony import */ var _services_constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/constants.js */ "./src/js/services/constants.js");
+
+let lastScrollY = window.scrollY;
+function handleScroll() {
+  if (window.scrollY > 500) {
+    if (window.scrollY > lastScrollY) {
+      _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.nav.classList.add('hide-menu');
+    } else {
+      _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.nav.classList.remove('hide-menu');
+    }
+  } else {
+    _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.nav.classList.remove('hide-menu');
+  }
+  lastScrollY = window.scrollY;
+}
+function hamburgerMenuClick() {
+  _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.showMenu.classList.toggle('show-menu');
+  _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.hamburger.classList.toggle('cross');
+}
+
+
+/***/ }),
+
+/***/ "./src/js/modules/sliders.js":
+/*!***********************************!*\
+  !*** ./src/js/modules/sliders.js ***!
+  \***********************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   sliderNews: () => (/* binding */ sliderNews),
+/* harmony export */   sliderPortfolio: () => (/* binding */ sliderPortfolio),
+/* harmony export */   sliderReview: () => (/* binding */ sliderReview)
+/* harmony export */ });
+/* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/bundle */ "./node_modules/swiper/swiper-bundle.mjs");
+
+function sliderReview() {
+  const swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.reviews__swiper-container', {
+    slidesPerView: '3',
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false
+    },
+    breakpoints: {
+      1440: {
+        spaceBetween: 48
+      },
+      1024: {
+        spaceBetween: 40
+      },
+      768: {
+        slidesPerView: '3',
+        spaceBetween: 20
+      },
+      576: {
+        slidesPerView: '2',
+        spaceBetween: 20
+      },
+      320: {
+        slidesPerView: '1',
+        spaceBetween: 10
+      }
+    }
+  });
+}
+function sliderNews() {
+  const swiper2 = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.news__swiper-container', {
+    slidesPerView: '1',
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    breakpoints: {
+      1440: {
+        spaceBetween: 48
+      },
+      1024: {
+        spaceBetween: 40
+      },
+      768: {
+        spaceBetween: 20
+      },
+      375: {
+        spaceBetween: 26
+      }
+    }
+  });
+}
+function sliderPortfolio() {
+  const swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.portfolio__accordion-swiper-container', {
+    slidesPerView: '1',
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false
+    },
+    breakpoints: {
+      1440: {
+        spaceBetween: 48
+      },
+      1024: {
+        spaceBetween: 40
+      },
+      768: {
+        spaceBetween: 20
+      },
+      375: {
+        spaceBetween: 26
+      }
+    }
+  });
+}
+
+
+/***/ }),
+
+/***/ "./src/js/modules/write.js":
+/*!*********************************!*\
+  !*** ./src/js/modules/write.js ***!
+  \*********************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _services_constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/constants.js */ "./src/js/services/constants.js");
+
+function write(e) {
+  if (!e.target.closest('.write')) {
+    // Клік поза кнопкою — прибираємо всі id
+    _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.messenger.removeAttribute('id');
+    setTimeout(() => _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.whatsapp.removeAttribute('id'), 100);
+    setTimeout(() => _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.viber.removeAttribute('id'), 200);
+    setTimeout(() => _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.telegram.removeAttribute('id'), 300);
+    setTimeout(() => _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.phone.removeAttribute('id'), 400);
+  } else {
+    // Клік по кнопці — якщо вже відкрито, закриваємо; якщо ні — відкриваємо
+    const isOpen = _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.messenger.hasAttribute('id');
+    if (isOpen) {
+      _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.messenger.removeAttribute('id');
+      setTimeout(() => _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.whatsapp.removeAttribute('id'), 100);
+      setTimeout(() => _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.viber.removeAttribute('id'), 200);
+      setTimeout(() => _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.telegram.removeAttribute('id'), 300);
+      setTimeout(() => _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.phone.removeAttribute('id'), 400);
+    } else {
+      setTimeout(() => _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.messenger.setAttribute('id', 'messenger'), 400);
+      setTimeout(() => _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.whatsapp.setAttribute('id', 'whatsapp'), 300);
+      setTimeout(() => _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.viber.setAttribute('id', 'viber'), 200);
+      setTimeout(() => _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.telegram.setAttribute('id', 'telegram'), 100);
+      _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.phone.setAttribute('id', 'phone');
+    }
+  }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (write);
+
+/***/ }),
+
+/***/ "./src/js/services/constants.js":
+/*!**************************************!*\
+  !*** ./src/js/services/constants.js ***!
+  \**************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   checkboxes: () => (/* binding */ checkboxes),
+/* harmony export */   filter: () => (/* binding */ filter),
+/* harmony export */   hamburger: () => (/* binding */ hamburger),
+/* harmony export */   menuList: () => (/* binding */ menuList),
+/* harmony export */   messenger: () => (/* binding */ messenger),
+/* harmony export */   modalBig: () => (/* binding */ modalBig),
+/* harmony export */   modalDirector: () => (/* binding */ modalDirector),
+/* harmony export */   modalMini: () => (/* binding */ modalMini),
+/* harmony export */   nav: () => (/* binding */ nav),
+/* harmony export */   overlayModal: () => (/* binding */ overlayModal),
+/* harmony export */   phone: () => (/* binding */ phone),
+/* harmony export */   showFilter: () => (/* binding */ showFilter),
+/* harmony export */   showMenu: () => (/* binding */ showMenu),
+/* harmony export */   telegram: () => (/* binding */ telegram),
+/* harmony export */   viber: () => (/* binding */ viber),
+/* harmony export */   whatsapp: () => (/* binding */ whatsapp)
+/* harmony export */ });
+const nav = document.querySelector('.nav');
+const showMenu = document.querySelector('.menu__line');
+const hamburger = document.querySelector('.hamburger');
+const menuList = document.querySelector('.menu__list');
+const messenger = document.querySelector('.write__btn-messenger');
+const whatsapp = document.querySelector('.write__btn-whatsapp');
+const viber = document.querySelector('.write__btn-viber');
+const telegram = document.querySelector('.write__btn-telegram');
+const phone = document.querySelector('.write__btn-phone');
+const overlayModal = document.querySelector('.overlay-modal');
+const modalBig = document.querySelector('.modal_big');
+const modalMini = document.querySelector('.modal_mini');
+const modalDirector = document.querySelector('.modal_director');
+const filter = document.querySelector('.portfolio__left-side');
+const showFilter = document.querySelector('.portfolio__center');
+const checkboxes = document.querySelectorAll('.portfolio__filter-group input[type="checkbox"]');
+
+
+/***/ }),
+
+/***/ "./src/js/services/observer.js":
+/*!*************************************!*\
+  !*** ./src/js/services/observer.js ***!
+  \*************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function observer() {
+  function onDisplay(entry) {
+    entry.forEach(function (change) {
+      if (change.isIntersecting) {
+        change.target.classList.add('delay');
+      } else {
+        change.target.classList.remove('delay');
+      }
+    });
+  }
+  const elements = document.querySelectorAll('.observer');
+  const options = {
+    threshold: [0.3]
+  };
+  const observer = new IntersectionObserver(onDisplay, options);
+  for (let elm of elements) {
+    observer.observe(elm);
+  }
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (observer);
+
 /***/ })
 
 /******/ 	});
@@ -10586,183 +10888,113 @@ var __webpack_exports__ = {};
   !*** ./src/js/portfolio.js ***!
   \*****************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/bundle */ "./node_modules/swiper/swiper-bundle.mjs");
+/* harmony import */ var _modules_sliders_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/sliders.js */ "./src/js/modules/sliders.js");
+/* harmony import */ var _services_constants_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services/constants.js */ "./src/js/services/constants.js");
+/* harmony import */ var _services_observer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/observer.js */ "./src/js/services/observer.js");
+/* harmony import */ var _modules_write_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/write.js */ "./src/js/modules/write.js");
+/* harmony import */ var _modules_filter_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/filter.js */ "./src/js/modules/filter.js");
+/* harmony import */ var _modules_menu_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/menu.js */ "./src/js/modules/menu.js");
+
+
+
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
-  const nav = document.querySelector('.nav');
-  let lastScrollY = window.scrollY;
-  function handleScroll() {
-    if (window.scrollY > 500) {
-      if (window.scrollY > lastScrollY) {
-        nav.classList.add('hide-menu');
-      } else {
-        nav.classList.remove('hide-menu');
-      }
-    } else {
-      nav.classList.remove('hide-menu');
-    }
-    lastScrollY = window.scrollY;
-  }
-  window.addEventListener('scroll', handleScroll);
-  function onDisplay(entry) {
-    entry.forEach(function (change) {
-      if (change.isIntersecting) {
-        change.target.classList.add('delay');
-      } else {
-        change.target.classList.remove('delay');
-      }
-    });
-  }
-  const elements = document.querySelectorAll('.observer');
-  const options = {
-    threshold: [0.3]
-  };
-  const observer = new IntersectionObserver(onDisplay, options);
-  for (let elm of elements) {
-    observer.observe(elm);
-  }
-  const messenger = document.querySelector('.write__btn-messenger');
-  const whatsapp = document.querySelector('.write__btn-whatsapp');
-  const viber = document.querySelector('.write__btn-viber');
-  const telegram = document.querySelector('.write__btn-telegram');
-  const phone = document.querySelector('.write__btn-phone');
+  (0,_modules_sliders_js__WEBPACK_IMPORTED_MODULE_0__.sliderPortfolio)();
+  window.addEventListener('scroll', () => (0,_modules_menu_js__WEBPACK_IMPORTED_MODULE_5__.handleScroll)());
+  (0,_services_observer_js__WEBPACK_IMPORTED_MODULE_2__["default"])();
   window.addEventListener('click', e => {
-    if (!e.target.closest('.write')) {
-      messenger.removeAttribute('id');
-      setTimeout(() => {
-        whatsapp.removeAttribute('id');
-      }, 100);
-      setTimeout(() => {
-        viber.removeAttribute('id');
-      }, 200);
-      setTimeout(() => {
-        telegram.removeAttribute('id');
-      }, 300);
-      setTimeout(() => {
-        phone.removeAttribute('id');
-      }, 400);
-    } else {
-      setTimeout(() => {
-        messenger.setAttribute('id', 'messenger');
-      }, 400);
-      setTimeout(() => {
-        whatsapp.setAttribute('id', 'whatsapp');
-      }, 300);
-      setTimeout(() => {
-        viber.setAttribute('id', 'viber');
-      }, 200);
-      setTimeout(() => {
-        telegram.setAttribute('id', 'telegram');
-      }, 100);
-      phone.setAttribute('id', 'phone');
-    }
-  });
-  const overlayModal = document.querySelector('.overlay-modal');
-  const modalBig = document.querySelector('.modal_big');
-  const modalMini = document.querySelector('.modal_mini');
-  const modalDirector = document.querySelector('.modal_director');
-  window.addEventListener('click', e => {
-    if (e.target.classList.contains('menu__center-contact') || e.target.classList.contains('doctor__link-btn')) {
-      modalOpen(modalBig, 'overlay-modal__active', 'modal__active');
-      console.log(1);
-    } else if (e.target.classList.contains('modal__close') || e.target.classList.contains('overlay-modal')) {
-      modalClose('overlay-modal__active', 'modal__active');
-    } else if (e.target.classList.contains('footer__left-write')) {
-      modalOpen(modalDirector, 'overlay-modal__active', 'modal__active');
-    } else if (e.target.closest('.portfolio__accordion-item')) {
+    (0,_modules_write_js__WEBPACK_IMPORTED_MODULE_3__["default"])(e);
+    if (e.target.closest('.portfolio__accordion-item')) {
       const accordionItem = e.target.closest('.portfolio__accordion-item');
       const accordionBlock = accordionItem.querySelector('.portfolio__accordion-block');
       accordionBlock.classList.toggle('height');
+    } else if (e.target.closest('.menu__list') || e.target.closest('.hamburger')) {
+      (0,_modules_menu_js__WEBPACK_IMPORTED_MODULE_5__.hamburgerMenuClick)();
+    } else if (e.target.classList.contains('menu__center-contact')) {
+      modalOpen(_services_constants_js__WEBPACK_IMPORTED_MODULE_1__.modalBig, 'overlay-modal__active', 'modal__active');
+    } else if (e.target.classList.contains('modal__close') || e.target.classList.contains('overlay-modal')) {
+      modalClose('overlay-modal__active', 'modal__active');
+    } else if (e.target.classList.contains('footer__left-write')) {
+      modalOpen(_services_constants_js__WEBPACK_IMPORTED_MODULE_1__.modalDirector, 'overlay-modal__active', 'modal__active');
+    } else if (e.target.closest('.portfolio__center') || e.target.closest('.portfolio__filter-close')) {
+      (0,_modules_filter_js__WEBPACK_IMPORTED_MODULE_4__.showCloseFilter)();
     }
   });
-  function modalOpen(reciver, overlayModalActive, modalActive) {
-    overlayModal.classList.add(overlayModalActive);
-    reciver.classList.add(modalActive);
-  }
-  function modalClose(overlayModalActive, modalActive) {
-    overlayModal.classList.remove(overlayModalActive);
-    modalBig.classList.remove(modalActive);
-    modalDirector.classList.remove(modalActive);
-    modalMini.classList.remove(modalActive);
-  }
-  const swiper = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"]('.portfolio__accordion-swiper-container', {
-    slidesPerView: '1',
-    loop: true,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false
-    },
-    breakpoints: {
-      1440: {
-        spaceBetween: 48
-      },
-      1024: {
-        spaceBetween: 40
-      },
-      768: {
-        spaceBetween: 20
-      },
-      375: {
-        spaceBetween: 26
-      }
-    }
-  });
-  const checkboxes = document.querySelectorAll('.portfolio__filter-group input[type="checkbox"]');
-  const filterItems = idArray => {
-    return Array.from(checkboxes).filter(checkbox => idArray.some(id => checkbox.id.includes(id))).filter(checkbox => checkbox.checked).map(checkbox => checkbox.id);
-  };
-  function filterPortfolioItems() {
-    const selectedDoctors = filterItems(['kozoriz', 'bilenko', 'gartyk', 'kovnatskiy', 'troyanska', 'korvach', 'boyko', 'faryna', 'kushnir', 'brodyk', 'solodovyk', 'goncharenko', 'alexeeva']);
-    const selectedMethods = filterItems(['anesteziologichne', 'likuvannya-kanaliv', 'metalevi-koronky', 'karies-tymchasovih', 'karies-postiynyh', 'no2', 'estetychny-koronky', 'travma-zubiv']);
+  (0,_modules_filter_js__WEBPACK_IMPORTED_MODULE_4__.itemsFilter)();
 
-    // Якщо не вибрано жодного чекбокса, показуємо всі елементи
-    const portfolioItems = document.querySelectorAll('.portfolio__accordion-item');
-    if (selectedDoctors.length === 0 && selectedMethods.length === 0) {
-      portfolioItems.forEach(item => item.style.display = 'block');
-    } else {
-      portfolioItems.forEach(item => {
-        const doctorId = item.getAttribute('data-doctor');
-        const methodId = item.getAttribute('data-metod');
-        const doctorMatches = selectedDoctors.length === 0 || selectedDoctors.includes(doctorId);
-        const methodMatches = selectedMethods.length === 0 || selectedMethods.includes(methodId);
-        item.style.display = doctorMatches && methodMatches ? 'block' : 'none';
-      });
-    }
-  }
+  // const checkboxes = document.querySelectorAll(
+  //     '.portfolio__filter-group input[type="checkbox"]'
+  // )
 
-  // Додаємо обробник події для кожного чекбокса
-  checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', filterPortfolioItems);
-  });
+  // const filterItems = idArray => {
+  //     return Array.from(checkboxes)
+  //         .filter(checkbox => idArray.some(id => checkbox.id.includes(id)))
+  //         .filter(checkbox => checkbox.checked)
+  //         .map(checkbox => checkbox.id)
+  // }
 
-  // Початкове застосування фільтрації
-  filterPortfolioItems();
-  const showMenu = document.querySelector('.menu__line');
-  const hamburger = document.querySelector('.hamburger');
-  const menuList = document.querySelector('.menu__list');
-  hamburger.addEventListener('click', () => {
-    showMenu.classList.toggle('show-menu');
-    hamburger.classList.toggle('cross');
-    if (filter.classList.contains('show-filter')) {
-      filter.classList.toggle('show-filter');
-      showFilter.classList.toggle('hide');
-    }
-  });
-  menuList.addEventListener('click', () => {
-    showMenu.classList.toggle('show-menu');
-    hamburger.classList.toggle('cross');
-  });
-  const closeFilter = document.querySelector('.portfolio__filter-close');
-  const showFilter = document.querySelector('.portfolio__center');
-  const filter = document.querySelector('.portfolio__left-side');
-  showFilter.addEventListener('click', () => {
-    filter.classList.toggle('show-filter');
-    showFilter.classList.toggle('hide');
-  });
-  closeFilter.addEventListener('click', () => {
-    filter.classList.toggle('show-filter');
-    showFilter.classList.toggle('hide');
-  });
+  // function filterPortfolioItems() {
+  //     const selectedDoctors = filterItems([
+  //         'kozoriz',
+  //         'bilenko',
+  //         'gartyk',
+  //         'kovnatskiy',
+  //         'troyanska',
+  //         'korvach',
+  //         'boyko',
+  //         'faryna',
+  //         'kushnir',
+  //         'brodyk',
+  //         'solodovyk',
+  //         'goncharenko',
+  //         'alexeeva',
+  //     ])
+
+  //     const selectedMethods = filterItems([
+  //         'anesteziologichne',
+  //         'likuvannya-kanaliv',
+  //         'metalevi-koronky',
+  //         'karies-tymchasovih',
+  //         'karies-postiynyh',
+  //         'no2',
+  //         'estetychny-koronky',
+  //         'travma-zubiv',
+  //     ])
+
+  //     // Якщо не вибрано жодного чекбокса, показуємо всі елементи
+  //     const portfolioItems = document.querySelectorAll(
+  //         '.portfolio__accordion-item'
+  //     )
+
+  //     if (selectedDoctors.length === 0 && selectedMethods.length === 0) {
+  //         portfolioItems.forEach(item => (item.style.display = 'block'))
+  //     } else {
+  //         portfolioItems.forEach(item => {
+  //             const doctorId = item.getAttribute('data-doctor')
+  //             const methodId = item.getAttribute('data-metod')
+
+  //             const doctorMatches =
+  //                 selectedDoctors.length === 0 ||
+  //                 selectedDoctors.includes(doctorId)
+  //             const methodMatches =
+  //                 selectedMethods.length === 0 ||
+  //                 selectedMethods.includes(methodId)
+
+  //             item.style.display =
+  //                 doctorMatches && methodMatches ? 'block' : 'none'
+  //         })
+  //     }
+  // }
+
+  // // Додаємо обробник події для кожного чекбокса
+  // checkboxes.forEach(checkbox => {
+  //     checkbox.addEventListener('change', filterPortfolioItems)
+  // })
+
+  // // Початкове застосування фільтрації
+  // filterPortfolioItems()
 });
 })();
 
