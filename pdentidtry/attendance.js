@@ -259,19 +259,25 @@ __webpack_require__.r(__webpack_exports__);
 document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => (0,_modules_menu_js__WEBPACK_IMPORTED_MODULE_0__.handleScroll)());
   (0,_services_observer_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
-  window.addEventListener('click', e => {
-    (0,_modules_write_js__WEBPACK_IMPORTED_MODULE_2__["default"])(e);
-    if (e.target.closest('.menu__list') || e.target.closest('.hamburger')) {
-      (0,_modules_menu_js__WEBPACK_IMPORTED_MODULE_0__.hamburgerMenuClick)();
-    } else if (e.target.classList.contains('menu__center-contact')) {
-      (0,_modules_modal_js__WEBPACK_IMPORTED_MODULE_3__.modalOpen)(_services_constants_js__WEBPACK_IMPORTED_MODULE_4__.modalBig, 'overlay-modal__active', 'modal__active');
-      console.log(1);
-    } else if (e.target.classList.contains('modal__close') || e.target.classList.contains('overlay-modal')) {
-      (0,_modules_modal_js__WEBPACK_IMPORTED_MODULE_3__.modalClose)('overlay-modal__active', 'modal__active');
-    } else if (e.target.classList.contains('footer__left-write')) {
-      (0,_modules_modal_js__WEBPACK_IMPORTED_MODULE_3__.modalOpen)(_services_constants_js__WEBPACK_IMPORTED_MODULE_4__.modalDirector, 'overlay-modal__active', 'modal__active');
-    }
-  });
+  if (window.innerWidth < 992) {
+    onAction('touchend');
+  } else {
+    onAction('click');
+  }
+  function onAction(action) {
+    window.addEventListener(action, e => {
+      (0,_modules_write_js__WEBPACK_IMPORTED_MODULE_2__["default"])(e);
+      if (e.target.closest('.menu__list') || e.target.closest('.hamburger')) {
+        (0,_modules_menu_js__WEBPACK_IMPORTED_MODULE_0__.hamburgerMenuClick)();
+      } else if (e.target.classList.contains('menu__center-contact')) {
+        (0,_modules_modal_js__WEBPACK_IMPORTED_MODULE_3__.modalOpen)(_services_constants_js__WEBPACK_IMPORTED_MODULE_4__.modalBig, 'overlay-modal__active', 'modal__active');
+      } else if (e.target.classList.contains('modal__close') || e.target.classList.contains('overlay-modal')) {
+        (0,_modules_modal_js__WEBPACK_IMPORTED_MODULE_3__.modalClose)('overlay-modal__active', 'modal__active');
+      } else if (e.target.classList.contains('footer__left-write')) {
+        (0,_modules_modal_js__WEBPACK_IMPORTED_MODULE_3__.modalOpen)(_services_constants_js__WEBPACK_IMPORTED_MODULE_4__.modalDirector, 'overlay-modal__active', 'modal__active');
+      }
+    });
+  }
 });
 })();
 
