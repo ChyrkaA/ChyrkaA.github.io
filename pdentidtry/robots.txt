@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pediatricdentistry.com.ua/sitemap.xml
