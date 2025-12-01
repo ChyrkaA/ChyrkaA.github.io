@@ -353,7 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   (0,_services_POST_js__WEBPACK_IMPORTED_MODULE_5__["default"])();
   const fetchProducts = async () => {
-    const response = await fetch('https://mixukkdrroecijgikage.supabase.co/rest/v1/database', {
+    const response = await fetch('https://mixukkdrroecijgikage.supabase.co/rest/v1/database?order=id.asc', {
       method: 'GET',
       headers: {
         apikey: 'sb_publishable_RusABZPiYJ_34ebRTOCzUw_ZnCMDzq0',
