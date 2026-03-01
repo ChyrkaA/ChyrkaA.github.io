@@ -10545,8 +10545,45 @@ function itemsFilter() {
     return Array.from(_services_constants_js__WEBPACK_IMPORTED_MODULE_0__.checkboxes).filter(checkbox => idArray.some(id => checkbox.id.includes(id))).filter(checkbox => checkbox.checked).map(checkbox => checkbox.id);
   };
   function filterPortfolioItems() {
-    const selectedDoctors = filterItems(['kozoriz', 'bilenko', 'gartyk', 'kovnatskiy', 'troyanska', 'korvach', 'boyko', 'faryna', 'kushnir', 'brodyk', 'solodovyk', 'goncharenko', 'alexeeva']);
-    const selectedMethods = filterItems(['anesteziologichne', 'likuvannya-kanaliv', 'metalevi-koronky', 'karies-tymchasovih', 'karies-postiynyh', 'no2', 'estetychny-koronky', 'travma-zubiv']);
+    const selectedDoctors = filterItems([
+      // 'kozoriz',
+      // 'bilenko',
+      // 'gartyk',
+      // 'kovnatskiy',
+      // 'troyanska',
+      // 'korvach',
+      // 'gaponenko',
+      // 'faryna',
+      // 'kushnir',
+      // 'brodyk',
+      // 'solodovyk',
+      // 'goncharenko',
+      // 'alexeeva',
+    ]);
+    const selectedMethods = filterItems([
+      // 'anesteziologichne',
+      // 'likuvannya-kanaliv',
+      // 'metalevi-koronky',
+      // 'karies-tymchasovih',
+      // 'karies-postiynyh',
+      // 'no2',
+      // 'estetychny-koronky',
+      // 'travma-tymchasovih-zubiv',
+      // 'travma-postiynyh-zubiv',
+      // 'germetyzaciya-post',
+      // 'breket',
+      // 'znimnoyu',
+      // 'neznimnoyu',
+      // 'germetyzaciya-post',
+      // 'germetyzaciya-tymch',
+      // 'prof-tymch',
+      // 'prof-post',
+      // 'bez-sverdl',
+      // 'sklad-vyd-tym-zub',
+      // 'vyd-nadkompl-zub',
+      // 'vyd-zub-mudrosti',
+      // 'kor-vuzdechki',
+    ]);
 
     // Якщо не вибрано жодного чекбокса, показуємо всі елементи
     const portfolioItems = document.querySelectorAll('.portfolio__accordion-item');
