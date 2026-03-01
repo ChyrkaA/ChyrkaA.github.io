@@ -10562,6 +10562,19 @@ function itemsFilter() {
       });
     }
   }
+  function applyDoctorFromURL() {
+    const params = new URLSearchParams(window.location.search);
+    const doctorFromURL = params.get('doctor');
+    if (!doctorFromURL) return;
+    const checkbox = Array.from(_services_constants_js__WEBPACK_IMPORTED_MODULE_0__.checkboxes).find(cb => cb.id === doctorFromURL);
+    if (checkbox) {
+      checkbox.checked = true;
+      checkbox.dispatchEvent(new Event('change'));
+    }
+    // 🔥 Прибираємо параметр з URL
+    const cleanUrl = window.location.pathname;
+    window.history.replaceState({}, document.title, cleanUrl);
+  }
 
   // Додаємо обробник події для кожного чекбокса
   _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.checkboxes.forEach(checkbox => {
@@ -10570,6 +10583,9 @@ function itemsFilter() {
 
   // Початкове застосування фільтрації
   filterPortfolioItems();
+
+  // 🔥 застосування лікаря з URL
+  applyDoctorFromURL();
 }
 
 
