@@ -10953,15 +10953,19 @@ document.addEventListener('DOMContentLoaded', () => {
   (0,_modules_sliders_js__WEBPACK_IMPORTED_MODULE_0__.sliderReview)();
   window.addEventListener('scroll', () => (0,_modules_menu_js__WEBPACK_IMPORTED_MODULE_2__.handleScroll)());
   (0,_services_observer_js__WEBPACK_IMPORTED_MODULE_5__["default"])();
-  if (window.innerWidth < 992) {
-    onAction('touchend');
-  } else {
-    onAction('click');
-  }
+
+  // if (window.innerWidth < 992) {
+  //     onAction('touchend')
+  // } else {
+  //     onAction('click')
+  // }
+  onAction('pointerdown');
   function onAction(action) {
     window.addEventListener(action, e => {
       (0,_modules_write_js__WEBPACK_IMPORTED_MODULE_3__["default"])(e);
-      if (e.target.closest('.menu__list') || e.target.closest('.hamburger')) {
+      if (
+      // e.target.closest('.menu__list') ||
+      e.target.closest('.hamburger')) {
         (0,_modules_menu_js__WEBPACK_IMPORTED_MODULE_2__.hamburgerMenuClick)();
       } else if (e.target.classList.contains('menu__center-contact')) {
         (0,_modules_modal_js__WEBPACK_IMPORTED_MODULE_4__.modalOpen)(_services_constants_js__WEBPACK_IMPORTED_MODULE_1__.modalBig, 'overlay-modal__active', 'modal__active');

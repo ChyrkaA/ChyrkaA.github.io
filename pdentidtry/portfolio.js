@@ -10545,45 +10545,8 @@ function itemsFilter() {
     return Array.from(_services_constants_js__WEBPACK_IMPORTED_MODULE_0__.checkboxes).filter(checkbox => idArray.some(id => checkbox.id.includes(id))).filter(checkbox => checkbox.checked).map(checkbox => checkbox.id);
   };
   function filterPortfolioItems() {
-    const selectedDoctors = filterItems([
-      // 'kozoriz',
-      // 'bilenko',
-      // 'gartyk',
-      // 'kovnatskiy',
-      // 'troyanska',
-      // 'korvach',
-      // 'gaponenko',
-      // 'faryna',
-      // 'kushnir',
-      // 'brodyk',
-      // 'solodovyk',
-      // 'goncharenko',
-      // 'alexeeva',
-    ]);
-    const selectedMethods = filterItems([
-      // 'anesteziologichne',
-      // 'likuvannya-kanaliv',
-      // 'metalevi-koronky',
-      // 'karies-tymchasovih',
-      // 'karies-postiynyh',
-      // 'no2',
-      // 'estetychny-koronky',
-      // 'travma-tymchasovih-zubiv',
-      // 'travma-postiynyh-zubiv',
-      // 'germetyzaciya-post',
-      // 'breket',
-      // 'znimnoyu',
-      // 'neznimnoyu',
-      // 'germetyzaciya-post',
-      // 'germetyzaciya-tymch',
-      // 'prof-tymch',
-      // 'prof-post',
-      // 'bez-sverdl',
-      // 'sklad-vyd-tym-zub',
-      // 'vyd-nadkompl-zub',
-      // 'vyd-zub-mudrosti',
-      // 'kor-vuzdechki',
-    ]);
+    const selectedDoctors = filterItems(['kozoriz', 'bilenko', 'gartyk', 'kovnatskiy', 'troyanska', 'korvach', 'gaponenko', 'faryna', 'kushnir', 'brodyk', 'solodovyk', 'goncharenko', 'alexeeva']);
+    const selectedMethods = filterItems(['anesteziologichne', 'likuvannya-kanaliv', 'metalevi-koronky', 'karies-tymchasovih', 'karies-postiynyh', 'no2', 'estetychny-koronky', 'travma-tymchasovih-zubiv', 'travma-postiynyh-zubiv', 'germetyzaciya-post', 'breket', 'znimnoyu', 'neznimnoyu', 'germetyzaciya-post', 'germetyzaciya-tymch', 'prof-tymch', 'prof-post', 'bez-sverdl', 'sklad-vyd-tym-zub', 'vyd-nadkompl-zub', 'vyd-zub-mudrosti', 'kor-vuzdechki']);
 
     // Якщо не вибрано жодного чекбокса, показуємо всі елементи
     const portfolioItems = document.querySelectorAll('.portfolio__accordion-item');
@@ -10641,6 +10604,33 @@ function handleScroll() {
 function hamburgerMenuClick() {
   _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.showMenu.classList.toggle('show-menu');
   _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.hamburger.classList.toggle('cross');
+}
+
+
+/***/ }),
+
+/***/ "./src/js/modules/modal.js":
+/*!*********************************!*\
+  !*** ./src/js/modules/modal.js ***!
+  \*********************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   modalClose: () => (/* binding */ modalClose),
+/* harmony export */   modalOpen: () => (/* binding */ modalOpen)
+/* harmony export */ });
+/* harmony import */ var _services_constants_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/constants.js */ "./src/js/services/constants.js");
+
+function modalOpen(reciver, overlayModalActive, modalActive) {
+  _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.overlayModal.classList.add(overlayModalActive);
+  reciver.classList.add(modalActive);
+}
+function modalClose(overlayModalActive, modalActive) {
+  _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.overlayModal.classList.remove(overlayModalActive);
+  _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.modalBig.classList.remove(modalActive);
+  _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.modalDirector.classList.remove(modalActive);
+  _services_constants_js__WEBPACK_IMPORTED_MODULE_0__.modalMini.classList.remove(modalActive);
 }
 
 
@@ -11000,9 +10990,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_constants_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services/constants.js */ "./src/js/services/constants.js");
 /* harmony import */ var _services_observer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/observer.js */ "./src/js/services/observer.js");
 /* harmony import */ var _modules_write_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/write.js */ "./src/js/modules/write.js");
-/* harmony import */ var _modules_filter_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/filter.js */ "./src/js/modules/filter.js");
-/* harmony import */ var _modules_menu_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/menu.js */ "./src/js/modules/menu.js");
-/* harmony import */ var _services_POST_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./services/POST.js */ "./src/js/services/POST.js");
+/* harmony import */ var _modules_modal_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/modal.js */ "./src/js/modules/modal.js");
+/* harmony import */ var _modules_filter_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/filter.js */ "./src/js/modules/filter.js");
+/* harmony import */ var _modules_menu_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/menu.js */ "./src/js/modules/menu.js");
+/* harmony import */ var _services_POST_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./services/POST.js */ "./src/js/services/POST.js");
+
 
 
 
@@ -11012,13 +11004,16 @@ __webpack_require__.r(__webpack_exports__);
 
 document.addEventListener('DOMContentLoaded', () => {
   (0,_modules_sliders_js__WEBPACK_IMPORTED_MODULE_0__.sliderPortfolio)();
-  window.addEventListener('scroll', () => (0,_modules_menu_js__WEBPACK_IMPORTED_MODULE_5__.handleScroll)());
+  window.addEventListener('scroll', () => (0,_modules_menu_js__WEBPACK_IMPORTED_MODULE_6__.handleScroll)());
   (0,_services_observer_js__WEBPACK_IMPORTED_MODULE_2__["default"])();
-  if (window.innerWidth < 992) {
-    onAction('touchend');
-  } else {
-    onAction('click');
-  }
+
+  // if (window.innerWidth < 992) {
+  //     onAction('touchend')
+  // } else {
+  //     onAction('click')
+  // }
+
+  onAction('pointerdown');
   function onAction(action) {
     window.addEventListener(action, e => {
       (0,_modules_write_js__WEBPACK_IMPORTED_MODULE_3__["default"])(e);
@@ -11026,21 +11021,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const accordionItem = e.target.closest('.portfolio__accordion-item');
         const accordionBlock = accordionItem.querySelector('.portfolio__accordion-block');
         accordionBlock.classList.toggle('height');
-      } else if (e.target.closest('.menu__list') || e.target.closest('.hamburger')) {
-        (0,_modules_menu_js__WEBPACK_IMPORTED_MODULE_5__.hamburgerMenuClick)();
+      } else if (e.target.closest('.hamburger')) {
+        (0,_modules_menu_js__WEBPACK_IMPORTED_MODULE_6__.hamburgerMenuClick)();
       } else if (e.target.classList.contains('menu__center-contact')) {
-        modalOpen(_services_constants_js__WEBPACK_IMPORTED_MODULE_1__.modalBig, 'overlay-modal__active', 'modal__active');
+        (0,_modules_modal_js__WEBPACK_IMPORTED_MODULE_4__.modalOpen)(_services_constants_js__WEBPACK_IMPORTED_MODULE_1__.modalBig, 'overlay-modal__active', 'modal__active');
       } else if (e.target.classList.contains('modal__close') || e.target.classList.contains('overlay-modal')) {
-        modalClose('overlay-modal__active', 'modal__active');
+        (0,_modules_modal_js__WEBPACK_IMPORTED_MODULE_4__.modalClose)('overlay-modal__active', 'modal__active');
       } else if (e.target.classList.contains('footer__left-write')) {
-        modalOpen(_services_constants_js__WEBPACK_IMPORTED_MODULE_1__.modalDirector, 'overlay-modal__active', 'modal__active');
+        (0,_modules_modal_js__WEBPACK_IMPORTED_MODULE_4__.modalOpen)(_services_constants_js__WEBPACK_IMPORTED_MODULE_1__.modalDirector, 'overlay-modal__active', 'modal__active');
       } else if (e.target.closest('.portfolio__center') || e.target.closest('.portfolio__filter-close')) {
-        (0,_modules_filter_js__WEBPACK_IMPORTED_MODULE_4__.showCloseFilter)();
+        (0,_modules_filter_js__WEBPACK_IMPORTED_MODULE_5__.showCloseFilter)();
       }
     });
   }
-  (0,_services_POST_js__WEBPACK_IMPORTED_MODULE_6__["default"])();
-  (0,_modules_filter_js__WEBPACK_IMPORTED_MODULE_4__.itemsFilter)();
+  (0,_services_POST_js__WEBPACK_IMPORTED_MODULE_7__["default"])();
+  (0,_modules_filter_js__WEBPACK_IMPORTED_MODULE_5__.itemsFilter)();
 });
 })();
 
