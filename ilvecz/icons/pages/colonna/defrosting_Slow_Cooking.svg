@@ -1,0 +1,17 @@
+<svg id="Black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184.25 184.25">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #222221;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="92.13" cy="92.13" r="89.29" transform="translate(-38.16 92.13) rotate(-45)"/>
+  <path class="cls-1" d="M151.84,92.13H32.41v29A22.16,22.16,0,0,0,54.58,143.3h75.09a22.16,22.16,0,0,0,22.17-22.17Z"/>
+  <path class="cls-1" d="M122.54,34.25c0,8-7.91,8-7.91,15.92s7.91,8,7.91,15.93-7.91,8-7.91,15.92"/>
+  <path class="cls-1" d="M96.08,34.25c0,8-7.91,8-7.91,15.92s7.91,8,7.91,15.93-7.91,8-7.91,15.92"/>
+  <path class="cls-1" d="M69.62,34.25c0,8-7.91,8-7.91,15.92s7.91,8,7.91,15.93-7.91,8-7.91,15.92"/>
+</svg>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Livello_1" viewBox="0 0 23 23">
+  <defs>
+    <style>.cls-1{fill:url(#linear-gradient);}.cls-1,.cls-2{stroke-width:0px;}.cls-2{fill:url(#linear-gradient-2);}</style>
+    <linearGradient id="linear-gradient" x1="7.95" y1=".56" x2="15.05" y2="22.44" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#bababa"></stop>
+      <stop offset=".03" stop-color="#cbcbcb"></stop>
+      <stop offset=".06" stop-color="#dfdfdf"></stop>
+      <stop offset=".11" stop-color="#eee"></stop>
+      <stop offset=".16" stop-color="#f6f6f6"></stop>
+      <stop offset=".25" stop-color="#f9f9f9"></stop>
+      <stop offset=".5" stop-color="#fff"></stop>
+      <stop offset=".5" stop-color="#fefefe"></stop>
+      <stop offset=".5" stop-color="#ededed"></stop>
+      <stop offset=".5" stop-color="#e1e1e1"></stop>
+      <stop offset=".5" stop-color="#dadada"></stop>
+      <stop offset=".51" stop-color="#d9d9d9"></stop>
+      <stop offset=".51" stop-color="#e5e5e5"></stop>
+      <stop offset=".52" stop-color="#f4f4f4"></stop>
+      <stop offset=".53" stop-color="#f9f9f9"></stop>
+      <stop offset=".55" stop-color="#f0f0f0"></stop>
+      <stop offset=".6" stop-color="#e2e2e2"></stop>
+      <stop offset=".66" stop-color="#d9d9d9"></stop>
+      <stop offset=".76" stop-color="#d7d7d7"></stop>
+      <stop offset=".87" stop-color="#d4d4d4"></stop>
+      <stop offset=".94" stop-color="#ccc"></stop>
+      <stop offset=".99" stop-color="#bdbdbd"></stop>
+      <stop offset="1" stop-color="#bababa"></stop>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="7.95" y1=".56" x2="15.05" y2="22.44" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2b3133"></stop>
+      <stop offset=".02" stop-color="#353d3f"></stop>
+      <stop offset=".06" stop-color="#465053"></stop>
+      <stop offset=".1" stop-color="#515d62"></stop>
+      <stop offset=".16" stop-color="#58656a"></stop>
+      <stop offset=".25" stop-color="#5b686d"></stop>
+      <stop offset=".28" stop-color="#637074"></stop>
+      <stop offset=".33" stop-color="#7c868a"></stop>
+      <stop offset=".39" stop-color="#a4abad"></stop>
+      <stop offset=".46" stop-color="#daddde"></stop>
+      <stop offset=".5" stop-color="#fff"></stop>
+      <stop offset=".5" stop-color="#f4f5f5"></stop>
+      <stop offset=".5" stop-color="#cfd3d5"></stop>
+      <stop offset=".5" stop-color="#afb5b8"></stop>
+      <stop offset=".5" stop-color="#949c9f"></stop>
+      <stop offset=".5" stop-color="#7e888c"></stop>
+      <stop offset=".5" stop-color="#6d787d"></stop>
+      <stop offset=".5" stop-color="#616d72"></stop>
+      <stop offset=".5" stop-color="#5a676c"></stop>
+      <stop offset=".51" stop-color="#59666b"></stop>
+      <stop offset=".53" stop-color="#5b686d"></stop>
+      <stop offset=".57" stop-color="#6a797f"></stop>
+      <stop offset=".61" stop-color="#76878d"></stop>
+      <stop offset=".67" stop-color="#7d8f96"></stop>
+      <stop offset=".76" stop-color="#809299"></stop>
+      <stop offset=".83" stop-color="#7d8f96"></stop>
+      <stop offset=".88" stop-color="#76878e"></stop>
+      <stop offset=".91" stop-color="#6a7a7f"></stop>
+      <stop offset=".95" stop-color="#5a666b"></stop>
+      <stop offset=".97" stop-color="#444e51"></stop>
+      <stop offset="1" stop-color="#2b3133"></stop>
+    </linearGradient>
+  </defs>
+  <circle class="cls-1" cx="11.5" cy="11.5" r="11.5"></circle>
+  <circle class="cls-2" cx="11.5" cy="11.5" r="11.5"></circle>
+</svg>

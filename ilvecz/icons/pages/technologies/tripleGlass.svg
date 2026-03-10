@@ -1,0 +1,18 @@
+<svg id="Black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184.25 184.25">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #222221;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g>
+    <circle class="cls-1" cx="92.13" cy="92.13" r="89.29"/>
+    <polygon class="cls-1" points="28.2 108 28.2 48.88 107.34 76.26 107.34 135.37 28.2 108"/>
+    <polyline class="cls-1" points="52.55 57.3 52.55 48.88 131.7 76.26 131.7 135.37 107.34 126.95"/>
+    <polyline class="cls-1" points="76.91 57.3 76.91 48.88 156.06 76.26 156.06 135.37 131.7 126.95"/>
+  </g>
+</svg>
