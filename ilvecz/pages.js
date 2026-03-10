@@ -739,7 +739,7 @@ __webpack_require__.r(__webpack_exports__);
 window.addEventListener("DOMContentLoaded", () => {
   (0,_modules_preload_js__WEBPACK_IMPORTED_MODULE_0__["default"])(".overlay", "body", "style");
   window.addEventListener("scroll", _modules_showTopMenu_js__WEBPACK_IMPORTED_MODULE_5__["default"]);
-  listener("pointerdown");
+  listener("pointerup");
 
   // if (window.innerWidth >= 992) {
   // 	listener("click");
