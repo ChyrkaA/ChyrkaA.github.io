@@ -1,104 +1,337 @@
-<?xml version="1.0" encoding="UTF-8"?> 
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"> 
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
 <url>
-<loc>https://chyrkaa.github.io/</loc>
+  <loc>https://pediatricdentistry.com.ua/</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>1.00</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/tel:0976518223</loc>
+  <loc>https://pediatricdentistry.com.ua/doctors.html</loc>
+  <lastmod>2026-03-01T18:22:12+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/doctors.html</loc>
+  <loc>https://pediatricdentistry.com.ua/for-parents.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/for-parents.html</loc>
+  <loc>https://pediatricdentistry.com.ua/price.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/price.html</loc>
+  <loc>https://pediatricdentistry.com.ua/portfolio.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/portfolio.html</loc>
+  <loc>https://pediatricdentistry.com.ua/injury.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/injury.html</loc>
+  <loc>https://pediatricdentistry.com.ua/blog.html</loc>
+  <lastmod>2026-03-01T18:22:12+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/smile.html</loc>
+  <loc>https://pediatricdentistry.com.ua/smile.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/why-center.html</loc>
+  <loc>https://pediatricdentistry.com.ua/why-center.html</loc>
+  <lastmod>2026-03-01T18:22:10+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/new-no2.html</loc>
+  <loc>https://pediatricdentistry.com.ua/maister-klas-myst-lik-kan.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/new-individual.html</loc>
+  <loc>https://pediatricdentistry.com.ua/maister-klas-eksp-navch.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/new-one-year.html</loc>
+  <loc>https://pediatricdentistry.com.ua/new-no2.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/complex-diagnostics.html</loc>
+  <loc>https://pediatricdentistry.com.ua/new-individual.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/prevention.html</loc>
+  <loc>https://pediatricdentistry.com.ua/new-one-year.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/treatment-caries.html</loc>
+  <loc>https://pediatricdentistry.com.ua/step-up.html</loc>
+  <lastmod>2026-03-01T18:22:10+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/computer-anesthesia.html</loc>
+  <loc>https://pediatricdentistry.com.ua/international-level.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/standart-crowns.html</loc>
+  <loc>https://pediatricdentistry.com.ua/complex-diagnostics.html</loc>
+  <lastmod>2026-03-01T18:22:12+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/root-canal-treatment.html</loc>
+  <loc>https://pediatricdentistry.com.ua/prevention.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/unformed-permanent.html</loc>
+  <loc>https://pediatricdentistry.com.ua/treatment-caries.html</loc>
+  <lastmod>2026-03-01T18:22:10+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/teeth-rejuvenation.html</loc>
+  <loc>https://pediatricdentistry.com.ua/computer-anesthesia.html</loc>
+  <lastmod>2026-03-01T18:22:12+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/wisdom-teeth-removal.html</loc>
+  <loc>https://pediatricdentistry.com.ua/standart-crowns.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/bridle-plastic-surgery.html</loc>
+  <loc>https://pediatricdentistry.com.ua/root-canal-treatment.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/supernumerary-teeth.html</loc>
+  <loc>https://pediatricdentistry.com.ua/unformed-permanent.html</loc>
+  <lastmod>2026-03-01T18:22:10+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/early-orthodontics.html</loc>
+  <loc>https://pediatricdentistry.com.ua/teeth-rejuvenation.html</loc>
+  <lastmod>2026-03-01T18:22:10+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/adolescent-orthodontics.html</loc>
+  <loc>https://pediatricdentistry.com.ua/wisdom-teeth-removal.html</loc>
+  <lastmod>2026-03-01T18:22:10+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/tooth-injury.html</loc>
+  <loc>https://pediatricdentistry.com.ua/bridle-plastic-surgery.html</loc>
+  <lastmod>2026-03-01T18:22:12+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/no2.html</loc>
+  <loc>https://pediatricdentistry.com.ua/supernumerary-teeth.html</loc>
+  <lastmod>2026-03-01T18:22:10+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/anesthesiology.html</loc>
+  <loc>https://pediatricdentistry.com.ua/early-orthodontics.html</loc>
+  <lastmod>2026-03-01T18:22:12+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/viber://chat?number=%2B380976518223</loc>
+  <loc>https://pediatricdentistry.com.ua/adolescent-orthodontics.html</loc>
+  <lastmod>2026-03-01T18:22:12+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/Wordpress</loc>
+  <loc>https://pediatricdentistry.com.ua/tooth-injury.html</loc>
+  <lastmod>2026-03-01T18:22:10+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/uber</loc>
+  <loc>https://pediatricdentistry.com.ua/no2.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/pulse</loc>
+  <loc>https://pediatricdentistry.com.ua/anesthesiology.html</loc>
+  <lastmod>2026-03-01T18:22:12+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/policy.html</loc>
+  <loc>https://pediatricdentistry.com.ua/kovnatskiy.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://chyrkaa.github.io/bandc</loc>
+  <loc>https://pediatricdentistry.com.ua/goncharenko.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/alexeeva.html</loc>
+  <lastmod>2026-03-01T18:22:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/troyanska.html</loc>
+  <lastmod>2026-03-01T18:22:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/korvach.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/faryna.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/brodyk.html</loc>
+  <lastmod>2026-03-01T18:22:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/gartyk.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/bilenko.html</loc>
+  <lastmod>2026-03-01T18:22:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/kozoriz.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/gaponenko.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/shepel.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/chelovyan.html</loc>
+  <lastmod>2026-03-01T18:22:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/tereshchenko.html</loc>
+  <lastmod>2026-03-01T18:22:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/prapro.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/zubritska.html</loc>
+  <lastmod>2026-03-01T18:22:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/gladka.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/gerashchenko.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/saradze-kirichok.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/krikunenko.html</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/zhukovska.html</loc>
+  <lastmod>2026-03-01T18:22:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/bogdalova.html</loc>
+  <lastmod>2026-03-01T18:22:12+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/portfolio.html?doctor=kovnatskiy</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/portfolio.html?doctor=goncharenko</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/portfolio.html?doctor=alexeeva</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/portfolio.html?doctor=troyanska</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/portfolio.html?doctor=korvach</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/portfolio.html?doctor=faryna</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/portfolio.html?doctor=brodyk</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/portfolio.html?doctor=gartyk</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/portfolio.html?doctor=bilenko</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/portfolio.html?doctor=kozoriz</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://pediatricdentistry.com.ua/portfolio.html?doctor=gaponenko</loc>
+  <lastmod>2026-03-01T18:22:11+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
+</urlset>

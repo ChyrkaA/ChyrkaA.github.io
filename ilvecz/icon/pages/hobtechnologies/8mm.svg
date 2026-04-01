@@ -1,0 +1,44 @@
+<svg id="Black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184.25 184.25">
+  <defs>
+    <style>
+      .cls-1, .cls-4 {
+        fill: none;
+      }
+
+      .cls-1, .cls-3, .cls-4 {
+        stroke: #222221;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1 {
+        stroke-width: 2px;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        font-size: 49px;
+        font-family: 'Faktpro', sans-serif;
+        font-weight: 200;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #222221;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="92.13" cy="92.13" r="89.29"/>
+  <g>
+    <g>
+      <polyline class="cls-1" points="75.02 37.75 93.58 19.18 112.15 37.75"/>
+      <line class="cls-1" x1="93.58" y1="67" x2="93.58" y2="19.18"/>
+      <line class="cls-1" x1="75.02" y1="12.58" x2="112.15" y2="12.58"/>
+    </g>
+    <g>
+      <polyline class="cls-1" points="112.15 146.5 93.58 165.07 75.02 146.5"/>
+      <line class="cls-1" x1="93.58" y1="117.25" x2="93.58" y2="165.07"/>
+      <line class="cls-1" x1="112.15" y1="171.67" x2="75.02" y2="171.67"/>
+    </g>
+    <g>
+      <text class="cls-2" transform="translate(35.62 103.98)">8 mm</text>
+    </g>
+  </g>
+</svg>
