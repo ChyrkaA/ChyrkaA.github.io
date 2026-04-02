@@ -10624,6 +10624,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
+  const menuHeight = document.querySelector('.nav');
+  document.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      menuHeight.classList.add('menu-height');
+    } else {
+      menuHeight.classList.remove('menu-height');
+    }
+  });
 });
 })();
 
