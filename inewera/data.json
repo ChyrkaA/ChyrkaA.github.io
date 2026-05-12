@@ -288,7 +288,12 @@
 		"phone": "Ivor Vance"
 	},
 	{
-		"phone": "Ray Hester"
+		"phone": "Ruffoni",
+		"catalogs": [
+			"files/ruffoni/catalog_opus_2026.pdf",
+			"files/rfn_catalog.pdf",
+			"files/catalog_historia_2026.pdf"
+		]
 	},
 	{
 		"phone": "Petra Best"
