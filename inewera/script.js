@@ -209,7 +209,7 @@ function cookies() {
         pl: {
           consentModal: {
             title: "Dbamy o Twoją prywatność 🍪",
-            description: "Strona <strong>Sunny Isles sp zoo Polska</strong> wykorzystuje niezbędne pliki cookie w celu zapewnienia jej prawidłowego działania. Pozostałe pliki cookie zostaną aktywowane wyłącznie po wyrażeniu przez Ciebie zgody.",
+            description: "Strona <strong>Sunny Isles sp z o.o. Polska</strong> wykorzystuje niezbędne pliki cookie w celu zapewnienia jej prawidłowego działania. Pozostałe pliki cookie zostaną aktywowane wyłącznie po wyrażeniu przez Ciebie zgody.",
             acceptAllBtn: "Akceptuj wszystkie",
             acceptNecessaryBtn: "Odrzuć opcjonalne",
             showPreferencesBtn: "Ustawienia"
